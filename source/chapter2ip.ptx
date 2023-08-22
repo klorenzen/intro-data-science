@@ -1,0 +1,26 @@
+<chapter xml:id="chapter-2" xmlns:xi="http://www.w3.org/2001/XInclude" >
+      <title>Data Ethics</title>
+
+      <section xml:id="section-2-1">
+        <title>Transparency of algorithms</title>
+      </section>
+
+      <section xml:id="section-2-2">
+        <title>Dangers of scaling</title>
+      </section>
+
+      <section xml:id="section-2-3">
+        <title>Fairness - using data for good.</title>
+    <p> Check bias that inevitably ends up in algorithms. </p>
+      </section>
+
+      <section xml:id="section-2-4">
+        <title>Ethical collection of data and use of personal data.</title>
+      </section>
+
+      <section xml:id="section-2-5">
+        <title>Accountability</title>
+    <p>Who is accountable? Consumers, programmers, or government?</p>
+      </section>
+
+  </chapter>

@@ -1,0 +1,175 @@
+<chapter xml:id="chapter-9" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>Projects</title>
+
+      <section xml:id="section-9-1">
+        <title>Sports</title>
+      </section>
+
+      <section xml:id="section-9-2">
+        <title>Finance</title>
+	  <p>Stock Market Trends</p>
+      <objectives xml:id="Section-9-2-objectives">
+        <ul>
+          <li> Webscraping </li>
+          <li> Cleaning Scraped Data </li>
+          <li> Introduce Time Series Analysis </li>
+        </ul>
+      </objectives>
+
+      </section>
+
+      <section xml:id="section-9-3">
+        <title>Environmental</title>
+        <objectives xml:id="Section-9-3-objectives">
+          <ul>
+            <li> Expand on PCA </li>
+            <li> Apply PCA to help identify outliers in large data sets </li>
+            <li> Apply PCA to aid in feature selection in small data sets </li>
+          </ul>
+        </objectives>
+          <p> As discussed in <xref ref="section-6-6"/>, identifying outliers is an important part of data analysis. It is also one of the more dangerous decisions that a data analyst can make. Labeling a unique observation as an outlier can remove valuable information that should be retained from our data set if decided haphazardly or incorrectly. Unfortunately, in high dimensional space, nearly any particular observation might be considered an outlier in at least some feature(s). </p>
+
+          <p> On the other hand, in large data sets, it is relatively likely that some outliers will be observed. Or worse, that some experimental error causes an unexpected alteration of the data. Including this information could be just as damaging to our analysis as removing data that should not be considered an outlier. We doing analysis where outliers might be present, recall that a standard practice is to do the analysis twice. Once with the proposed outliers, and once without. </p>
+
+          <p> As introduced in *CHAPTER REFERENCE*, PCA provides a way to help us to reduce the dimensionality of a data set. In this way, it can help illuminate us not only to the most important features, but also to data points that are exceptionally far from a typical observation. Unfortunately, PCA depends on variance to make its determination, and outliers can have a large impact on the variance of a feature causing the outliers to be harder to distinguish. </p>
+
+          <p> For this reason, we introduce Robust PCA. Our idea is that by taking many subsamples of our data, we expect not to be heavily impacted by what we expect to be only a few outliers. The question that must be answered now is how do we determine which subset to use as our ``typical'' data. Our intuition for outliers in PCA is that they would be far away from most of the data in the reduced space provided by PCA. One way to think about the size of the space that PCA finds is through the determinant. A small determinant would correspond to a compact space in which the data lies. With this intuition, we may hazard to guess that a good set to run PCA on would provide compact space. Our goal is to sample from our data set to find a minimum determinant of the covariance matrix. </p>
+
+          <p> When we subsample, there are a few decisions that we must make. One of the most important decisions in such a process is the size of the subsets chosen. In PCA we still want a representative sample of the entire data, so we should not choose a small (under 50%) proportion of our data. On the other hand, if the sampled set is too large, we are likely to choose outliers. A general rule of thumb is to select about 75% of the entire data set for each sample. Note that one cost of a resampling method such as this is cost. Instead of running PCA once, we will be running it potentially hundreds or thousands of times. As such, data sets with more than a few features might be time consuming and will eventually be impractical to check. </p>
+
+        <subsection xml:id="section-9-3-1">
+          <title>Minimum Covariance Determinant</title>
+
+          <p> We will now apply the minimum covariance determinant method to a dataset to identify potential outliers. Fortunately for us, this has already been implemented in the SciKit-Learn! </p>
+
+          <sage>
+          <input>
+            import pandas as pd
+            import numpy as np
+            from sklearn.preprocessing import StandardScaler
+            from sklearn.datasets import load_wine
+            import seaborn as sns
+            import matplotlib.pyplot as plt
+
+
+            allWineData = load_wine()
+            df = pd.DataFrame(data = allWineData.data, columns = allWineData.feature_names)
+            wineType = allWineData['target']
+
+            print(allWineData.feature_names)
+            print(df.head(5))
+          </input>
+
+          <output>
+
+          </output>
+          </sage>
+
+          <p> As we can see, there are 13 measured variables for each wine. One might wonder, what is the most important feature for determining the type of wine. Can we make a solid guess about the type of wine if we select only two or three of these thirteen options? </p>
+
+          <p> Before, we developed techinques to visualize high dimensional data. A common technique is to visualize the data in pairs, for example we might plot alcohol versus flavonoids. Below we make that plot and a plot for alcohol vs malic_acid. </p>
+
+          <sage>
+          <input>
+          sns.relplot(data = df, x='alcohol', y='flavanoids', hue=allWineData['target'], aspect=1.61)
+          plt.show()
+
+          sns.relplot(data = df, x ='alcohol', y='malic_acid', hue=allWineData['target'], aspect=1.61)
+          plt.show()
+          </input>
+
+          <output>
+
+          </output>
+          </sage>
+
+          <p>Each of these plots looks like you could separate some of the groups from them, but it merely a small portion of the data we have available. This is where Principal Component Analysis (PCA) kicks in. When we apply PCA we can determine which combinations of variables are most important and plot based on those instead of an arbitrary choice. </p>
+          
+          <p>Ideally after applying PCA we will be able to identify combinations of features that allow us to easily distinguish between groups in data. Visually this means that there should be little to no overlap in the groups. </p>
+          <sage>
+          <input>
+            pca = PCA()
+            plt.figure(figsize=(8,6))
+
+            pcaData = pca.fit_transform(df)
+            plot = plt.scatter(pcaData[:,0],pcaData[:,1], c=wineType)
+            plot.show()
+          </input>
+
+          <output>
+
+          </output>
+          </sage>
+
+          <p> Here we see that by using PCA we can nicely separate out at least one of the groups but there is a little overlap remaining. Part of the reason for this is that PCA relies heavily on the variance of each of the features. Since our features were not scaled down, we are not getting as clean an image as we may like. Whenever using PCA, we should always consider scaling our data before applying PCA! </p>
+
+          <p> Below we will scale the data using a built in scaler in SciKit-Learn. We will then make the same plot (using the first two principal components) and get a more clear distinction between the three groups of wine. </p>
+          
+          <sage>
+          <input>
+            scaler = StandardScaler()
+            scaler.fit(df)
+            wineDataScaled = scaler.transform(df)
+
+            plt.figure(figsize=(8,6))
+
+            scaledPCA = pca.fit_transform(wineDataScaled)
+            plot2 = plt.scatter(scaledPCA[:,0],scaledPCA[:,1], c=wineType)
+
+          </input>
+
+          <output>
+
+          </output>
+
+          </sage>
+
+          <p> Now each group has almost no overlap with any other group! This is a great success for PCA as we can now plot our data in two dimensions where each group is clearly distinguished. </p>
+        
+          <p> A few questions remain though. What were the features that were chosen for this representation? And how well do those features really do in explaining how different our wines can be? </p>
+
+          <p> Fortunately, this implementation of PCA allows us to extract a variable called explained_variance_ratio_ which gives the percentage of the total variance that each of these principal components explains. We can also extract the principal components themselves using components_ but these are perhaps less intuitively valuable. As discussed above, they roughly tell you how to combine each feature to get the most information. </p>
+
+          <p> Our goal now is to represent how important each of the remaining principal components that were not used for the biplot are.</p>
+
+          <sage>
+
+          <input>
+          print(pca.explained_variance_ratio_)
+          </input>
+
+          <output>
+
+          </output>
+          </sage>
+
+          <p> To interpret this, we would say that 36.2% of the total variance is explained using principal component 1, 19.2% is explained by principal component 2, and so on. This allows us to get an estimate of just how good a representation of our data the two principal component representation is. Though it remains to consider the impact of each of the other principal components. </p>
+
+          <p> We now create an important representation of PCA called the biplot. This plot is a two dimensional plot that also includes projections of the features into the transformed space that PCA creates so we can visualize which features are having the greatest impact on our data.</p>
+
+          
+        </subsection>
+
+
+
+      </section>
+
+      <section xml:id="section-9-4">
+        <title>Marketing</title>
+      </section>
+
+      <section xml:id="section-9-5">
+        <title>Social networks</title>
+      </section>
+
+      <section xml:id="section-9-6">
+        <title>Psychology</title>
+      </section>
+
+
+      <section xml:id="section-9-7">
+        <title>Health sciences</title>
+	  <p>Microbiology, possibly.</p>
+      </section>
+
+    </chapter>

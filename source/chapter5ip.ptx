@@ -1,0 +1,15 @@
+<chapter xml:id="chapter-5"  xmlns:xi="http://www.w3.org/2001/XInclude" >
+      <title>Communication in Data Science</title>
+
+      <section xml:id="section-5-1">
+        <title>Communicating with self</title>
+    <p> Best practices for notebooks, etc. Notes for self/team members.</p>
+      </section>
+
+      <section xml:id="section-5-2">
+        <title>Communicating with others</title>
+    <p>Like a science fair project: Intro, methods, conclusion.</p>
+    <p>Tips for STEM written and oral communication.</p>
+      </section>
+
+    </chapter>

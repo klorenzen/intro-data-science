@@ -1,0 +1,19 @@
+<chapter xml:id="chapter-1" xmlns:xi="http://www.w3.org/2001/XInclude" >
+  <title>You <em>ARE</em> a Data Scientist</title>
+  <introduction>
+   
+    <p>
+     Surprise! You are already a Data Scientist. But what does that mean? What even is data science? How can you start to ask questions that can be answered with data? In this chapter, we will explore the answers and start on our own data science journey. 
+    </p>
+
+  
+    
+
+  </introduction>
+  <xi:include  href="what-is-data-science1-1.ptx" />
+  <xi:include  href="asking-interesting-questions1-2.ptx" />  
+
+  
+  
+  
+</chapter>

@@ -1,0 +1,38 @@
+<section xml:id="section-1-1">
+        <title>What is Data Science?</title>
+      
+      <p>In the most general terms data science is the process of applying the scientific method to data. In the current information age we live in data is everywhere! We post on social media, wear watches that track our heart beat, take pictures of planets in the universe we never knew existed. We have an unprecedented ability to gather and keep data about our thoughts, our actions, and the universe around us and data science is the study of how to make sense of all this data. At first, this might seem like a daunting task, but data science draws from many other well established fields. 
+        </p>
+
+        <p>
+      The first field is Mathematics and Statistics. Using statistics we can use the scientific method to draw inference from our data. Hopefully by the end of this class you will be convinced that data science is much more than applied statistics despite how data science draws a lot of inspiration from statistics. Using mathematics we can draw lots of modeling techniques and solutions to tricky issues that arise when dealing with data. 
+</p>
+
+        <p>
+      The second field is Computer Science. The data is best accessed through computers and having a solid foundation of working with computers, data types, and programing are certainly helpful! Computer scientists have been studying how to handle large amounts of data   for some time. We will draw on programming techniques and ideas of how to process lots of data in an efficient manner from computer science.
+</p>
+
+        <p>
+      Lastly, is an area of expertise! Data comes from somewhere and that context is an important part of how it is used and studied. Data science about behavior on social media will draw ideas and theories from behavioral science. Light patterns gathered from space will draw techniques from astrophysicists. Player performance in a game will draw theories from sports analytics. Not only we will use context to understand where the data is coming from, but these areas will help us ask good and interesting questions about the data. 
+</p>
+
+        <p>
+      To be clear, you do not need to be an expert in an area (nor an expert in math, statistics, and computer science) to be a data scientists. But you do need enough of a background that you can make sense of the data and the results. One analogy we can use is that we need to be able to walk before we can run. Knowing enough of these three areas is the ability to walk, and data science allows us run and explore all the data has to offer. 
+          </p> 
+<exploration>
+        <title>Classification at the Zoo</title>
+        <statement>
+                <p>The local zoo has lots of animals that they house. Each animal is classified into a Kingdom, Genus, Family, and Species (as we remember from a biology class). Some new animals have arrived and we want to classify them based on the data. Below you have the data for 10 known animals and three unknown animals. 
+                <ol marker="a.">
+                        <li><p>Your first task is to use the data to group your known animals together. How do you know you have good groups? </p></li>
+                        <li><p>Now, look at the data of the unknown animals. Predict which groups they belong in.</p></li>
+                        <li><p>Explain your method of putting the unknown animals into know groups? Which variables or combination of variables did you use?</p></li>
+                        <li><p>Brainstorm ways that you could have done this task easier or better? How would computers help?</p></li>
+                </ol></p>
+                <p>Congratulations! You just did Data Science! You are a data scientist! Reviewing your first steps as a data scientist, what might be some other areas where a similar model is used?</p>
+                
+        </statement>
+</exploration>
+
+
+          </section>

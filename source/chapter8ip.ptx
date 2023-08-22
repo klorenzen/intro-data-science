@@ -1,0 +1,17 @@
+    <chapter xml:id="chapter-8" xmlns:xi="http://www.w3.org/2001/XInclude" >
+      <title>Preparing a Project</title>
+
+      <section xml:id="section-8-1">
+        <title>How to ask a data science question</title>
+      </section>
+
+      <section xml:id="section-8-2">
+        <title>Data acquisition</title>
+      </section>
+
+      <section xml:id="section-8-3">
+        <title>Choosing your tools</title>
+      </section>
+
+
+    </chapter>

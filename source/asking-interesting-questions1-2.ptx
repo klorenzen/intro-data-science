@@ -1,0 +1,42 @@
+<section xml:id="section-1-2">
+        <title>Asking Interesting Questions</title>
+        <p>
+        The first step to doing Data Science is to have data. Data comes in many forms but for the purposes of this section, we will think of data as information stored on a computer. Data is collected about people, countries, natural environment, institutions, and many others. Therefore, most data comes when humans interact with systems that collect data. This could be when you open tiktok on your phone and every like and comment you make. This could be when you swipe your keycard to get into a building. The key insight is that the data collected is reflected of actions of people. We cannot collect data about someone's emotions when they swipe into a building- we can make predictions, we can ask them- but these are not objective pieces of data. -side note about the field of psychology and survey design, but most of the data we will be exploring in this class will deal with objective data-
+</p>
+<p>
+So, if we only have data about people's reactions to events or other objective, observable facts, what can we tell from data? Well, other objective, observable facts about the **future**. This is the power of data science! It also shapes the types of questions data science can answer. A good rule of thumb is that data science questions should be future looking (What do I expect to happen?), observable (in the future, I can come back and tell if I was right or wrong), and have un-obvious solutions. 
+</p>
+
+<exploration>
+        <title>Asking Data Science Questions</title>
+        <statement>
+                <p>For each of the following, explain why they are not good data science questions. Then rephrase them to be good data science questions.  
+                <ol marker="a.">
+                        <li><p>Who won the football game last week? </p></li>
+                        <li><p>Does my boyfriend love me?</p></li>
+                        <li><p>How many members are on an NBA team?</p></li>
+                </ol></p>
+                <p>Despite these being silly, remember today when thinking about data science questions so you do not become an example memorialized in a text.</p>
+                
+        </statement>
+</exploration>
+
+<p>
+        Later this course, when preparing for projects we will work on how to divise good question (and how to answer it).
+</p>
+
+        <exercises>
+        <exercise>
+        <p>
+        For each of the ways that gather is collected around you, brainstorm possible data science questions that are future looking, observable, and have un-obvious solutions.
+        <ol marker="a.">
+        <li>Number of pictures a person posts a day on a social media site.</li>
+        <li>Number of times people searched for a particular word each day over several years.</li>
+        <li>The number of webpages written in every language.</li>
+        <li>Answers to survey results sent out to thousands of people.</li>
+        <li>Number of times a particular player tries to score and the number of times they are successful.  </li>
+        </ol>
+        </p>
+        </exercise>
+        </exercises>
+      </section>

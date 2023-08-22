@@ -1,0 +1,76 @@
+<chapter xml:id="chapter-6"  xmlns:xi="http://www.w3.org/2001/XInclude" >
+      <title>Statistics and Machine Learning</title>
+
+      <section xml:id="section-6-1">
+        <title>Under and over sampling techniques</title>
+      </section>
+
+      <section xml:id="section-6-2">
+	<title>Naive Bayes Classifier</title>
+      <p>I didn't retype my notes, but here is how you do math. Inline: <m>x=4</m>.
+	As an unlabeled equation:
+	<me> P(A|B) = \frac{P(B|A)P(A)}{P(B)} </me>
+        As a labeled equation:
+	<men xml:id='eqn-example'>
+	e^{i\pi}=-1
+	</men>
+      </p>
+
+
+
+      <p> Here is an example of a table: </p>
+	<table>
+	  <title>Bike Ride Data</title>
+	  <tabular halign="center">
+		<!-- use halign in the entire tabular, or in cells-->
+		<!-- options for halign are center, left, or right.-->
+		<!-- similarly, valign takes care of vertical alignment-->
+		<!-- valign options are top, middle, or bottom-->
+	    <row header="yes" bottom="minor">
+		<!-- can add tags of left, right, top and bottom -->
+		<!-- this adds borders on the sides specified -->
+		<!-- default value is none. Can also use minor, -->
+		<!-- major, or medium (for thickness of line.) -->
+	    <cell left="yes" >Weather</cell>
+	    <cell>Temperature</cell>
+	    <cell>Humidity</cell>
+	    <cell>Wind</cell>
+	    <cell>Bike Ride?</cell>
+	    </row>
+
+	    <row>
+	    <cell>Rainy</cell>
+	    <cell><m>54^{\circ}</m> F</cell>
+	    <cell>High</cell>
+	    <cell>13 mph</cell>
+	    <cell>False</cell>
+	    </row>
+	   </tabular>
+	</table>
+      </section>
+
+      <section xml:id="section-6-3">
+        <title>Linear and Logistic Regression</title>
+      </section>
+
+      <section xml:id="section-6-4">
+        <title>K-Nearest Neighbors</title>
+      </section>
+
+      <section xml:id="section-6-5">
+        <title>Decision Trees</title>
+      </section>
+
+      <section xml:id="section-6-6">
+        <title>K-Means Clustering</title>
+      </section>
+
+      <section xml:id="section-6-7">
+        <title>Principal Component Analysis</title>
+      </section>
+
+      <section xml:id="section-6-8">
+        <title>Neural Nets</title>
+      </section>
+
+    </chapter>
