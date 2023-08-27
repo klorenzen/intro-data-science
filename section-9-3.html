@@ -213,11 +213,11 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <li>
 <div class="toc-item"><a href="chapter-1.html" class="internal"><span class="codenumber">1</span> <span class="title">You <em class="emphasis">ARE</em> a Data Scientist</span></a></div>
 <ul class="structural">
+<li><div class="toc-item"><a href="section-1-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is Data Science?</span></a></div></li>
 <li>
-<div class="toc-item"><a href="section-1-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is Data Science?</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-1-1.html#exercises-1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-item"><a href="section-1-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Asking Interesting Questions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-1-2.html#exercises-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="section-1-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Asking Interesting Questions</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -300,20 +300,66 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <li id="li-16"><div class="para" id="p-derived-li-16">Expand on PCA</div></li>
 <li id="li-17"><div class="para" id="p-derived-li-17">Apply PCA to help identify outliers in large data sets</div></li>
 <li id="li-18"><div class="para" id="p-derived-li-18">Apply PCA to aid in feature selection in small data sets</div></li>
-</ul></article><div class="para" id="p-30">As discussed in <a href="section-6-6.html" class="internal" title="Section 6.6: K-Means Clustering">Section 6.6</a>, identifying outliers is an important part of data analysis. It is also one of the more dangerous decisions that a data analyst can make. Labeling a unique observation as an outlier can remove valuable information that should be retained from our data set if decided haphazardly or incorrectly. Unfortunately, in high dimensional space, nearly any particular observation might be considered an outlier in at least some feature(s).</div>
-<div class="para" id="p-31">On the other hand, in large data sets, it is relatively likely that some outliers will be observed. Or worse, that some experimental error causes an unexpected alteration of the data. Including this information could be just as damaging to our analysis as removing data that should not be considered an outlier. We doing analysis where outliers might be present, recall that a standard practice is to do the analysis twice. Once with the proposed outliers, and once without.</div>
-<div class="para" id="p-32">As introduced in *CHAPTER REFERENCE*, PCA provides a way to help us to reduce the dimensionality of a data set. In this way, it can help illuminate us not only to the most important features, but also to data points that are exceptionally far from a typical observation. Unfortunately, PCA depends on variance to make its determination, and outliers can have a large impact on the variance of a feature causing the outliers to be harder to distinguish.</div>
-<div class="para" id="p-33">For this reason, we introduce Robust PCA. Our idea is that by taking many subsamples of our data, we expect not to be heavily impacted by what we expect to be only a few outliers. The question that must be answered now is how do we determine which subset to use as our ``typical'' data. Our intuition for outliers in PCA is that they would be far away from most of the data in the reduced space provided by PCA. One way to think about the size of the space that PCA finds is through the determinant. A small determinant would correspond to a compact space in which the data lies. With this intuition, we may hazard to guess that a good set to run PCA on would provide compact space. Our goal is to sample from our data set to find a minimum determinant of the covariance matrix.</div>
-<div class="para" id="p-34">When we subsample, there are a few decisions that we must make. One of the most important decisions in such a process is the size of the subsets chosen. In PCA we still want a representative sample of the entire data, so we should not choose a small (under 50%) proportion of our data. On the other hand, if the sampled set is too large, we are likely to choose outliers. A general rule of thumb is to select about 75% of the entire data set for each sample. Note that one cost of a resampling method such as this is cost. Instead of running PCA once, we will be running it potentially hundreds or thousands of times. As such, data sets with more than a few features might be time consuming and will eventually be impractical to check.</div>
+</ul></article><div class="para" id="p-31">As discussed in <a href="section-6-6.html" class="internal" title="Section 6.6: K-Means Clustering">Section 6.6</a>, identifying outliers is an important part of data analysis. It is also one of the more dangerous decisions that a data analyst can make. Labeling a unique observation as an outlier can remove valuable information that should be retained from our data set if decided haphazardly or incorrectly. Unfortunately, in high dimensional space, nearly any particular observation might be considered an outlier in at least some feature(s).</div>
+<div class="para" id="p-32">On the other hand, in large data sets, it is relatively likely that some outliers will be observed. Or worse, that some experimental error causes an unexpected alteration of the data. Including this information could be just as damaging to our analysis as removing data that should not be considered an outlier. We doing analysis where outliers might be present, recall that a standard practice is to do the analysis twice. Once with the proposed outliers, and once without.</div>
+<div class="para" id="p-33">As introduced in *CHAPTER REFERENCE*, PCA provides a way to help us to reduce the dimensionality of a data set. In this way, it can help illuminate us not only to the most important features, but also to data points that are exceptionally far from a typical observation. Unfortunately, PCA depends on variance to make its determination, and outliers can have a large impact on the variance of a feature causing the outliers to be harder to distinguish.</div>
+<div class="para" id="p-34">For this reason, we introduce Robust PCA. Our idea is that by taking many subsamples of our data, we expect not to be heavily impacted by what we expect to be only a few outliers. The question that must be answered now is how do we determine which subset to use as our ``typical'' data. Our intuition for outliers in PCA is that they would be far away from most of the data in the reduced space provided by PCA. One way to think about the size of the space that PCA finds is through the determinant. A small determinant would correspond to a compact space in which the data lies. With this intuition, we may hazard to guess that a good set to run PCA on would provide compact space. Our goal is to sample from our data set to find a minimum determinant of the covariance matrix.</div>
+<div class="para" id="p-35">When we subsample, there are a few decisions that we must make. One of the most important decisions in such a process is the size of the subsets chosen. In PCA we still want a representative sample of the entire data, so we should not choose a small (under 50%) proportion of our data. On the other hand, if the sampled set is too large, we are likely to choose outliers. A general rule of thumb is to select about 75% of the entire data set for each sample. Note that one cost of a resampling method such as this is cost. Instead of running PCA once, we will be running it potentially hundreds or thousands of times. As such, data sets with more than a few features might be time consuming and will eventually be impractical to check.</div>
 <section class="subsection" id="section-9-3-1"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">9.3.1</span> <span class="title">Minimum Covariance Determinant</span>
 </h3>
-<div class="para" id="p-35">We will now apply the minimum covariance determinant method to a dataset to identify potential outliers. Fortunately for us, this has already been implemented in the SciKit-Learn!</div>
-<pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">from sklearn.covariance import MinCovDet
+<div class="para" id="p-36">We will now apply the minimum covariance determinant method to a dataset to identify potential outliers. Fortunately for us, this has already been implemented in the SciKit-Learn!</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
 from sklearn.datasets import load_wine
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-data = load_wine()
-</script></pre></section></section></div>
+
+allWineData = load_wine()
+df = pd.DataFrame(data = allWineData.data, columns = allWineData.feature_names)
+wineType = allWineData['target']
+
+print(allWineData.feature_names)
+print(df.head(5))
+</script></pre>
+<div class="para" id="p-37">As we can see, there are 13 measured variables for each wine. One might wonder, what is the most important feature for determining the type of wine. Can we make a solid guess about the type of wine if we select only two or three of these thirteen options?</div>
+<div class="para" id="p-38">Before, we developed techinques to visualize high dimensional data. A common technique is to visualize the data in pairs, for example we might plot alcohol versus flavonoids. Below we make that plot and a plot for alcohol vs malic_acid.</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">sns.relplot(data = df, x='alcohol', y='flavanoids', hue=allWineData['target'], aspect=1.61)
+plt.show()
+
+sns.relplot(data = df, x ='alcohol', y='malic_acid', hue=allWineData['target'], aspect=1.61)
+plt.show()
+</script></pre>
+<div class="para" id="p-39">Each of these plots looks like you could separate some of the groups from them, but it merely a small portion of the data we have available. This is where Principal Component Analysis (PCA) kicks in. When we apply PCA we can determine which combinations of variables are most important and plot based on those instead of an arbitrary choice.</div>
+<div class="para" id="p-40">Ideally after applying PCA we will be able to identify combinations of features that allow us to easily distinguish between groups in data. Visually this means that there should be little to no overlap in the groups.</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">pca = PCA()
+plt.figure(figsize=(8,6))
+
+pcaData = pca.fit_transform(df)
+plot = plt.scatter(pcaData[:,0],pcaData[:,1], c=wineType)
+plot.show()
+</script></pre>
+<div class="para" id="p-41">Here we see that by using PCA we can nicely separate out at least one of the groups but there is a little overlap remaining. Part of the reason for this is that PCA relies heavily on the variance of each of the features. Since our features were not scaled down, we are not getting as clean an image as we may like. Whenever using PCA, we should always consider scaling our data before applying PCA!</div>
+<div class="para" id="p-42">Below we will scale the data using a built in scaler in SciKit-Learn. We will then make the same plot (using the first two principal components) and get a more clear distinction between the three groups of wine.</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage">scaler = StandardScaler()
+scaler.fit(df)
+wineDataScaled = scaler.transform(df)
+
+plt.figure(figsize=(8,6))
+
+scaledPCA = pca.fit_transform(wineDataScaled)
+plot2 = plt.scatter(scaledPCA[:,0],scaledPCA[:,1], c=wineType)
+</script></pre>
+<div class="para" id="p-43">Now each group has almost no overlap with any other group! This is a great success for PCA as we can now plot our data in two dimensions where each group is clearly distinguished.</div>
+<div class="para" id="p-44">A few questions remain though. What were the features that were chosen for this representation? And how well do those features really do in explaining how different our wines can be?</div>
+<div class="para" id="p-45">Fortunately, this implementation of PCA allows us to extract a variable called explained_variance_ratio_ which gives the percentage of the total variance that each of these principal components explains. We can also extract the principal components themselves using components_ but these are perhaps less intuitively valuable. As discussed above, they roughly tell you how to combine each feature to get the most information.</div>
+<div class="para" id="p-46">Our goal now is to represent how important each of the remaining principal components that were not used for the biplot are.</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-5"><script type="text/x-sage">print(pca.explained_variance_ratio_)
+</script></pre>
+<div class="para" id="p-47">To interpret this, we would say that 36.2% of the total variance is explained using principal component 1, 19.2% is explained by principal component 2, and so on. This allows us to get an estimate of just how good a representation of our data the two principal component representation is. Though it remains to consider the impact of each of the other principal components.</div>
+<div class="para" id="p-48">We now create an important representation of PCA called the biplot. This plot is a two dimensional plot that also includes projections of the features into the transformed space that PCA creates so we can visualize which features are having the greatest impact on our data.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="section-9-2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-9-4.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
