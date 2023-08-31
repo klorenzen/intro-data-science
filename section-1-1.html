@@ -207,10 +207,13 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="chapter-1.html" class="internal"><span class="codenumber">1</span> <span class="title">You <em class="emphasis">ARE</em> a Data Scientist</span></a></div>
 <ul class="structural">
-<li class="active"><div class="toc-item"><a href="section-1-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is Data Science?</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="section-1-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is Data Science?</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-1-1.html#exercises-1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 <li>
 <div class="toc-item"><a href="section-1-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Asking Interesting Questions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-1-2.html#exercises-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul class="structural"><li><div class="toc-item"><a href="section-1-2.html#exercises-2" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -298,14 +301,685 @@ window.MathJax = {
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Classification at the Zoo.</span>
 </h3>
 <div class="para logical" id="p-7">
-<div class="para">The local zoo has lots of animals that they house. Each animal is classified into a Kingdom, Genus, Family, and Species (as we remember from a biology class). Some new animals have arrived and we want to classify them based on the data. Below you have the data for 10 known animals and three unknown animals.</div>
+<div class="para">The local zoo has lots of animals that they house. Each animal is classified into a Kingdom, Genus, Family, and Species (as we remember from a biology class). These are based on certain characteristics which we have gathered data about. Some new animals have arrived and we want to classify them based on the data. Below you have the data for 10 known animals and three unknown animals.</div>
 <ol class="lower-alpha">
 <li id="li-1"><div class="para" id="p-8">Your first task is to use the data to group your known animals together. How do you know you have good groups?</div></li>
 <li id="li-2"><div class="para" id="p-9">Now, look at the data of the unknown animals. Predict which groups they belong in.</div></li>
 <li id="li-3"><div class="para" id="p-10">Explain your method of putting the unknown animals into know groups? Which variables or combination of variables did you use?</div></li>
 <li id="li-4"><div class="para" id="p-11">Brainstorm ways that you could have done this task easier or better? How would computers help?</div></li>
 </ol>
-</div> <div class="para" id="p-12">Congratulations! You just did Data Science! You are a data scientist! Reviewing your first steps as a data scientist, what might be some other areas where a similar model is used?</div></article></section></div>
+</div> <div class="para" id="p-12">Congratulations! You just did Data Science! You are a data scientist! Reviewing your first steps as a data scientist, what might be some other areas where a similar model is used?</div></article><figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>Animal Classification</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">Animal_Name</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Class</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Hair</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Feathers</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Eggs</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Milk</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Airborne</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Aquatic</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Toothed</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Backbone</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Venomous</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Fins</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Legs</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">antelope</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">bear</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">hare</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">platypus</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">wolf</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">chicken</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">crow</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">duck</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">flamingo</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">gull</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">ostrich</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">pitviper</td>
+<td class="l m b1 r1 l0 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">seasnake</td>
+<td class="l m b1 r1 l0 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">slowworm</td>
+<td class="l m b1 r1 l0 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">tortoise</td>
+<td class="l m b1 r1 l0 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">tuatara</td>
+<td class="l m b1 r1 l0 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">bass</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">catfish</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">herring</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">piranha</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">seahorse</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">stingray</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">frog</td>
+<td class="l m b1 r1 l0 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">newt</td>
+<td class="l m b1 r1 l0 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">toad</td>
+<td class="l m b1 r1 l0 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">flea</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">honeybee</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">housefly</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">moth</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">wasp</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">clam</td>
+<td class="l m b1 r1 l0 t0 lines">7</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">lobster</td>
+<td class="l m b1 r1 l0 t0 lines">7</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">scorpion</td>
+<td class="l m b1 r1 l0 t0 lines">7</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">8</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">slug</td>
+<td class="l m b1 r1 l0 t0 lines">7</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">starfish</td>
+<td class="l m b1 r1 l0 t0 lines">7</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">worm</td>
+<td class="l m b1 r1 l0 t0 lines">7</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr></tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Animal_1</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Animal_2</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Animal_3</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">8</td>
+</tr>
+</table></div></figure><div class="para" id="p-13">Every data set has two main components <em class="emphasis">data points</em> and <em class="emphasis">variables</em>. In the table, the data points are the rows and each one represents an observation. The variables are the columns and store the information that we gathered about each observation. You might have noticed when classifying the animals that some variables were more important than others. This is a key skill of a data scientist! Practice this idea in the following exercise.</div>
+<section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-14">You are given a data set about movies which has the movie title, director, year of release, total gross revenue, genres, and average rating as variables. Below is the first few rows of data.</div>
+<figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>Movies and Ratings</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">Title</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Director</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Year</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Gross Revenue</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Genres</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Rating</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Toy Story</td>
+<td class="l m b1 r1 l0 t0 lines">John Lasseter</td>
+<td class="l m b1 r1 l0 t0 lines">1995</td>
+<td class="l m b1 r1 l0 t0 lines">$3.3 billion</td>
+<td class="l m b1 r1 l0 t0 lines">Adventure, animation, children, comedy, fantasy</td>
+<td class="l m b1 r1 l0 t0 lines">8.3</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Father of the Bride Part II</td>
+<td class="l m b1 r1 l0 t0 lines">Charles Shyer</td>
+<td class="l m b1 r1 l0 t0 lines">1995</td>
+<td class="l m b1 r1 l0 t0 lines">$76.6 million</td>
+<td class="l m b1 r1 l0 t0 lines">Comedy</td>
+<td class="l m b1 r1 l0 t0 lines">6.1</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">The Hunger Games</td>
+<td class="l m b1 r1 l0 t0 lines">Gary Ross</td>
+<td class="l m b1 r1 l0 t0 lines">2012</td>
+<td class="l m b1 r1 l0 t0 lines">$2.97 billion</td>
+<td class="l m b1 r1 l0 t0 lines">Action, adventure, drama, sci-fi, thriller</td>
+<td class="l m b1 r1 l0 t0 lines">7.2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Alvin and the Chipmunks: Chipwrecked</td>
+<td class="l m b1 r1 l0 t0 lines">Mike Mitchell</td>
+<td class="l m b1 r1 l0 t0 lines">2011</td>
+<td class="l m b1 r1 l0 t0 lines">$343 million</td>
+<td class="l m b1 r1 l0 t0 lines">Animation, comedy</td>
+<td class="l m b1 r1 l0 t0 lines">4.3</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">How to Train Your Dragon 2</td>
+<td class="l m b1 r1 l0 t0 lines">Dean DeBlois</td>
+<td class="l m b1 r1 l0 t0 lines">2014</td>
+<td class="l m b1 r1 l0 t0 lines">$618.9 million</td>
+<td class="l m b1 r1 l0 t0 lines">Action, adventure,animation</td>
+<td class="l m b1 r1 l0 t0 lines">7.8</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Some like it Hot</td>
+<td class="l m b1 r1 l0 t0 lines">Billy Wilder</td>
+<td class="l m b1 r1 l0 t0 lines">1959</td>
+<td class="l m b1 r1 l0 t0 lines">$25 million</td>
+<td class="l m b1 r1 l0 t0 lines">Comedy, music, romance</td>
+<td class="l m b1 r1 l0 t0 lines">8.2</td>
+</tr>
+</table></div></figure><div class="para logical" id="p-15"><ol class="lower-alpha">
+<li id="li-5"><div class="para" id="p-derived-li-5">Suppose a person had watched some of these movies and given them ratings. We would like to predict if they would like another movie. Which variables would we want to use?</div></li>
+<li id="li-6"><div class="para" id="p-derived-li-6">Describe how you would organize the data according to these variables?</div></li>
+<li id="li-7"><div class="para" id="p-derived-li-7">How could you determine if your prediction about the movie for the person were correct?</div></li>
+<li id="li-8"><div class="para" id="p-derived-li-8">Now suppose we are a movie production company and we are trying to determine whether to make a particular movie where we already have the script and director whose has made lots of movies for us before. We would like to estimate how much gross revenue we will get so we can set an appropriate budget. Which variables from the data set should we use for our analysis? Should we restrict the values? (If so, which ones and by what restriction.)</div></li>
+<li id="li-9"><div class="para" id="p-derived-li-9">Based on what you know about the economy and movie distribution, what are some things we should be cautious about when we get our final answer. In other words, how might some of our data be corrupting our prediction? Brainstorm ways we might be able to get a more accurate answer.</div></li>
+</ol></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chapter-1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-1-2.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
