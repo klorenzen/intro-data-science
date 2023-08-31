@@ -22,17 +22,130 @@
 <exploration>
         <title>Classification at the Zoo</title>
         <statement>
-                <p>The local zoo has lots of animals that they house. Each animal is classified into a Kingdom, Genus, Family, and Species (as we remember from a biology class). Some new animals have arrived and we want to classify them based on the data. Below you have the data for 10 known animals and three unknown animals. 
+                <p>The local zoo has lots of animals that they house. Each animal is classified into a Kingdom, Genus, Family, and Species (as we remember from a biology class). These are based on certain characteristics which we have gathered data about. Some new animals have arrived and we want to classify them based on the data. Below you have the data for 10 known animals and three unknown animals. 
+
                 <ol marker="a.">
                         <li><p>Your first task is to use the data to group your known animals together. How do you know you have good groups? </p></li>
                         <li><p>Now, look at the data of the unknown animals. Predict which groups they belong in.</p></li>
                         <li><p>Explain your method of putting the unknown animals into know groups? Which variables or combination of variables did you use?</p></li>
                         <li><p>Brainstorm ways that you could have done this task easier or better? How would computers help?</p></li>
-                </ol></p>
+                </ol>
+
+                </p>
                 <p>Congratulations! You just did Data Science! You are a data scientist! Reviewing your first steps as a data scientist, what might be some other areas where a similar model is used?</p>
                 
         </statement>
 </exploration>
 
+<table>
+        <title>Animal Classification</title>
+        <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>Animal_Name </cell>
+                  <cell> Class</cell>
+                  <cell>Hair</cell>
+                  <cell> Feathers</cell>
+                  <cell>Eggs</cell>
+                  <cell>Milk</cell>
+                  <cell>Airborne</cell>
+                  <cell>Aquatic</cell>
+                  <cell>Toothed</cell>
+                  <cell>Backbone</cell>
+                  <cell>Venomous</cell>
+                  <cell>Fins</cell>
+                  <cell>Legs </cell>
+          </row>
+               <row><cell>antelope</cell><cell>       1</cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell> bear</cell><cell>           1</cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell>hare</cell><cell>           1</cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell>platypus</cell><cell>       1</cell><cell>      1</cell><cell>      0</cell><cell>              1</cell><cell>      1</cell><cell>      0</cell><cell>              1</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell>wolf</cell><cell>           1</cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell>chicken</cell><cell>        2</cell><cell>      0</cell><cell>      1</cell><cell>              1</cell><cell>      0</cell><cell>      1</cell><cell>              0</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      2</cell></row>
+               <row><cell>crow</cell><cell>           2</cell><cell>      0</cell><cell>      1</cell><cell>              1</cell><cell>      0</cell><cell>      1</cell><cell>              0</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      2</cell></row>
+               <row><cell>duck</cell><cell>           2</cell><cell>      0</cell><cell>      1</cell><cell>              1</cell><cell>      0</cell><cell>      1</cell><cell>              1</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      2</cell></row>
+               <row><cell>flamingo</cell><cell>       2</cell><cell>      0</cell><cell>      1</cell><cell>              1</cell><cell>      0</cell><cell>      1</cell><cell>              0</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      2</cell></row>
+               <row><cell>gull</cell><cell>           2</cell><cell>      0</cell><cell>      1</cell><cell>              1</cell><cell>      0</cell><cell>      1</cell><cell>              1</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      2</cell></row>
+               <row><cell>ostrich</cell><cell>        2</cell><cell>      0</cell><cell>      1</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      2</cell></row>
+               <row><cell>pitviper</cell><cell>       3</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>      0</cell></row>
+               <row><cell>seasnake</cell><cell>       3</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>      0</cell></row>
+               <row><cell> slowworm</cell><cell>       3</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      0</cell></row>
+               <row><cell>tortoise</cell><cell>       3</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell>tuatara</cell><cell>        3</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell>bass</cell><cell>           4</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              1</cell><cell>      0</cell></row>
+               <row><cell>catfish</cell><cell>        4</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              1</cell><cell>      0</cell></row>
+               <row><cell>herring</cell><cell>        4</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              1</cell><cell>      0</cell></row>
+               <row><cell>piranha</cell><cell>        4</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              1</cell><cell>      0</cell></row>
+               <row><cell>seahorse</cell><cell>       4</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              1</cell><cell>      0</cell></row>
+               <row><cell>stingray</cell><cell>       4</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>      0</cell></row>
+               <row><cell>frog</cell><cell>           5</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell>newt</cell><cell>           5</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell>toad</cell><cell>           5</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      4</cell></row>
+               <row><cell>flea</cell><cell>           6</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>      6</cell></row>
+               <row><cell> honeybee</cell><cell>       6</cell><cell>      1</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      1</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>      6</cell></row>
+               <row><cell>housefly</cell><cell>       6</cell><cell>      1</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      1</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>      6</cell></row>
+               <row><cell>moth</cell><cell>           6</cell><cell>      1</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      1</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>      6</cell></row>
+               <row><cell>wasp</cell><cell>           6</cell><cell>      1</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      1</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>      6</cell></row>
+               <row><cell>clam</cell><cell>           7</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>      0</cell></row>
+               <row><cell>lobster</cell><cell>        7</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>      6</cell></row>
+               <row><cell>scorpion</cell><cell>       7</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>      8</cell></row>
+               <row><cell>slug</cell><cell>           7</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>      0</cell></row>
+               <row><cell>starfish</cell><cell>       7</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>      5</cell></row>
+               <row><cell>worm</cell><cell>           7</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>      0</cell></row>
+               <row></row>
 
+                <row top="major"><cell>Animal_1</cell><cell>      </cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>      1</cell><cell>      0</cell><cell>              0</cell><cell>              1</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      2</cell></row>
+               <row><cell>Animal_2</cell><cell>       </cell><cell>      0</cell><cell>      1</cell><cell>              1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>      2</cell></row>
+               <row><cell>Animal_3</cell><cell>      </cell><cell>      0</cell><cell>      0</cell><cell>          1</cell><cell>      0</cell><cell>      0</cell><cell>              1</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>              0</cell><cell>      8</cell></row>
+
+
+</tabular>
+</table>
+
+
+<p>Every data set has two main components <em>data points</em> and <em>variables</em>. In the table, the data points are the rows and each one represents an observation. The variables are the columns and store the information that we gathered about each observation. You might have noticed when classifying the animals that some variables were more important than others. This is a key skill of a data scientist! Practice this idea in the following exercise.</p>
+
+<exercises>
+        <exercise>
+        <p>
+        You are given a data set about movies which has the movie title, director, year of release, total gross revenue, genres, and average rating as variables. Below is the first few rows of data. </p>
+<table>
+        <title>Movies and Ratings</title>
+        <tabular top="minor" left="minor" right="minor" bottom="minor">
+                <row header="yes" bottom="major">
+                        <cell>Title</cell><cell>Director</cell><cell>Year</cell><cell>Gross Revenue</cell><cell>Genres</cell><cell>Rating</cell>
+                </row>
+                <row>
+                        <cell>Toy Story</cell><cell>John Lasseter</cell><cell>1995</cell><cell>$3.3 billion</cell><cell>Adventure, animation, children, comedy, fantasy</cell><cell>8.3</cell>
+                </row>
+                <row>
+                        <cell>Father of the Bride Part II</cell><cell>Charles Shyer</cell><cell>1995</cell><cell>$76.6 million</cell><cell>Comedy</cell><cell>6.1</cell>
+                </row>
+                <row>
+                        <cell>The Hunger Games</cell><cell>Gary Ross</cell><cell>2012</cell><cell>$2.97 billion</cell><cell>Action, adventure, drama, sci-fi, thriller</cell><cell>7.2</cell>
+                </row>
+                <row>
+                        <cell>Alvin and the Chipmunks: Chipwrecked</cell><cell>Mike Mitchell</cell><cell>2011</cell><cell>$343 million</cell><cell>Animation, comedy</cell><cell>4.3</cell>
+                </row>
+                <row>
+                        <cell>How to Train Your Dragon 2</cell><cell>Dean DeBlois</cell><cell>2014</cell><cell>$618.9 million</cell><cell>Action, adventure,animation</cell><cell>7.8</cell>
+                </row>
+                <row>
+                        <cell>Some like it Hot</cell><cell>Billy Wilder</cell><cell>1959</cell><cell>$25 million</cell><cell>Comedy, music, romance</cell><cell>8.2</cell>
+                </row>
+        </tabular>
+
+</table>
+
+        <p>
+        <ol marker="a.">
+        <li>Suppose a person had watched some of these movies and given them ratings. We would like to predict if they would like another movie. Which variables would we want to use?</li>
+        <li>Describe how you would organize the data according to these variables?</li>
+        <li>How could you determine if your prediction about the movie for the person were correct?</li>
+        <li>Now suppose we are a movie production company and we are trying to determine whether to make a particular movie where we already have the script and director whose has made lots of movies for us before. We would like to estimate how much gross revenue we will get so we can set an appropriate budget. Which variables from the data set should we use for our analysis? Should we restrict the values? (If so, which ones and by what restriction.)</li>
+        <li>Based on what you know about the economy and movie distribution, what are some things we should be cautious about when we get our final answer. In other words, how might some of our data be corrupting our prediction? Brainstorm ways we might be able to get a more accurate answer. </li>
+        </ol>
+        </p>
+        </exercise>
+        </exercises>
           </section>
