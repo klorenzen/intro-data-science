@@ -1,0 +1,95 @@
+<section xml:id="intro-ethics">
+      <title>Introduction to Data Ethics</title>
+
+      <p>Data science and algorithms have brought many advances to our society. Think of all the ways that technology has changed over your lifetime (and try to imagine how it has changed over your professor's lifetime). It has become sophisticated enough at recognizing patterns of human behavior that it can predict financial markets and recommend videos to everyone's hyper niche interests. Recently, technology has been released to the public that can write term papers and hold debates with humans. In short, it is amazing what technology can do. 
+      </p>
+
+      <p>
+            One thing that algorithms are not able to do is put limits on its power. It was reported in the Wall Street Journal that a health data app was reporting to employers the health data (in the aggregate) of their employees including predictions on the number who will develop certain health conditions, including pregnancy. To do this the app was seeing if any employees had stop renewing birth control or had searched for prenatal vitamins or other fertility related searches. This raises questions about the amount of information that we want employers to have about their employees. 
+      </p>
+
+      <p>
+            Health companies could argue that providing this information to employers helps them make decisions about how many people to staff. But this information could also be used in nefarious ways. Many people have reasons that they want to keep their health data secrete. Data scientists must think about potential abuses of their algorithms and weigh this with the potential benefits instead of only seeing the potential benefit.
+      </p>
+
+      <p>In addition to algorithms, we need to consider the data they are using to train their predictions on. Typically algorithms are designed to replicate actions and decisions made by humans. So if the data documents previous injustices, then the algorithm is bound to repeat it.  </p>
+
+      <exploration xref="big-group-discussion">
+            <title>What are data ethics?</title>
+            <statement>
+                <p>Ethics are about establishing actions that are right vs wrong in a philosophical sense. Before we jump into practical situations, let us muse philosophically about big picture principles of data ethics.
+                <ol marker="a.">
+                        <li><p>What does it mean to be ethical? What does it mean to be acting in a fair and just way? </p></li>
+                        <li><p>At their core, why does we use algorithms?</p></li>
+                        <li><p>Our ethics tell us that we want the world to be more fair and just. Algorithms and data analysis is about making our world more efficient. How can the data scientist balance these two ideas?</p></li>
+                </ol></p>
+                <p>As a data science community, we need to agree in the abstract about moving towards a fair and just society. The balance of this with the desire to have a more efficient world is where lots of work in data ethics need to take place.</p>
+                
+        </statement>
+      </exploration>
+
+<exploration xref="small-group-discussion">
+      <title>Data ethics in the wild</title>
+      <p>Let's now explore further into some concrete situations where unethical behavior has not been properly followed. After reading each article, use the discussion questions as a springboard to start developing your principles of data ethics.
+      <ol marker ="1.">
+            <li><p><url href="https://ssir.org/articles/entry/when_good_algorithms_go_sexist_why_and_how_to_advance_ai_gender_equity">When good algorithms go sexists</url>
+            <ol marker="a.">
+                  <li><p>What are some of the ways gender is a contentious variable in data sets?</p></li>
+                  <li><p>When should gender be used as a variable in data science? When should it not?</p></li>
+                  <li><p>In historic data sets, gender is represented as a binary which clashes with modern ideas. How can we reconcile this as a data science community? </p></li>
+                  <li><p>With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. What might be other variables that strongly correspond to gender?</p></li>
+                  <li><p>Predict some other variables that are questionable to include in data analysis. You may include applications where these variables should and should not be used.</p></li>
+            </ol></p></li>
+            <li><p><url href="https://www.newyorker.com/news/daily-comment/the-ai-gaydar-study-and-the-real-dangers-of-big-data">The A.I. ``Gaydar" study and the real dangers of big data</url>
+            <ol marker="a.">
+                  <li><p>What are the problems with trying to predict sexual orientation with facial recognition?</p></li>
+                  <li><p>How was the data set collected? What ethical issues with consent do the data scientists face?</p></li>
+                  <li><p>Other algorithms try to predict sexual orientation with habitual behavior (like shopping trends). Is this more or less ethical than with facial recognition?</p></li> 
+                  <li><p>Some organizations try to predict someone’s race based on their name to target voting registration. With a less nefarious application, some might see this project as more ethical. Would the application of predicting sexual orientation using facial recognition make it more or less ethical?</p></li>
+                  <li><p>Predict some other variables that are questionable to predict from a data set. You may include applications.</p></li>
+            </ol></p></li>
+            <li><p><url href="https://www.nytimes.com/2006/08/09/technology/09aol.html">A face is exposed for AOL searcher no. 4417749</url>
+            <ol marker="a.">
+                  <li><p>What are some problems with releasing 3 months of search history of users?</p></li>
+                  <li><p>What are the potential harms of someone’s search history being public?</p></li>
+                  <li><p>What is the difference between consent and informed consent? How does this difference effect the ethics of a data set?</p></li>
+                  <li><p>Most search engines keep search data. Could applications of this data be considered more or less ethical than others? Give examples.</p></li>
+                  <li><p>Predict other data that people give with uninformed consent. How could the release of this data be potentially harmful?</p></li>
+            </ol></p></li>
+            <li><p><url href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine bias risk assessment in criminal sentencing</url>
+            <ol marker="a.">
+                  <li><p>What are some problems with trying to predict crime?</p></li>
+                  <li><p>How did the algorithm receive feedback as to its accuracy? How does its inaccuracy cause harm to people?</p></li>
+                  <li><p>With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. So if a data scientists did not want to include race they may also not include zip code. What are some of the questions the model uses (variables)? Are these introducing variables that should be avoided when thinking about a fair and just society? What are some of these variables? </p></li>
+                  <li><p>Other types of models instead look at common locations of crimes and send police to patrol those areas. Naturally, police find crime there and report it back to the algorithm. These areas tend to be the poorer neighborhoods in cities. What are some issues with this type of feedback to the algorithm? Does this algorithm seem fair?</p></li>
+                  <li><p>In a fair and just society, we must balance public safety with freedom and humanity of everyone. How could algorithm related to crime be improved (if at all) in terms of how humans interpret these results?</p></li>
+            </ol></p></li>
+            <li><p><url href="https://www.theatlantic.com/technology/archive/2023/05/chatbot-cheating-college-campuses/674073/">The first year of AI college ends in ruin</url>
+            <ol marker="a.">
+                  <li><p>What are some problems with AI generating text tools use by college students?</p></li>
+                  <li><p>What are some potential benefits of students using AI tools to complete their schoolwork? What are some potential harms?</p></li>
+                  <li><p>Technology revolutions have always affected classrooms (think about what happened with the invention and popularity of the calculator, typewriter, spell check). How does AI text generation compare? </p></li>
+                  <li><p>The article mentioned plagiarism checkers. How do they receive feedback to their accuracy? How does this cause potential harm to people?</p></li>
+                  <li><p>One of the goals of education is to equalize people from different socio-economic backgrounds. If technology is unobtainable for groups of people, how can we still guarantee equal access and ability to succeed in school. </p></li>
+            </ol></p></li>
+      </ol>
+            </p>
+</exploration>
+
+<p>This only scratches the surface about how to conduct data science ethically. When conducting data science it is important to weigh the potential benefits with the potential harms to others and our goal of living in a fair and justice world. </p>
+
+<exercises>
+      <exercise>
+            <p>Pick a topic from class or another of your choosing relating to data science and ethics. Read an article or a blog post about your issue (cite source in some easy to find way). Discuss in 1-2 pages (typed) the new technology and potential (or actual) harms to humans, fairness, and justice. Some example topics include:
+            </p>
+            <ol marker="a.">
+                  <li><p>College rankings</p></li>
+                  <li><p>Credit Scores</p></li>
+                  <li><p>Workplace scheduling technology/monitoring truck drivers</p></li>
+                  <li><p>Workplace personality tests</p></li>
+                  <li><p>Home loans</p></li>
+            </ol>
+      </exercise>
+</exercises>
+     
+      </section>

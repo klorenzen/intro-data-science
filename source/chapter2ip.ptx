@@ -1,6 +1,13 @@
 <chapter xml:id="chapter-2" xmlns:xi="http://www.w3.org/2001/XInclude" >
       <title>Data Ethics</title>
+      <introduction>
+      <p>
+      In the previous chapter we learned that we are in fact already data sciencists (party emoji!). With this power comes great responsibility. Anytime we learn new skills we have a responsibility to use our new skills for good and the betterment of humankind. This chapter explores areas where we need to be responsible and questions to ask ourselves to better serve others with our data science. 
+      </p>
+      </introduction>
 
+      <xi:include  href="intro-ethics.ptx" />
+<!--ToDo
       <section xml:id="section-2-1">
         <title>Transparency of algorithms</title>
       </section>
@@ -22,5 +29,5 @@
         <title>Accountability</title>
     <p>Who is accountable? Consumers, programmers, or government?</p>
       </section>
-
+-->
   </chapter>
