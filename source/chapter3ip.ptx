@@ -1,6 +1,14 @@
 <chapter xml:id="chapter-3" xmlns:xi="http://www.w3.org/2001/XInclude" >
       <title>Dealing with Data</title>
+      <introduction>
+        <p>
+        Let us now start to get our hands dirty with data! In this section we will learn how to effectivly manage, process, and wrangle data. We will start to be able to answer some of our questions!
+      </p>
+      </introduction>
 
+<xi:include  href="data-verbs-3-1.ptx" />
+
+<!--ToDo
       <section xml:id="section-3-1">
         <title>Wrangling</title>
       </section>
@@ -12,6 +20,6 @@
       <section xml:id="section-3-3">
         <title>Cleaning</title>
       </section>
-
+-->
 
     </chapter>

@@ -19,6 +19,7 @@
             <statement>
                 <p>Ethics are about establishing actions that are right vs wrong in a philosophical sense. Before we jump into practical situations, let us muse philosophically about big picture principles of data ethics.
                 <ol marker="a.">
+                        <li><p>What does living in a fair society mean to you? </p></li>
                         <li><p>What does it mean to be ethical? What does it mean to be acting in a fair and just way? </p></li>
                         <li><p>At their core, why does we use algorithms?</p></li>
                         <li><p>Our ethics tell us that we want the world to be more fair and just. Algorithms and data analysis is about making our world more efficient. How can the data scientist balance these two ideas?</p></li>

@@ -1,0 +1,796 @@
+<section xml:id="section-1-1">
+	<title>Data Verbs</title>
+
+	<p>Inspired by workshop presentation by Todd Iverson and Chris Malone, Winona State University, for Project NExT at MathFest 2021.</p>
+	<subsection><title>Brief Introduction to Data Types</title>
+		<p>All of our data is classfied into different categories which helps computers process our instructions to it. Essentially, these categories make it easier for it to tell us what actions we can and cannot do to the data values. For example, if we had a column storing the height of basketball players it would be incoherent to try to make these numbers upper case where as making the names upper case is a task we can carry out.</p>
+		<p>The main data types are as follows:</p>
+		<ul>
+			<li><p><em>Boolean:</em> only two possible values, True or False.</p></li>
+			<li><p><em>Integers:</em> whole numbers with no decimal places.</p></li>
+			<li><p><em>Numerical/Float:</em> All other numbers, usually with decimal places.</p></li>
+			<li><p><em>Character:</em> a single letter or special symbol, think one key stroke from the keyboard.</p></li>
+			<li><p><em>String:</em> A serise of characters including spaces.</p></li>
+		</ul>
+
+		<activity xml:id="matching-one" label="matching-data-types">
+  <title>Data Types</title>
+  <idx>matching data types</idx>
+  <statement>
+    <p>
+      Match each column in the data table below to its data type
+    </p>
+  </statement>
+<table>
+        <title>Example Data Table</title>
+        <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+      </tabular>
+  </table>
+<!--
+  <feedback>
+    <p>
+      Review
+      <url href="https://www.britannica.com/list/25-decade-defining-events-in-us-history" visual="www.britannica.com/list/25-decade-defining-events-in-us-history">Encyclopedia Brittania, 25 Decade-Defining Events in U.S. History</url>
+      url.
+    </p>
+  </feedback>
+-->
+  <matches>
+   <match order="1">
+  <premise>A</premise>
+  <response>Integer</response>
+  </match>
+  <match order="2">
+  <premise>B</premise>
+  <response>Character</response>
+  </match>
+   <match order="3">
+  <premise>C</premise>
+  <response>Boolean</response>
+  </match>
+  
+    <match order="4">
+  <premise>D</premise>
+  <response>Float</response>
+  </match>
+  
+   <match order="5">
+  <premise>E</premise>
+  <response>String</response>
+  </match>
+  </matches>
+</activity>
+
+<p> Each data type has certain functions that we can do to them. Here is a non-exhaustive list of the functions that we can do to data types. </p>
+<table>
+        <title>Functions for Data Table</title>
+        <tabular left="minor" right="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>Boolean </cell>
+                  <cell> Integer</cell>
+                  <cell>Float</cell>
+                  <cell> Character</cell>
+                  <cell>String</cell>
+          </row>
+          <row>
+          	<cell>Equals?</cell><cell>Sum</cell><cell>Sum</cell><cell>Uppercase</cell><cell>Upper/lower case</cell>
+          </row>
+          <row>
+          	<cell>AND</cell><cell>Count</cell><cell>Count</cell><cell>Lowercase</cell><cell>Join/split</cell>
+          </row>
+          <row>
+          	<cell>OR</cell><cell>Abs</cell><cell>Abs</cell><cell>Equals</cell><cell>Count substring</cell>
+          </row>
+          <row>
+          	<cell>NOT</cell><cell>Mult.</cell><cell>Mult./Div.</cell><cell></cell><cell>Find</cell>
+          </row>
+          <row>
+          	<cell>Sum</cell><cell>Greater/less than</cell><cell>Greater/less than</cell><cell></cell><cell>Strip</cell>
+          </row>
+          <row>
+          	<cell>Count</cell><cell>Mod div.</cell><cell>Equals/</cell><cell></cell><cell>Length</cell>
+          </row>
+          <row>
+          	<cell>Average</cell><cell>Equals?</cell><cell>Most math</cell><cell></cell><cell></cell>
+          </row>
+      </tabular>
+  </table>
+  <p>As we get further into working with data, we will get a better knowldge of how to implement these functions. When you start using a computer with data science, you might run into a <em>type error</em> which means that your data type and the function you are trying to use are incompatable. Having a mental chart like the one above can be helpful when trying to resolve this type of error.</p>
+	</subsection>
+
+	<subsection><title>First Data Verbs</title>
+
+		<p>Data verbs are actions we can do to a data set. We will be collection and using these throughout this class.</p>
+
+		<p>Our first data verb is <term>Select</term> where we choose a group of columns to be working with. Below is the result when we <em>Select A,B,C</em>
+		</p>
+
+		<ul cols="2">
+			<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+      </tabular>
+  </table></p></li>
+<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+         
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell>
+          </row>
+      </tabular>
+  </table></p></li>
+</ul>
+
+<p>Our next data verb is <term>Filter</term> where we choose a some rows that meet a condition. Below is the result when we <em>Filter by B== a</em>
+		</p>
+
+		<ul cols="2">
+			<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+      </tabular>
+  </table></p></li>
+<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+      </tabular>
+  </table></p></li>
+</ul>
+
+<p>Our next data verb is <term>Mutate</term> where we create a new column based on another. Below is the result when we <em>Mutate F=A+2</em>
+		</p>
+
+		<ul cols="2">
+			<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+      </tabular>
+  </table></p></li>
+<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  <row header="yes" bottom="major"> 
+               <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+                  <cell>F</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell><cell>7</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell><cell>5</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell><cell>6</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell><cell>4</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell><cell>5</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell><cell>7</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell><cell>6</cell>
+          </row>
+      </tabular>
+  </table></p></li>
+</ul>
+
+<p>Our next data verb is <term>Sort</term> where we order rows based on their entries in a column(s). Below is the result when we <em>Sort by D, descending</em>
+		</p>
+
+		<ul cols="2">
+			<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+      </tabular>
+  </table></p></li>
+<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  <row header="yes" bottom="major"> 
+               <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          
+      </tabular>
+  </table></p></li>
+</ul>
+
+<exercises>
+<p>
+		<table><title>Original data table for following exercises</title>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+      </tabular>
+  </table></p>
+<exercise xml:id="data-verb-one" label="data-verb-mult-one">
+  <title>Test yourself!</title>
+  <idx>multi data verbs</idx>
+  <statement><p>Determine which data verb was applied get the following result. Select all that apply.
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+                 
+          </row>
+          <row>
+          	<cell>True</cell><cell>46.7</cell><cell>NORTH</cell>
+          </row>
+          <row>
+          	<cell>True</cell><cell>35.6</cell><cell>WEST</cell>
+          </row>          
+          <row>
+          	<cell>True</cell><cell>124.6</cell><cell>NORTH</cell>
+          </row>
+          <row>
+          	<cell>True</cell><cell>7.4</cell><cell>WEST</cell>
+          </row>
+      </tabular>
+  </table>
+  </p></statement>
+  <choices>
+  	<choice correct="yes">
+  		<statement>
+  			<p>
+  				Select
+  			</p>
+  		</statement>
+  		<feedback>
+  			<p>
+  				Yes, columns C,D, and E were selected.
+  			</p>
+  		</feedback>
+  	</choice>
+
+  	<choice correct="yes">
+  		<statement>
+  			<p>
+  				Filter
+  			</p>
+  		</statement>
+  		<feedback>
+  			<p>
+  				Yes, this data set was filtered by C==True or filtered by E==North or West.
+  			</p>
+  		</feedback>
+  	</choice>
+
+  	<choice correct="yes">
+  		<statement>
+  			<p>
+  				Mutate
+  			</p>
+  		</statement>
+  		<feedback>
+  			<p>
+  				Yes, notice how column E is now in upper case.
+  			</p>
+  		</feedback>
+  	</choice>
+
+  	<choice>
+  		<statement>
+  			<p>
+  				Sort
+  			</p>
+  		</statement>
+  		<feedback>
+  			<p>
+  				Our rows have not changed relative order.
+  			</p>
+  		</feedback>
+  	</choice>
+  </choices>
+
+</exercise>
+
+<exercise xml:id="data-verb-two" label="data-verb-mult-two">
+  <title>Test yourself!</title>
+  <idx>multi data verbs</idx>
+  <statement><p>Determine which data verb was applied get the following result. Select all that apply.
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                
+                  <cell>E</cell>
+                  <cell> F(from A)</cell>
+                  <cell>G (from B)</cell>
+                 
+          </row>
+          <row>
+          	<cell>East</cell><cell>8</cell><cell>25</cell>
+          </row>
+          <row>
+          	<cell>East</cell><cell>10</cell><cell>11</cell>
+          </row>          
+         
+      </tabular>
+  </table>
+  </p></statement>
+  <choices>
+  	<choice correct="yes">
+  		<statement>
+  			<p>
+  				Select
+  			</p>
+  		</statement>
+  		<feedback>
+  			<p>
+  				Yes, columns E, F, and G were selected.
+  			</p>
+  		</feedback>
+  	</choice>
+
+  	<choice correct="yes">
+  		<statement>
+  			<p>
+  				Filter
+  			</p>
+  		</statement>
+  		<feedback>
+  			<p>
+  				Yes, this data set was filtered by E==East.
+  			</p>
+  		</feedback>
+  	</choice>
+
+  	<choice correct="yes">
+  		<statement>
+  			<p>
+  				Mutate
+  			</p>
+  		</statement>
+  		<feedback>
+  			<p>
+  				Yes, both columns F and G are made from previous columns (A and B respectively). Can you determine the operation?
+  			</p>
+  		</feedback>
+  	</choice>
+
+  	<choice>
+  		<statement>
+  			<p>
+  				Sort
+  			</p>
+  		</statement>
+  		<feedback>
+  			<p>
+  				Our rows have not changed relative order.
+  			</p>
+  		</feedback>
+  	</choice>
+  </choices>
+
+</exercise>
+</exercises>
+	</subsection>
+
+	<subsection><title>More Data Verbs</title>
+
+	<p>We are now entering more complex data verb land, but these are some of the most useful!</p>
+
+	<p>Our next data verb is <term>Group</term> where we split our data into smaller portions according to a key value in a column. Below is the result when we <em>Group by B</em>
+		</p>
+
+		<ul cols="2">
+			<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+      </tabular>
+  </table></p></li>
+<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  				<row header="yes" bottom="major">
+               <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row bottom="major">
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+           <row>
+          	<cell> </cell><cell></cell><cell></cell><cell></cell><cell></cell>
+          </row>
+          <row top="major">
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row bottom="major">
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell> </cell><cell></cell><cell></cell><cell></cell><cell></cell>
+          </row>
+          <row top="major">
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+          
+      </tabular>
+  </table></p></li>
+</ul>
+
+<p>On its own grouping is not useful, but when paired with our next data verb it is really powerful! </p>
+
+<p>Our next data verb is <term>Aggregate</term> where we apply a function over all rows in a column. Below is the result when we <em>Aggregate sum</em>
+		</p>
+
+		<ul cols="2">
+			<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell>West</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>True</cell><cell>124.6</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>c</cell><cell>False</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>c</cell><cell>True</cell><cell>7.4</cell><cell>West</cell>
+          </row>
+      </tabular>
+  </table></p></li>
+<li><p>
+		<table>
+       <tabular top="minor" left="minor" right="minor" bottom="minor">
+  				<row header="yes" bottom="major">
+               <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+          </row>
+          <row>
+          	<cell>26</cell><cell>186</cell><cell>4</cell><cell>234.6</cell>
+          </row>  
+      </tabular>
+  </table></p></li>
+</ul>
+
+<p>Our next data verbs are about merging datasets together. This is important to know because sometimes our data is in different places and we want to bring it together. There are three main ways to merge datasets:</p>
+	<ol marker="1.">
+		<li><p><term>Union</term>- use when columns are the same, glues rows of one dataset to the end of another</p></li>
+		<li><p><term>Intersect</term>- only takes rows that are the same between the two datasets</p></li>
+		<li><p><term>Difference</term>- only takes rows that are in one dataset but not the other</p></li>
+	</ol>
+
+	<activity>
+		<p>Brainstrom situations where you would want to use each of these data table mergers. </p>
+	</activity>
+
+</subsection>
+
+<subsection><title>Setting up verb sentences</title>
+	<p>Now that we have our data verbs, we can start using them to talk about how we would like to start answering our data science questions! Below is a sample of a data table about places that sell burritos. First, what data type is each column?</p>
+
+	<p><table><tabular top="minor" left="minor" right="minor" bottom="minor">
+		<row header="yes" bottom="major">
+			<cell>Location</cell><cell>BurritoType</cell><cell>Date</cell><cell>Neighborhood</cell><cell>Address</cell><cell>Yelp</cell><cell>Google</cell><cell>Chips</cell><cell>Cost</cell></row>
+<row><cell>Taco Stand</cell><cell>California</cell><cell>2/12/2016</cell><cell>La Jolla</cell><cell>621 Pearl St</cell><cell>4.5</cell><cell>4.4</cell><cell></cell><cell>7.49</cell></row>
+<row><cell>Lola's 7 Up Market and Deli</cell><cell>Shredded beef</cell><cell>2/29/2016</cell><cell>Carlsbad</cell><cell>3292 Roosevelt St</cell><cell>4.5</cell><cell>4.9</cell><cell></cell><cell>6</cell></row>
+<row><cell>Cancun Mexican and Seafood</cell><cell>California</cell><cell>3/20/2016</cell><cell>Encinitas</cell><cell>1766 N Coast Hwy</cell><cell>4.5</cell><cell>4.1</cell><cell>x</cell><cell>6.99</cell></row>
+<row><cell>Mikes Taco Club</cell><cell>California</cell><cell>3/23/2016</cell><cell>Ocean Beach</cell><cell>5060 Newport Ave</cell><cell>4.5</cell><cell>4.9</cell><cell></cell><cell>8.59</cell></row>
+<row><cell>La Perla Cocina</cell><cell>Addiction</cell><cell>3/30/2016</cell><cell>Pacific Beach</cell><cell>745 Emerald St</cell><cell>4.5</cell><cell>4.7</cell><cell></cell><cell>7.99</cell></row>
+<row><cell>California Burritos</cell><cell>California Everything</cell><cell>4/15/2016</cell><cell>Linda Vista</cell><cell>7754 Starling Dr</cell><cell>4.5</cell><cell>4.4</cell><cell>x</cell><cell>6.25</cell></row>
+<row><cell>Mi Asador Mexican and Seafood </cell><cell>California </cell><cell>4/27/2016</cell><cell>Oceanside</cell><cell>4750 Oceanside Blvd</cell><cell>4.5</cell><cell>4.4</cell><cell>x</cell><cell>6.89</cell></row>
+	</tabular></table></p>
+<p> If our question is <em>Which location in La Jolla has the highest rated burrito?</em> we can answer this using our data verbs. First, we would want to <term>Filter</term> the neighborhood column so it only shows us places in La Jolla. Then we would want to <term>Mutate</term> creating a new column which is the combination of the two ratings (either by summing them or finding the average). Finally we would <term>Sort</term> by this combined rating column in descending order (leaving the biggest entry as the first one). Then the first row would give us our desired location! </p>
+
+	<activity><title>Data Verb Sentences</title>
+		For the questions below, determine which data verbs you would need to achieve this task! Sometimes it can be helpful to physically sketch what the final table would look like and then use the verbs to get to your desired table.
+		<ol marker="1.">
+			<li><p>Which burrito type is the highest rated?</p></li>
+			<li><p>Which burrito type costs the most?</p></li>
+			<li><p>Does coming with chips increase ratings?</p></li>
+		</ol>
+	</activity>
+<p>Data verbs are a helpful framework to help get us thinking like a data scientists when we start using technology. What is nice about this framework is you can apply it to any programming language that you use- you just need to learn the commands for your data verbs!</p>
+	</subsection>
+</section>
