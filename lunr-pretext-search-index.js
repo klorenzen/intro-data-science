@@ -79,7 +79,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Introduction to Data Ethics",
-  "body": " Introduction to Data Ethics  Data science and algorithms have brought many advances to our society. Think of all the ways that technology has changed over your lifetime (and try to imagine how it has changed over your professor's lifetime). It has become sophisticated enough at recognizing patterns of human behavior that it can predict financial markets and recommend videos to everyone's hyper niche interests. Recently, technology has been released to the public that can write term papers and hold debates with humans. In short, it is amazing what technology can do.  One thing that algorithms are not able to do is put limits on its power. It was reported in the Wall Street Journal that a health data app was reporting to employers the health data (in the aggregate) of their employees including predictions on the number who will develop certain health conditions, including pregnancy. To do this the app was seeing if any employees had stop renewing birth control or had searched for prenatal vitamins or other fertility related searches. This raises questions about the amount of information that we want employers to have about their employees.  Health companies could argue that providing this information to employers helps them make decisions about how many people to staff. But this information could also be used in nefarious ways. Many people have reasons that they want to keep their health data secrete. Data scientists must think about potential abuses of their algorithms and weigh this with the potential benefits instead of only seeing the potential benefit.  In addition to algorithms, we need to consider the data they are using to train their predictions on. Typically algorithms are designed to replicate actions and decisions made by humans. So if the data documents previous injustices, then the algorithm is bound to repeat it.   What are data ethics?   Ethics are about establishing actions that are right vs wrong in a philosophical sense. Before we jump into practical situations, let us muse philosophically about big picture principles of data ethics.  What does it mean to be ethical? What does it mean to be acting in a fair and just way?  At their core, why does we use algorithms?  Our ethics tell us that we want the world to be more fair and just. Algorithms and data analysis is about making our world more efficient. How can the data scientist balance these two ideas?   As a data science community, we need to agree in the abstract about moving towards a fair and just society. The balance of this with the desire to have a more efficient world is where lots of work in data ethics need to take place.     Data ethics in the wild  Let's now explore further into some concrete situations where unethical behavior has not been properly followed. After reading each article, use the discussion questions as a springboard to start developing your principles of data ethics.  When good algorithms go sexists   What are some of the ways gender is a contentious variable in data sets?  When should gender be used as a variable in data science? When should it not?  In historic data sets, gender is represented as a binary which clashes with modern ideas. How can we reconcile this as a data science community?  With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. What might be other variables that strongly correspond to gender?  Predict some other variables that are questionable to include in data analysis. You may include applications where these variables should and should not be used.   The A.I. ``Gaydar\" study and the real dangers of big data   What are the problems with trying to predict sexual orientation with facial recognition?  How was the data set collected? What ethical issues with consent do the data scientists face?  Other algorithms try to predict sexual orientation with habitual behavior (like shopping trends). Is this more or less ethical than with facial recognition?  Some organizations try to predict someone’s race based on their name to target voting registration. With a less nefarious application, some might see this project as more ethical. Would the application of predicting sexual orientation using facial recognition make it more or less ethical?  Predict some other variables that are questionable to predict from a data set. You may include applications.   A face is exposed for AOL searcher no. 4417749   What are some problems with releasing 3 months of search history of users?  What are the potential harms of someone’s search history being public?  What is the difference between consent and informed consent? How does this difference effect the ethics of a data set?  Most search engines keep search data. Could applications of this data be considered more or less ethical than others? Give examples.  Predict other data that people give with uninformed consent. How could the release of this data be potentially harmful?   Machine bias risk assessment in criminal sentencing   What are some problems with trying to predict crime?  How did the algorithm receive feedback as to its accuracy? How does its inaccuracy cause harm to people?  With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. So if a data scientists did not want to include race they may also not include zip code. What are some of the questions the model uses (variables)? Are these introducing variables that should be avoided when thinking about a fair and just society? What are some of these variables?  Other types of models instead look at common locations of crimes and send police to patrol those areas. Naturally, police find crime there and report it back to the algorithm. These areas tend to be the poorer neighborhoods in cities. What are some issues with this type of feedback to the algorithm? Does this algorithm seem fair?  In a fair and just society, we must balance public safety with freedom and humanity of everyone. How could algorithm related to crime be improved (if at all) in terms of how humans interpret these results?   The first year of AI college ends in ruin   What are some problems with AI generating text tools use by college students?  What are some potential benefits of students using AI tools to complete their schoolwork? What are some potential harms?  Technology revolutions have always affected classrooms (think about what happened with the invention and popularity of the calculator, typewriter, spell check). How does AI text generation compare?  The article mentioned plagiarism checkers. How do they receive feedback to their accuracy? How does this cause potential harm to people?  One of the goals of education is to equalize people from different socio-economic backgrounds. If technology is unobtainable for groups of people, how can we still guarantee equal access and ability to succeed in school.      This only scratches the surface about how to conduct data science ethically. When conducting data science it is important to weigh the potential benefits with the potential harms to others and our goal of living in a fair and justice world.   Pick a topic from class or another of your choosing relating to data science and ethics. Read an article or a blog post about your issue (cite source in some easy to find way). Discuss in 1-2 pages (typed) the new technology and potential (or actual) harms to humans, fairness, and justice. Some example topics include:  College rankings  Credit Scores  Workplace scheduling technology\/monitoring truck drivers  Workplace personality tests  Home loans    "
+  "body": " Introduction to Data Ethics  Data science and algorithms have brought many advances to our society. Think of all the ways that technology has changed over your lifetime (and try to imagine how it has changed over your professor's lifetime). It has become sophisticated enough at recognizing patterns of human behavior that it can predict financial markets and recommend videos to everyone's hyper niche interests. Recently, technology has been released to the public that can write term papers and hold debates with humans. In short, it is amazing what technology can do.  One thing that algorithms are not able to do is put limits on its power. It was reported in the Wall Street Journal that a health data app was reporting to employers the health data (in the aggregate) of their employees including predictions on the number who will develop certain health conditions, including pregnancy. To do this the app was seeing if any employees had stop renewing birth control or had searched for prenatal vitamins or other fertility related searches. This raises questions about the amount of information that we want employers to have about their employees.  Health companies could argue that providing this information to employers helps them make decisions about how many people to staff. But this information could also be used in nefarious ways. Many people have reasons that they want to keep their health data secrete. Data scientists must think about potential abuses of their algorithms and weigh this with the potential benefits instead of only seeing the potential benefit.  In addition to algorithms, we need to consider the data they are using to train their predictions on. Typically algorithms are designed to replicate actions and decisions made by humans. So if the data documents previous injustices, then the algorithm is bound to repeat it.   What are data ethics?   Ethics are about establishing actions that are right vs wrong in a philosophical sense. Before we jump into practical situations, let us muse philosophically about big picture principles of data ethics.  What does living in a fair society mean to you?  What does it mean to be ethical? What does it mean to be acting in a fair and just way?  At their core, why does we use algorithms?  Our ethics tell us that we want the world to be more fair and just. Algorithms and data analysis is about making our world more efficient. How can the data scientist balance these two ideas?   As a data science community, we need to agree in the abstract about moving towards a fair and just society. The balance of this with the desire to have a more efficient world is where lots of work in data ethics need to take place.     Data ethics in the wild  Let's now explore further into some concrete situations where unethical behavior has not been properly followed. After reading each article, use the discussion questions as a springboard to start developing your principles of data ethics.  When good algorithms go sexists   What are some of the ways gender is a contentious variable in data sets?  When should gender be used as a variable in data science? When should it not?  In historic data sets, gender is represented as a binary which clashes with modern ideas. How can we reconcile this as a data science community?  With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. What might be other variables that strongly correspond to gender?  Predict some other variables that are questionable to include in data analysis. You may include applications where these variables should and should not be used.   The A.I. ``Gaydar\" study and the real dangers of big data   What are the problems with trying to predict sexual orientation with facial recognition?  How was the data set collected? What ethical issues with consent do the data scientists face?  Other algorithms try to predict sexual orientation with habitual behavior (like shopping trends). Is this more or less ethical than with facial recognition?  Some organizations try to predict someone’s race based on their name to target voting registration. With a less nefarious application, some might see this project as more ethical. Would the application of predicting sexual orientation using facial recognition make it more or less ethical?  Predict some other variables that are questionable to predict from a data set. You may include applications.   A face is exposed for AOL searcher no. 4417749   What are some problems with releasing 3 months of search history of users?  What are the potential harms of someone’s search history being public?  What is the difference between consent and informed consent? How does this difference effect the ethics of a data set?  Most search engines keep search data. Could applications of this data be considered more or less ethical than others? Give examples.  Predict other data that people give with uninformed consent. How could the release of this data be potentially harmful?   Machine bias risk assessment in criminal sentencing   What are some problems with trying to predict crime?  How did the algorithm receive feedback as to its accuracy? How does its inaccuracy cause harm to people?  With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. So if a data scientists did not want to include race they may also not include zip code. What are some of the questions the model uses (variables)? Are these introducing variables that should be avoided when thinking about a fair and just society? What are some of these variables?  Other types of models instead look at common locations of crimes and send police to patrol those areas. Naturally, police find crime there and report it back to the algorithm. These areas tend to be the poorer neighborhoods in cities. What are some issues with this type of feedback to the algorithm? Does this algorithm seem fair?  In a fair and just society, we must balance public safety with freedom and humanity of everyone. How could algorithm related to crime be improved (if at all) in terms of how humans interpret these results?   The first year of AI college ends in ruin   What are some problems with AI generating text tools use by college students?  What are some potential benefits of students using AI tools to complete their schoolwork? What are some potential harms?  Technology revolutions have always affected classrooms (think about what happened with the invention and popularity of the calculator, typewriter, spell check). How does AI text generation compare?  The article mentioned plagiarism checkers. How do they receive feedback to their accuracy? How does this cause potential harm to people?  One of the goals of education is to equalize people from different socio-economic backgrounds. If technology is unobtainable for groups of people, how can we still guarantee equal access and ability to succeed in school.      This only scratches the surface about how to conduct data science ethically. When conducting data science it is important to weigh the potential benefits with the potential harms to others and our goal of living in a fair and justice world.   Pick a topic from class or another of your choosing relating to data science and ethics. Read an article or a blog post about your issue (cite source in some easy to find way). Discuss in 1-2 pages (typed) the new technology and potential (or actual) harms to humans, fairness, and justice. Some example topics include:  College rankings  Credit Scores  Workplace scheduling technology\/monitoring truck drivers  Workplace personality tests  Home loans    "
 },
 {
   "id": "exploration-3",
@@ -88,7 +88,7 @@ var ptx_lunr_docs = [
   "type": "Exploration",
   "number": "2.1.1",
   "title": "What are data ethics?",
-  "body": " What are data ethics?   Ethics are about establishing actions that are right vs wrong in a philosophical sense. Before we jump into practical situations, let us muse philosophically about big picture principles of data ethics.  What does it mean to be ethical? What does it mean to be acting in a fair and just way?  At their core, why does we use algorithms?  Our ethics tell us that we want the world to be more fair and just. Algorithms and data analysis is about making our world more efficient. How can the data scientist balance these two ideas?   As a data science community, we need to agree in the abstract about moving towards a fair and just society. The balance of this with the desire to have a more efficient world is where lots of work in data ethics need to take place.   "
+  "body": " What are data ethics?   Ethics are about establishing actions that are right vs wrong in a philosophical sense. Before we jump into practical situations, let us muse philosophically about big picture principles of data ethics.  What does living in a fair society mean to you?  What does it mean to be ethical? What does it mean to be acting in a fair and just way?  At their core, why does we use algorithms?  Our ethics tell us that we want the world to be more fair and just. Algorithms and data analysis is about making our world more efficient. How can the data scientist balance these two ideas?   As a data science community, we need to agree in the abstract about moving towards a fair and just society. The balance of this with the desire to have a more efficient world is where lots of work in data ethics need to take place.   "
 },
 {
   "id": "exploration-4",
@@ -109,31 +109,283 @@ var ptx_lunr_docs = [
   "body": "Pick a topic from class or another of your choosing relating to data science and ethics. Read an article or a blog post about your issue (cite source in some easy to find way). Discuss in 1-2 pages (typed) the new technology and potential (or actual) harms to humans, fairness, and justice. Some example topics include:  College rankings  Credit Scores  Workplace scheduling technology\/monitoring truck drivers  Workplace personality tests  Home loans  "
 },
 {
-  "id": "section-3-1",
+  "id": "section-1-1",
   "level": "1",
-  "url": "section-3-1.html",
+  "url": "section-1-1.html",
   "type": "Section",
   "number": "3.1",
-  "title": "Wrangling",
-  "body": " Wrangling  "
+  "title": "Data Verbs",
+  "body": " Data Verbs  Inspired by workshop presentation by Todd Iverson and Chris Malone, Winona State University, for Project NExT at MathFest 2021.  Brief Introduction to Data Types  All of our data is classfied into different categories which helps computers process our instructions to it. Essentially, these categories make it easier for it to tell us what actions we can and cannot do to the data values. For example, if we had a column storing the height of basketball players it would be incoherent to try to make these numbers upper case where as making the names upper case is a task we can carry out.  The main data types are as follows:   Boolean: only two possible values, True or False.  Integers: whole numbers with no decimal places.  Numerical\/Float: All other numbers, usually with decimal places.  Character: a single letter or special symbol, think one key stroke from the keyboard.  String: A serise of characters including spaces.    Data Types  matching data types   Match each column in the data table below to its data type    Example Data Table    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West        A  Integer    B  Character    C  Boolean    D  Float    E  String     Each data type has certain functions that we can do to them. Here is a non-exhaustive list of the functions that we can do to data types.   Functions for Data Table    Boolean  Integer  Float  Character  String    Equals? Sum Sum Uppercase Upper\/lower case    AND Count Count Lowercase Join\/split    OR Abs Abs Equals Count substring    NOT Mult. Mult.\/Div. Find    Sum Greater\/less than Greater\/less than Strip    Count Mod div. Equals\/ Length    Average Equals? Most math     As we get further into working with data, we will get a better knowldge of how to implement these functions. When you start using a computer with data science, you might run into a type error which means that your data type and the function you are trying to use are incompatable. Having a mental chart like the one above can be helpful when trying to resolve this type of error.   First Data Verbs  Data verbs are actions we can do to a data set. We will be collection and using these throughout this class.  Our first data verb is Select where we choose a group of columns to be working with. Below is the result when we Select A,B,C        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C    5 a True    3 a True    4 b False    2 b True    3 c False    5 c False    4 c True      Our next data verb is Filter where we choose a some rows that meet a condition. Below is the result when we Filter by B== a        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West      Our next data verb is Mutate where we create a new column based on another. Below is the result when we Mutate F=A+2        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E  F    5 a True 46.7 North 7    3 a True 35.6 West 5    4 b False 10.8 East 6    2 b True 124.6 North 4    3 c False 4.8 South 5    5 c False 4.7 East 7    4 c True 7.4 West 6      Our next data verb is Sort where we order rows based on their entries in a column(s). Below is the result when we Sort by D, descending        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E    2 b True 124.6 North    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    4 c True 7.4 West    3 c False 4.8 South    5 c False 4.7 East        Original data table for following exercises    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West     Test yourself! multi data verbs Determine which data verb was applied get the following result. Select all that apply.    C  D  E    True 46.7 NORTH    True 35.6 WEST    True 124.6 NORTH    True 7.4 WEST        Select    Yes, columns C,D, and E were selected.      Filter    Yes, this data set was filtered by C==True or filtered by E==North or West.      Mutate    Yes, notice how column E is now in upper case.      Sort    Our rows have not changed relative order.     Test yourself! multi data verbs Determine which data verb was applied get the following result. Select all that apply.    E  F(from A)  G (from B)    East 8 25    East 10 11        Select    Yes, columns E, F, and G were selected.      Filter    Yes, this data set was filtered by E==East.      Mutate    Yes, both columns F and G are made from previous columns (A and B respectively). Can you determine the operation?      Sort    Our rows have not changed relative order.       More Data Verbs  We are now entering more complex data verb land, but these are some of the most useful!  Our next data verb is Group where we split our data into smaller portions according to a key value in a column. Below is the result when we Group by B        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West        4 b False 10.8 East    2 b True 124.6 North        3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West      On its own grouping is not useful, but when paired with our next data verb it is really powerful!  Our next data verb is Aggregate where we apply a function over all rows in a column. Below is the result when we Aggregate sum        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D    26 186 4 234.6      Our next data verbs are about merging datasets together. This is important to know because sometimes our data is in different places and we want to bring it together. There are three main ways to merge datasets:   Union - use when columns are the same, glues rows of one dataset to the end of another  Intersect - only takes rows that are the same between the two datasets  Difference - only takes rows that are in one dataset but not the other    Brainstrom situations where you would want to use each of these data table mergers.    Setting up verb sentences  Now that we have our data verbs, we can start using them to talk about how we would like to start answering our data science questions! Below is a sample of a data table about places that sell burritos. First, what data type is each column?    Location BurritoType Date Neighborhood Address Yelp Google Chips Cost  Taco Stand California 2\/12\/2016 La Jolla 621 Pearl St 4.5 4.4 7.49  Lola's 7 Up Market and Deli Shredded beef 2\/29\/2016 Carlsbad 3292 Roosevelt St 4.5 4.9 6  Cancun Mexican and Seafood California 3\/20\/2016 Encinitas 1766 N Coast Hwy 4.5 4.1 x 6.99  Mikes Taco Club California 3\/23\/2016 Ocean Beach 5060 Newport Ave 4.5 4.9 8.59  La Perla Cocina Addiction 3\/30\/2016 Pacific Beach 745 Emerald St 4.5 4.7 7.99  California Burritos California Everything 4\/15\/2016 Linda Vista 7754 Starling Dr 4.5 4.4 x 6.25  Mi Asador Mexican and Seafood California 4\/27\/2016 Oceanside 4750 Oceanside Blvd 4.5 4.4 x 6.89   If our question is Which location in La Jolla has the highest rated burrito? we can answer this using our data verbs. First, we would want to Filter the neighborhood column so it only shows us places in La Jolla. Then we would want to Mutate creating a new column which is the combination of the two ratings (either by summing them or finding the average). Finally we would Sort by this combined rating column in descending order (leaving the biggest entry as the first one). Then the first row would give us our desired location!  Data Verb Sentences For the questions below, determine which data verbs you would need to achieve this task! Sometimes it can be helpful to physically sketch what the final table would look like and then use the verbs to get to your desired table.  Which burrito type is the highest rated?  Which burrito type costs the most?  Does coming with chips increase ratings?    Data verbs are a helpful framework to help get us thinking like a data scientists when we start using technology. What is nice about this framework is you can apply it to any programming language that you use- you just need to learn the commands for your data verbs!   "
 },
 {
-  "id": "section-3-2",
-  "level": "1",
-  "url": "section-3-2.html",
-  "type": "Section",
-  "number": "3.2",
-  "title": "Feature engineering",
-  "body": " Feature engineering  "
+  "id": "matching-data-types",
+  "level": "2",
+  "url": "section-1-1.html#matching-data-types",
+  "type": "Activity",
+  "number": "3.1.1",
+  "title": "Data Types.",
+  "body": " Data Types  matching data types   Match each column in the data table below to its data type    Example Data Table    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West        A  Integer    B  Character    C  Boolean    D  Float    E  String    "
 },
 {
-  "id": "section-3-3",
-  "level": "1",
-  "url": "section-3-3.html",
-  "type": "Section",
-  "number": "3.3",
-  "title": "Cleaning",
-  "body": " Cleaning  "
+  "id": "table-4",
+  "level": "2",
+  "url": "section-1-1.html#table-4",
+  "type": "Table",
+  "number": "3.1.2",
+  "title": "Functions for Data Table",
+  "body": " Functions for Data Table    Boolean  Integer  Float  Character  String    Equals? Sum Sum Uppercase Upper\/lower case    AND Count Count Lowercase Join\/split    OR Abs Abs Equals Count substring    NOT Mult. Mult.\/Div. Find    Sum Greater\/less than Greater\/less than Strip    Count Mod div. Equals\/ Length    Average Equals? Most math    "
+},
+{
+  "id": "p-87",
+  "level": "2",
+  "url": "section-1-1.html#p-87",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Select "
+},
+{
+  "id": "table-5",
+  "level": "2",
+  "url": "section-1-1.html#table-5",
+  "type": "Table",
+  "number": "3.1.3",
+  "title": "",
+  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
+},
+{
+  "id": "table-6",
+  "level": "2",
+  "url": "section-1-1.html#table-6",
+  "type": "Table",
+  "number": "3.1.4",
+  "title": "",
+  "body": "   A  B  C    5 a True    3 a True    4 b False    2 b True    3 c False    5 c False    4 c True    "
+},
+{
+  "id": "p-90",
+  "level": "2",
+  "url": "section-1-1.html#p-90",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Filter "
+},
+{
+  "id": "table-7",
+  "level": "2",
+  "url": "section-1-1.html#table-7",
+  "type": "Table",
+  "number": "3.1.5",
+  "title": "",
+  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
+},
+{
+  "id": "table-8",
+  "level": "2",
+  "url": "section-1-1.html#table-8",
+  "type": "Table",
+  "number": "3.1.6",
+  "title": "",
+  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    "
+},
+{
+  "id": "p-93",
+  "level": "2",
+  "url": "section-1-1.html#p-93",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Mutate "
+},
+{
+  "id": "table-9",
+  "level": "2",
+  "url": "section-1-1.html#table-9",
+  "type": "Table",
+  "number": "3.1.7",
+  "title": "",
+  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
+},
+{
+  "id": "table-10",
+  "level": "2",
+  "url": "section-1-1.html#table-10",
+  "type": "Table",
+  "number": "3.1.8",
+  "title": "",
+  "body": "   A  B  C  D  E  F    5 a True 46.7 North 7    3 a True 35.6 West 5    4 b False 10.8 East 6    2 b True 124.6 North 4    3 c False 4.8 South 5    5 c False 4.7 East 7    4 c True 7.4 West 6    "
+},
+{
+  "id": "p-96",
+  "level": "2",
+  "url": "section-1-1.html#p-96",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Sort "
+},
+{
+  "id": "table-11",
+  "level": "2",
+  "url": "section-1-1.html#table-11",
+  "type": "Table",
+  "number": "3.1.9",
+  "title": "",
+  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
+},
+{
+  "id": "table-12",
+  "level": "2",
+  "url": "section-1-1.html#table-12",
+  "type": "Table",
+  "number": "3.1.10",
+  "title": "",
+  "body": "   A  B  C  D  E    2 b True 124.6 North    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    4 c True 7.4 West    3 c False 4.8 South    5 c False 4.7 East    "
+},
+{
+  "id": "table-13",
+  "level": "2",
+  "url": "section-1-1.html#table-13",
+  "type": "Table",
+  "number": "3.1.11",
+  "title": "Original data table for following exercises",
+  "body": "Original data table for following exercises    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
+},
+{
+  "id": "data-verb-mult-one",
+  "level": "2",
+  "url": "section-1-1.html#data-verb-mult-one",
+  "type": "Exercise",
+  "number": "3.1.2.1",
+  "title": "Test yourself!",
+  "body": "Test yourself! multi data verbs Determine which data verb was applied get the following result. Select all that apply.    C  D  E    True 46.7 NORTH    True 35.6 WEST    True 124.6 NORTH    True 7.4 WEST        Select    Yes, columns C,D, and E were selected.      Filter    Yes, this data set was filtered by C==True or filtered by E==North or West.      Mutate    Yes, notice how column E is now in upper case.      Sort    Our rows have not changed relative order.    "
+},
+{
+  "id": "data-verb-mult-two",
+  "level": "2",
+  "url": "section-1-1.html#data-verb-mult-two",
+  "type": "Exercise",
+  "number": "3.1.2.2",
+  "title": "Test yourself!",
+  "body": "Test yourself! multi data verbs Determine which data verb was applied get the following result. Select all that apply.    E  F(from A)  G (from B)    East 8 25    East 10 11        Select    Yes, columns E, F, and G were selected.      Filter    Yes, this data set was filtered by E==East.      Mutate    Yes, both columns F and G are made from previous columns (A and B respectively). Can you determine the operation?      Sort    Our rows have not changed relative order.    "
+},
+{
+  "id": "p-119",
+  "level": "2",
+  "url": "section-1-1.html#p-119",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Group "
+},
+{
+  "id": "table-16",
+  "level": "2",
+  "url": "section-1-1.html#table-16",
+  "type": "Table",
+  "number": "3.1.14",
+  "title": "",
+  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
+},
+{
+  "id": "table-17",
+  "level": "2",
+  "url": "section-1-1.html#table-17",
+  "type": "Table",
+  "number": "3.1.15",
+  "title": "",
+  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West        4 b False 10.8 East    2 b True 124.6 North        3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
+},
+{
+  "id": "p-123",
+  "level": "2",
+  "url": "section-1-1.html#p-123",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Aggregate "
+},
+{
+  "id": "table-18",
+  "level": "2",
+  "url": "section-1-1.html#table-18",
+  "type": "Table",
+  "number": "3.1.16",
+  "title": "",
+  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
+},
+{
+  "id": "table-19",
+  "level": "2",
+  "url": "section-1-1.html#table-19",
+  "type": "Table",
+  "number": "3.1.17",
+  "title": "",
+  "body": "   A  B  C  D    26 186 4 234.6    "
+},
+{
+  "id": "p-127",
+  "level": "2",
+  "url": "section-1-1.html#p-127",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Union "
+},
+{
+  "id": "p-128",
+  "level": "2",
+  "url": "section-1-1.html#p-128",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Intersect "
+},
+{
+  "id": "p-129",
+  "level": "2",
+  "url": "section-1-1.html#p-129",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Difference "
+},
+{
+  "id": "activity-2",
+  "level": "2",
+  "url": "section-1-1.html#activity-2",
+  "type": "Activity",
+  "number": "3.1.2",
+  "title": "",
+  "body": " Brainstrom situations where you would want to use each of these data table mergers.  "
+},
+{
+  "id": "table-20",
+  "level": "2",
+  "url": "section-1-1.html#table-20",
+  "type": "Table",
+  "number": "3.1.18",
+  "title": "",
+  "body": "  Location BurritoType Date Neighborhood Address Yelp Google Chips Cost  Taco Stand California 2\/12\/2016 La Jolla 621 Pearl St 4.5 4.4 7.49  Lola's 7 Up Market and Deli Shredded beef 2\/29\/2016 Carlsbad 3292 Roosevelt St 4.5 4.9 6  Cancun Mexican and Seafood California 3\/20\/2016 Encinitas 1766 N Coast Hwy 4.5 4.1 x 6.99  Mikes Taco Club California 3\/23\/2016 Ocean Beach 5060 Newport Ave 4.5 4.9 8.59  La Perla Cocina Addiction 3\/30\/2016 Pacific Beach 745 Emerald St 4.5 4.7 7.99  California Burritos California Everything 4\/15\/2016 Linda Vista 7754 Starling Dr 4.5 4.4 x 6.25  Mi Asador Mexican and Seafood California 4\/27\/2016 Oceanside 4750 Oceanside Blvd 4.5 4.4 x 6.89  "
+},
+{
+  "id": "p-133",
+  "level": "2",
+  "url": "section-1-1.html#p-133",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Filter Mutate Sort "
+},
+{
+  "id": "activity-3",
+  "level": "2",
+  "url": "section-1-1.html#activity-3",
+  "type": "Activity",
+  "number": "3.1.3",
+  "title": "Data Verb Sentences.",
+  "body": "Data Verb Sentences For the questions below, determine which data verbs you would need to achieve this task! Sometimes it can be helpful to physically sketch what the final table would look like and then use the verbs to get to your desired table.  Which burrito type is the highest rated?  Which burrito type costs the most?  Does coming with chips increase ratings?   "
 },
 {
   "id": "section-4-1",
@@ -199,9 +451,9 @@ var ptx_lunr_docs = [
   "body": " Naive Bayes Classifier  I didn't retype my notes, but here is how you do math. Inline: . As an unlabeled equation: As a labeled equation:   Here is an example of a table:   Bike Ride Data            Weather  Temperature  Humidity  Wind  Bike Ride?    Rainy  F  High  13 mph  False     "
 },
 {
-  "id": "table-3",
+  "id": "table-21",
   "level": "2",
-  "url": "section-6-2.html#table-3",
+  "url": "section-6-2.html#table-21",
   "type": "Table",
   "number": "6.2.1",
   "title": "Bike Ride Data",

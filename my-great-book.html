@@ -83,6 +83,37 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.1.4/prefix-runtime.d3f96040775bf7ec.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.1.4/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.1.4/prefix-runestone.3a5641c4e1fe869e.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.1.4/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.1.4/prefix-runestone.cec40a61180efd41.css">
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
@@ -232,11 +263,18 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </li>
 <li>
 <div class="toc-item"><a href="chapter-3.html" class="internal"><span class="codenumber">3</span> <span class="title">Dealing with Data</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="section-1-1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Data Verbs</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="section-3-1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Wrangling</span></a></div></li>
-<li><div class="toc-item"><a href="section-3-2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Feature engineering</span></a></div></li>
-<li><div class="toc-item"><a href="section-3-3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Cleaning</span></a></div></li>
+<li><div class="toc-item"><a href="section-1-1.html#subsection-1" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Brief Introduction to Data Types</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-1-1.html#subsection-2" class="internal"><span class="codenumber">3.1.2</span> <span class="title">First Data Verbs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-1-1.html#exercises-4" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="section-1-1.html#subsection-3" class="internal"><span class="codenumber">3.1.3</span> <span class="title">More Data Verbs</span></a></div></li>
+<li><div class="toc-item"><a href="section-1-1.html#subsection-4" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Setting up verb sentences</span></a></div></li>
 </ul>
+</li></ul>
 </li>
 <li>
 <div class="toc-item"><a href="chapter-4.html" class="internal"><span class="codenumber">4</span> <span class="title">Data Visualizations</span></a></div>
