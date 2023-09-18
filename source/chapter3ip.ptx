@@ -7,6 +7,15 @@
       </introduction>
 
 <xi:include  href="data-verbs-3-1.ptx" />
+<xi:include  href="cleaning-3-2.ptx" />
+
+<section xml:id="section-3-3">
+  <title>Data Verbs in Excel</title>
+  <p>Let's revisit our questions about the burrito data set. Let's answer this using Excel. We can do most of our data verbs if we turn our data set into a table. For group and aggregate we will need to use a pivot table. We can pull our variables into rows, columns, value - where we can choose our aggregate function. This is not the full extent of what a pivot table can do but is helpful for us for quick data analysis.
+  </p>
+</section>
+
+<xi:include  href="python-data-verbs.ptx" />
 
 <!--ToDo
       <section xml:id="section-3-1">

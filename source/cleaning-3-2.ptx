@@ -1,0 +1,105 @@
+<section xml:id="section-3-2">
+	<title>Cleaning Data</title>
+	<p>Cleaning is where we use our data verbs in order to put our dataset in a format that is easier for future use. Usually we perform cleaning when:
+		<ul>
+			<li><p> Data is not in right format (think variable type)</p></li>
+			<li><p> Data is not in consistent format</p></li>
+			<li><p> Missing or blank values</p></li>
+		</ul>
+	</p>
+	<question>
+		<statement>Why would it be important for all data in a column to have the same variable type?</statement></question>
+
+		<p>Having our data in the same format allows us to easily use our data verbs later on whether we are filtering, mutating, or performing aggregate functions. It ensures that the column contains perdictable values so we can easily give commands to the computer. </p>
+
+		<question>
+		<statement>How can we handle missing values?</statement></question>
+
+		<p>Our options come down to delete column, delete row, fill entry with value (zero, min/max, average, random), or ignore. Which one we use depends on what the variable means. </p>
+
+		<activity>
+			<statement><p>Consider the data table below and list what needs to be cleaned in each column. How should we handle the missing values? How would you use your data verbs to carry out the cleaning?<table>
+        <title>Dirty Data Table</title>
+        <tabular top="minor" left="minor" right="minor" bottom="minor">
+  
+               <row header="yes" bottom="major"> 
+                <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
+          	<cell>5</cell><cell>a</cell><cell>True</cell><cell>46.7</cell><cell>North</cell>
+          </row>
+          <row>
+          	<cell>three</cell><cell>a</cell><cell>True</cell><cell>35.6</cell><cell></cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell>b</cell><cell>No</cell><cell>10.8</cell><cell></cell>
+          </row>
+          <row>
+          	<cell>2</cell><cell>b</cell><cell>y</cell><cell></cell><cell></cell>
+          </row>
+          <row>
+          	<cell>3</cell><cell>c</cell><cell>0</cell><cell>4.8</cell><cell></cell>
+          </row>
+          <row>
+          	<cell>5.0</cell><cell>c</cell><cell>n</cell><cell>4.7</cell><cell>East</cell>
+          </row>
+          <row>
+          	<cell>4</cell><cell></cell><cell></cell><cell></cell><cell></cell>
+          </row>
+      </tabular>
+  </table></p></statement>
+</activity>
+
+<p>Especially around missing values, we need to be considerate before we handle them. Questions to ask ourselves about missing values before deciding:
+	<ul>
+		<li><p>Is a value missing because of human error or intentional? Having a missing weight value could be because someone forgot to enter it or maybe the object is outside the limits of the scale. This is an important distinction and we need to understand what our question is before moving forward with missing values. 
+		</p></li>
+		<li><p>How important is this piece of data? If we are not going to be using a column for our analysis, then we do not need to make a decision about dealing with a missing value. </p></li>
+	</ul></p>
+
+	<exercises><exercise>
+		<p>Consider the dataset about Olympic Athletes with a sample shown below. 
+			<table>
+				<tabular top="minor" left="minor" right="minor" bottom="minor">
+					<row header="yes" bottom="major">
+						<cell>ID</cell><cell>Name</cell><cell>Sex</cell><cell>Age</cell><cell>Height</cell><cell>Weight</cell><cell>Team</cell><cell>NOC</cell><cell>Games</cell><cell>Year</cell><cell>Season</cell><cell>City</cell><cell>Sport</cell><cell>Event</cell><cell>Medal</cell></row>
+<row><cell>3</cell><cell>Gunnar Nielsen Aaby</cell><cell>M</cell><cell>24</cell><cell>NA</cell><cell>NA</cell><cell>Denmark</cell><cell>DEN</cell><cell>1920 Summer</cell><cell>1920</cell><cell>Summer</cell><cell>Antwerpen</cell><cell>Football</cell><cell>Football Men's Football</cell><cell>NA</cell></row>
+<row><cell>9</cell><cell>Antti Sami Aalto</cell><cell>M</cell><cell>26</cell><cell>186</cell><cell>96</cell><cell>Finland</cell><cell>FIN</cell><cell>2002 Winter</cell><cell>2002</cell><cell>Winter</cell><cell>Salt Lake City</cell><cell>Ice Hockey</cell><cell>Ice Hockey Men's Ice Hockey</cell><cell>NA</cell></row>
+<row><cell>14</cell><cell>Pirjo Hannele Aalto (Mattila-)</cell><cell>F</cell><cell>32</cell><cell>171</cell><cell>65</cell><cell>Finland</cell><cell>FIN</cell><cell>1994 Winter</cell><cell>1994</cell><cell>Winter</cell><cell>Lillehammer</cell><cell>Biathlon</cell><cell>Biathlon Women's 7.5 kilometres Sprint</cell><cell>NA</cell></row>
+<row><cell>18</cell><cell>Timo Antero Aaltonen</cell><cell>M</cell><cell>31</cell><cell>189</cell><cell>130</cell><cell>Finland</cell><cell>FIN</cell><cell>2000 Summer</cell><cell>2000</cell><cell>Summer</cell><cell>Sydney</cell><cell>Athletics</cell><cell>Athletics Men's Shot Put</cell><cell>NA</cell></row>
+<row><cell>21</cell><cell>Ragnhild Margrethe Aamodt</cell><cell>F</cell><cell>27</cell><cell>163</cell><cell>NA</cell><cell>Norway</cell><cell>NOR</cell><cell>2008 Summer</cell><cell>2008</cell><cell>Summer</cell><cell>Beijing</cell><cell>Handball</cell><cell>Handball Women's Handball</cell><cell>Gold</cell></row>
+<row><cell>22</cell><cell>Andreea Aanei</cell><cell>F</cell><cell>22</cell><cell>170</cell><cell>125</cell><cell>Romania</cell><cell>ROU</cell><cell>2016 Summer</cell><cell>2016</cell><cell>Summer</cell><cell>Rio de Janeiro</cell><cell>Weightlifting</cell><cell>Weightlifting Women's Super-Heavyweight</cell><cell>NA</cell></row>
+<row><cell>30</cell><cell>Pepijn Aardewijn</cell><cell>M</cell><cell>26</cell><cell>189</cell><cell>72</cell><cell>Netherlands</cell><cell>NED</cell><cell>1996 Summer</cell><cell>1996</cell><cell>Summer</cell><cell>Atlanta</cell><cell>Rowing</cell><cell>Rowing Men's Lightweight Double Sculls</cell><cell>Silver</cell></row>
+<row><cell>30</cell><cell>Pepijn Aardewijn</cell><cell>M</cell><cell>30</cell><cell>189</cell><cell>72</cell><cell>Netherlands</cell><cell>NED</cell><cell>2000 Summer</cell><cell>2000</cell><cell>Summer</cell><cell>Sydney</cell><cell>Rowing</cell><cell>Rowing Men's Lightweight Double Sculls</cell><cell>NA</cell></row>
+3<row><cell>1</cell><cell>Evald rma (rman-)</cell><cell>M</cell><cell>24</cell><cell>174</cell><cell>70</cell><cell>Estonia</cell><cell>EST</cell><cell>1936 Summer</cell><cell>1936</cell><cell>Summer</cell><cell>Berlin</cell><cell>Athletics</cell><cell>Athletics Men's Pole Vault</cell><cell>NA</cell></row>
+<row><cell>39</cell><cell>Lars Thorlaksn Aas</cell><cell>M</cell><cell>33</cell><cell>NA</cell><cell>NA</cell><cell>Norway</cell><cell>NOR</cell><cell>1912 Summer</cell><cell>1912</cell><cell>Summer</cell><cell>Stockholm</cell><cell>Fencing</cell><cell>"Fencing Men's Foil, Individual"</cell><cell>NA</cell></row>
+<row><cell>39</cell><cell>Lars Thorlaksn Aas</cell><cell>M</cell><cell>33</cell><cell>NA</cell><cell>NA</cell><cell>Norway</cell><cell>NOR</cell><cell>1912 Summer</cell><cell>1912</cell><cell>Summer</cell><cell>Stockholm</cell><cell>Fencing</cell><cell>"Fencing Men's epee, Individual"</cell><cell>NA</cell></row>
+<row><cell>39</cell><cell>Lars Thorlaksn Aas</cell><cell>M</cell><cell>33</cell><cell>NA</cell><cell>NA</cell><cell>Norway</cell><cell>NOR</cell><cell>1912 Summer</cell><cell>1912</cell><cell>Summer</cell><cell>Stockholm</cell><cell>Fencing</cell><cell>"Fencing Men's epee, Team"</cell><cell>NA</cell></row>
+<row><cell>44</cell><cell>Meelis Aasme</cell><cell>M</cell><cell>25</cell><cell>182</cell><cell>73</cell><cell>Estonia</cell><cell>EST</cell><cell>1998 Winter</cell><cell>1998</cell><cell>Winter</cell><cell>Nagano</cell><cell>Cross Country Skiing</cell><cell>Cross Country Skiing Men's 30 kilometres</cell><cell>NA</cell></row>
+<row><cell>44</cell><cell>Meelis Aasme</cell><cell>M</cell><cell>25</cell><cell>182</cell><cell>73</cell><cell>Estonia</cell><cell>EST</cell><cell>1998 Winter</cell><cell>1998</cell><cell>Winter</cell><cell>Nagano</cell><cell>Cross Country Skiing</cell><cell>Cross Country Skiing Men's 50 kilometres</cell><cell>NA</cell></row>
+<row><cell>44</cell><cell>Meelis Aasme</cell><cell>M</cell><cell>29</cell><cell>182</cell><cell>73</cell><cell>Estonia</cell><cell>EST</cell><cell>2002 Winter</cell><cell>2002</cell><cell>Winter</cell><cell>Salt Lake City</cell><cell>Cross Country Skiing</cell><cell>Cross Country Skiing Men's 15 kilometres</cell><cell>NA</cell></row>
+<row><cell>44</cell><cell>Meelis Aasme</cell><cell>M</cell><cell>29</cell><cell>182</cell><cell>73</cell><cell>Estonia</cell><cell>EST</cell><cell>2002 Winter</cell><cell>2002</cell><cell>Winter</cell><cell>Salt Lake City</cell><cell>Cross Country Skiing</cell><cell>Cross Country Skiing Men's 50 kilometres</cell><cell>NA</cell></row>
+<row><cell>44</cell><cell>Meelis Aasme</cell><cell>M</cell><cell>29</cell><cell>182</cell><cell>73</cell><cell>Estonia</cell><cell>EST</cell><cell>2002 Winter</cell><cell>2002</cell><cell>Winter</cell><cell>Salt Lake City</cell><cell>Cross Country Skiing</cell><cell>Cross Country Skiing Men's 4 x 10 kilometres Relay</cell><cell>NA</cell></row>
+<row><cell>49</cell><cell>Moonika Aava</cell><cell>F</cell><cell>24</cell><cell>168</cell><cell>65</cell><cell>Estonia</cell><cell>EST</cell><cell>2004 Summer</cell><cell>2004</cell><cell>Summer</cell><cell>Athina</cell><cell>Athletics</cell><cell>Athletics Women's Javelin Throw</cell><cell>NA</cell></row>
+<row><cell>49</cell><cell>Moonika Aava</cell><cell>F</cell><cell>28</cell><cell>168</cell><cell>65</cell><cell>Estonia</cell><cell>EST</cell><cell>2008 Summer</cell><cell>2008</cell><cell>Summer</cell><cell>Beijing</cell><cell>Athletics</cell><cell>Athletics Women's Javelin Throw</cell><cell>NA</cell></row>
+<row><cell>57</cell><cell>Borislav Abadzhiev</cell><cell>M</cell><cell>24</cell><cell>176</cell><cell>66</cell><cell>Bulgaria</cell><cell>BUL</cell><cell>1988 Summer</cell><cell>1988</cell><cell>Summer</cell><cell>Seoul</cell><cell>Boxing</cell><cell>Boxing Men's Light-Welterweight</cell><cell>NA</cell></row>
+
+</tabular>
+			</table>
+			<ol marker="a.">
+				<li><p>Indicate the variable type of each column.</p></li>
+				<li><p>Some of the rows have missing data indicated with NA in the data cell. Propose what you would do to deal with the missing (and duplicate) data in each of the following scenarios.
+					<ol marker="i.">
+						<li><p>You want to compute the average height of athletes of different sports.</p></li>
+						<li><p>You want to determine which countries earn the most gold, silver, and bronze medals.</p></li>
+					</ol>
+				</p></li>
+			</ol>
+		</p></exercise>
+	</exercises>
+
+</section>

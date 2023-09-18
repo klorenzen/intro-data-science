@@ -1,16 +1,16 @@
-<section xml:id="section-1-1">
+<section xml:id="section-3-1">
 	<title>Data Verbs</title>
 
 	<p>Inspired by workshop presentation by Todd Iverson and Chris Malone, Winona State University, for Project NExT at MathFest 2021.</p>
 	<subsection><title>Brief Introduction to Data Types</title>
-		<p>All of our data is classfied into different categories which helps computers process our instructions to it. Essentially, these categories make it easier for it to tell us what actions we can and cannot do to the data values. For example, if we had a column storing the height of basketball players it would be incoherent to try to make these numbers upper case where as making the names upper case is a task we can carry out.</p>
+		<p>All of our data is classified into different categories which helps computers process our instructions to it. Essentially, these categories make it easier for it to tell us what actions we can and cannot do to the data values. For example, if we had a column storing the height of basketball players it would be incoherent to try to make these numbers upper case where as making the names upper case is a task we can carry out.</p>
 		<p>The main data types are as follows:</p>
 		<ul>
 			<li><p><em>Boolean:</em> only two possible values, True or False.</p></li>
 			<li><p><em>Integers:</em> whole numbers with no decimal places.</p></li>
 			<li><p><em>Numerical/Float:</em> All other numbers, usually with decimal places.</p></li>
 			<li><p><em>Character:</em> a single letter or special symbol, think one key stroke from the keyboard.</p></li>
-			<li><p><em>String:</em> A serise of characters including spaces.</p></li>
+			<li><p><em>String:</em> A series of characters including spaces.</p></li>
 		</ul>
 
 		<activity xml:id="matching-one" label="matching-data-types">
@@ -19,8 +19,7 @@
   <statement>
     <p>
       Match each column in the data table below to its data type
-    </p>
-  </statement>
+    
 <table>
         <title>Example Data Table</title>
         <tabular top="minor" left="minor" right="minor" bottom="minor">
@@ -55,6 +54,8 @@
           </row>
       </tabular>
   </table>
+  </p>
+  </statement>
 <!--
   <feedback>
     <p>
@@ -125,7 +126,7 @@
           </row>
       </tabular>
   </table>
-  <p>As we get further into working with data, we will get a better knowldge of how to implement these functions. When you start using a computer with data science, you might run into a <em>type error</em> which means that your data type and the function you are trying to use are incompatable. Having a mental chart like the one above can be helpful when trying to resolve this type of error.</p>
+  <p>As we get further into working with data, we will get a better knowledge of how to implement these functions. When you start using a computer with data science, you might run into a <em>type error</em> which means that your data type and the function you are trying to use are incompatible. Having a mental chart like the one above can be helpful when trying to resolve this type of error.</p>
 	</subsection>
 
 	<subsection><title>First Data Verbs</title>
@@ -675,7 +676,14 @@
            <row>
           	<cell> </cell><cell></cell><cell></cell><cell></cell><cell></cell>
           </row>
-          <row top="major">
+          <row header="yes" bottom="major">
+               <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
           	<cell>4</cell><cell>b</cell><cell>False</cell><cell>10.8</cell><cell>East</cell>
           </row>
           <row bottom="major">
@@ -684,7 +692,14 @@
           <row>
           	<cell> </cell><cell></cell><cell></cell><cell></cell><cell></cell>
           </row>
-          <row top="major">
+          <row header="yes" bottom="major">
+               <cell>A </cell>
+                  <cell> B</cell>
+                  <cell>C</cell>
+                  <cell> D</cell>
+                  <cell>E</cell>
+          </row>
+          <row>
           	<cell>3</cell><cell>c</cell><cell>False</cell><cell>4.8</cell><cell>South</cell>
           </row>
           <row>
@@ -793,4 +808,20 @@
 	</activity>
 <p>Data verbs are a helpful framework to help get us thinking like a data scientists when we start using technology. What is nice about this framework is you can apply it to any programming language that you use- you just need to learn the commands for your data verbs!</p>
 	</subsection>
+
+	<exercises>
+		<exercise><p>Below is a list of our data verbs. Categorize the verbs into groups depending if they happen to the columns or rows. </p>
+			<ul>
+				<li><p>Select</p></li>
+				<li><p>Filter</p></li>
+				<li><p>Mutate</p></li>
+				<li><p>Sort</p></li>
+				<li><p>Group</p></li>
+				<li><p>Aggregate</p></li>
+
+			</ul>
+		</exercise>
+		<exercise><p> What is a good system to help use our verbs to answer our data questions?</p></exercise>
+		<exercise><p> What do you predict some challenges could be when using data verbs?</p></exercise>
+	</exercises>
 </section>
