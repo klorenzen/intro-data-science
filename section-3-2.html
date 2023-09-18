@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Feature engineering</title>
+<title>Cleaning Data</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -59,7 +59,8 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -77,6 +78,37 @@ window.MathJax = {
 <link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.1.4/prefix-runtime.d3f96040775bf7ec.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.1.4/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.1.4/prefix-runestone.3a5641c4e1fe869e.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.1.4/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.1.4/prefix-runestone.cec40a61180efd41.css">
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
@@ -227,9 +259,31 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="chapter-3.html" class="internal"><span class="codenumber">3</span> <span class="title">Dealing with Data</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="section-3-1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Wrangling</span></a></div></li>
-<li class="active"><div class="toc-item"><a href="section-3-2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Feature engineering</span></a></div></li>
-<li><div class="toc-item"><a href="section-3-3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Cleaning</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-3-1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Data Verbs</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3-1.html#subsection-1" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Brief Introduction to Data Types</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-3-1.html#subsection-2" class="internal"><span class="codenumber">3.1.2</span> <span class="title">First Data Verbs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-3-1.html#exercises-4" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="section-3-1.html#subsection-3" class="internal"><span class="codenumber">3.1.3</span> <span class="title">More Data Verbs</span></a></div></li>
+<li><div class="toc-item"><a href="section-3-1.html#subsection-4" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Setting up verb sentences</span></a></div></li>
+<li><div class="toc-item"><a href="section-3-1.html#exercises-5" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="section-3-2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Cleaning Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-3-2.html#exercises-6" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="section-3-3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Data Verbs in Excel</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-3-4.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Data Verbs in Python</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3-4.html#subsection-5" class="internal"><span class="codenumber">3.4.1</span> <span class="title">A bit more programming</span></a></div></li>
+<li><div class="toc-item"><a href="section-3-4.html#subsection-6" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Data Verbs</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -287,8 +341,468 @@ window.MathJax = {
 <li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-3-2"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Feature engineering</span>
-</h2></section></div>
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Cleaning Data</span>
+</h2>
+<div class="para logical" id="p-147">
+<div class="para">Cleaning is where we use our data verbs in order to put our dataset in a format that is easier for future use. Usually we perform cleaning when:</div>
+<ul class="disc">
+<li id="li-86"><div class="para" id="p-148">Data is not in right format (think variable type)</div></li>
+<li id="li-87"><div class="para" id="p-149">Data is not in consistent format</div></li>
+<li id="li-88"><div class="para" id="p-150">Missing or blank values</div></li>
+</ul>
+</div>
+<article class="question example-like" id="question-1"><a href="" data-knowl="" class="id-ref question-knowl original" data-refid="hk-question-1"><h3 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-question-1"><article class="question example-like">Why would it be important for all data in a column to have the same variable type?</article></div>
+<div class="para" id="p-151">Having our data in the same format allows us to easily use our data verbs later on whether we are filtering, mutating, or performing aggregate functions. It ensures that the column contains perdictable values so we can easily give commands to the computer.</div>
+<article class="question example-like" id="question-2"><a href="" data-knowl="" class="id-ref question-knowl original" data-refid="hk-question-2"><h3 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-question-2"><article class="question example-like">How can we handle missing values?</article></div>
+<div class="para" id="p-152">Our options come down to delete column, delete row, fill entry with value (zero, min/max, average, random), or ignore. Which one we use depends on what the variable means.</div>
+<article class="activity project-like" id="activity-4"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-153">Consider the data table below and list what needs to be cleaned in each column. How should we handle the missing values? How would you use your data verbs to carry out the cleaning?<figure class="table table-like" id="table-21"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.3<span class="period">.</span></span><span class="space"> </span>Dirty Data Table</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">three</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">No</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">y</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">0</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5.0</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">n</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+</table></div></figure>
+</div></article><div class="para logical" id="p-154">
+<div class="para">Especially around missing values, we need to be considerate before we handle them. Questions to ask ourselves about missing values before deciding:</div>
+<ul class="disc">
+<li id="li-89"><div class="para" id="p-155">Is a value missing because of human error or intentional? Having a missing weight value could be because someone forgot to enter it or maybe the object is outside the limits of the scale. This is an important distinction and we need to understand what our question is before moving forward with missing values.</div></li>
+<li id="li-90"><div class="para" id="p-156">How important is this piece of data? If we are not going to be using a column for our analysis, then we do not need to make a decision about dealing with a missing value.</div></li>
+</ul>
+</div>
+<section class="exercises" id="exercises-6"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="p-157">
+<div class="para">Consider the dataset about Olympic Athletes with a sample shown below. <figure class="table table-like" id="table-22"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.4<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">ID</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Name</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Sex</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Age</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Height</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Weight</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Team</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">NOC</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Games</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Year</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Season</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">City</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Sport</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Event</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Medal</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">Gunnar Nielsen Aaby</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">24</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+<td class="l m b1 r1 l0 t0 lines">Denmark</td>
+<td class="l m b1 r1 l0 t0 lines">DEN</td>
+<td class="l m b1 r1 l0 t0 lines">1920 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">1920</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Antwerpen</td>
+<td class="l m b1 r1 l0 t0 lines">Football</td>
+<td class="l m b1 r1 l0 t0 lines">Football Men's Football</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">9</td>
+<td class="l m b1 r1 l0 t0 lines">Antti Sami Aalto</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">26</td>
+<td class="l m b1 r1 l0 t0 lines">186</td>
+<td class="l m b1 r1 l0 t0 lines">96</td>
+<td class="l m b1 r1 l0 t0 lines">Finland</td>
+<td class="l m b1 r1 l0 t0 lines">FIN</td>
+<td class="l m b1 r1 l0 t0 lines">2002 Winter</td>
+<td class="l m b1 r1 l0 t0 lines">2002</td>
+<td class="l m b1 r1 l0 t0 lines">Winter</td>
+<td class="l m b1 r1 l0 t0 lines">Salt Lake City</td>
+<td class="l m b1 r1 l0 t0 lines">Ice Hockey</td>
+<td class="l m b1 r1 l0 t0 lines">Ice Hockey Men's Ice Hockey</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">14</td>
+<td class="l m b1 r1 l0 t0 lines">Pirjo Hannele Aalto (Mattila-)</td>
+<td class="l m b1 r1 l0 t0 lines">F</td>
+<td class="l m b1 r1 l0 t0 lines">32</td>
+<td class="l m b1 r1 l0 t0 lines">171</td>
+<td class="l m b1 r1 l0 t0 lines">65</td>
+<td class="l m b1 r1 l0 t0 lines">Finland</td>
+<td class="l m b1 r1 l0 t0 lines">FIN</td>
+<td class="l m b1 r1 l0 t0 lines">1994 Winter</td>
+<td class="l m b1 r1 l0 t0 lines">1994</td>
+<td class="l m b1 r1 l0 t0 lines">Winter</td>
+<td class="l m b1 r1 l0 t0 lines">Lillehammer</td>
+<td class="l m b1 r1 l0 t0 lines">Biathlon</td>
+<td class="l m b1 r1 l0 t0 lines">Biathlon Women's 7.5 kilometres Sprint</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">18</td>
+<td class="l m b1 r1 l0 t0 lines">Timo Antero Aaltonen</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">31</td>
+<td class="l m b1 r1 l0 t0 lines">189</td>
+<td class="l m b1 r1 l0 t0 lines">130</td>
+<td class="l m b1 r1 l0 t0 lines">Finland</td>
+<td class="l m b1 r1 l0 t0 lines">FIN</td>
+<td class="l m b1 r1 l0 t0 lines">2000 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">2000</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Sydney</td>
+<td class="l m b1 r1 l0 t0 lines">Athletics</td>
+<td class="l m b1 r1 l0 t0 lines">Athletics Men's Shot Put</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">21</td>
+<td class="l m b1 r1 l0 t0 lines">Ragnhild Margrethe Aamodt</td>
+<td class="l m b1 r1 l0 t0 lines">F</td>
+<td class="l m b1 r1 l0 t0 lines">27</td>
+<td class="l m b1 r1 l0 t0 lines">163</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+<td class="l m b1 r1 l0 t0 lines">Norway</td>
+<td class="l m b1 r1 l0 t0 lines">NOR</td>
+<td class="l m b1 r1 l0 t0 lines">2008 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">2008</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Beijing</td>
+<td class="l m b1 r1 l0 t0 lines">Handball</td>
+<td class="l m b1 r1 l0 t0 lines">Handball Women's Handball</td>
+<td class="l m b1 r1 l0 t0 lines">Gold</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">22</td>
+<td class="l m b1 r1 l0 t0 lines">Andreea Aanei</td>
+<td class="l m b1 r1 l0 t0 lines">F</td>
+<td class="l m b1 r1 l0 t0 lines">22</td>
+<td class="l m b1 r1 l0 t0 lines">170</td>
+<td class="l m b1 r1 l0 t0 lines">125</td>
+<td class="l m b1 r1 l0 t0 lines">Romania</td>
+<td class="l m b1 r1 l0 t0 lines">ROU</td>
+<td class="l m b1 r1 l0 t0 lines">2016 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">2016</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Rio de Janeiro</td>
+<td class="l m b1 r1 l0 t0 lines">Weightlifting</td>
+<td class="l m b1 r1 l0 t0 lines">Weightlifting Women's Super-Heavyweight</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">30</td>
+<td class="l m b1 r1 l0 t0 lines">Pepijn Aardewijn</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">26</td>
+<td class="l m b1 r1 l0 t0 lines">189</td>
+<td class="l m b1 r1 l0 t0 lines">72</td>
+<td class="l m b1 r1 l0 t0 lines">Netherlands</td>
+<td class="l m b1 r1 l0 t0 lines">NED</td>
+<td class="l m b1 r1 l0 t0 lines">1996 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">1996</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Atlanta</td>
+<td class="l m b1 r1 l0 t0 lines">Rowing</td>
+<td class="l m b1 r1 l0 t0 lines">Rowing Men's Lightweight Double Sculls</td>
+<td class="l m b1 r1 l0 t0 lines">Silver</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">30</td>
+<td class="l m b1 r1 l0 t0 lines">Pepijn Aardewijn</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">30</td>
+<td class="l m b1 r1 l0 t0 lines">189</td>
+<td class="l m b1 r1 l0 t0 lines">72</td>
+<td class="l m b1 r1 l0 t0 lines">Netherlands</td>
+<td class="l m b1 r1 l0 t0 lines">NED</td>
+<td class="l m b1 r1 l0 t0 lines">2000 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">2000</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Sydney</td>
+<td class="l m b1 r1 l0 t0 lines">Rowing</td>
+<td class="l m b1 r1 l0 t0 lines">Rowing Men's Lightweight Double Sculls</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">1</td>
+<td class="l m b1 r1 l0 t0 lines">Evald rma (rman-)</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">24</td>
+<td class="l m b1 r1 l0 t0 lines">174</td>
+<td class="l m b1 r1 l0 t0 lines">70</td>
+<td class="l m b1 r1 l0 t0 lines">Estonia</td>
+<td class="l m b1 r1 l0 t0 lines">EST</td>
+<td class="l m b1 r1 l0 t0 lines">1936 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">1936</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Berlin</td>
+<td class="l m b1 r1 l0 t0 lines">Athletics</td>
+<td class="l m b1 r1 l0 t0 lines">Athletics Men's Pole Vault</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">39</td>
+<td class="l m b1 r1 l0 t0 lines">Lars Thorlaksn Aas</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">33</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+<td class="l m b1 r1 l0 t0 lines">Norway</td>
+<td class="l m b1 r1 l0 t0 lines">NOR</td>
+<td class="l m b1 r1 l0 t0 lines">1912 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">1912</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Stockholm</td>
+<td class="l m b1 r1 l0 t0 lines">Fencing</td>
+<td class="l m b1 r1 l0 t0 lines">"Fencing Men's Foil, Individual"</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">39</td>
+<td class="l m b1 r1 l0 t0 lines">Lars Thorlaksn Aas</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">33</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+<td class="l m b1 r1 l0 t0 lines">Norway</td>
+<td class="l m b1 r1 l0 t0 lines">NOR</td>
+<td class="l m b1 r1 l0 t0 lines">1912 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">1912</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Stockholm</td>
+<td class="l m b1 r1 l0 t0 lines">Fencing</td>
+<td class="l m b1 r1 l0 t0 lines">"Fencing Men's epee, Individual"</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">39</td>
+<td class="l m b1 r1 l0 t0 lines">Lars Thorlaksn Aas</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">33</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+<td class="l m b1 r1 l0 t0 lines">Norway</td>
+<td class="l m b1 r1 l0 t0 lines">NOR</td>
+<td class="l m b1 r1 l0 t0 lines">1912 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">1912</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Stockholm</td>
+<td class="l m b1 r1 l0 t0 lines">Fencing</td>
+<td class="l m b1 r1 l0 t0 lines">"Fencing Men's epee, Team"</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">44</td>
+<td class="l m b1 r1 l0 t0 lines">Meelis Aasme</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">25</td>
+<td class="l m b1 r1 l0 t0 lines">182</td>
+<td class="l m b1 r1 l0 t0 lines">73</td>
+<td class="l m b1 r1 l0 t0 lines">Estonia</td>
+<td class="l m b1 r1 l0 t0 lines">EST</td>
+<td class="l m b1 r1 l0 t0 lines">1998 Winter</td>
+<td class="l m b1 r1 l0 t0 lines">1998</td>
+<td class="l m b1 r1 l0 t0 lines">Winter</td>
+<td class="l m b1 r1 l0 t0 lines">Nagano</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing Men's 30 kilometres</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">44</td>
+<td class="l m b1 r1 l0 t0 lines">Meelis Aasme</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">25</td>
+<td class="l m b1 r1 l0 t0 lines">182</td>
+<td class="l m b1 r1 l0 t0 lines">73</td>
+<td class="l m b1 r1 l0 t0 lines">Estonia</td>
+<td class="l m b1 r1 l0 t0 lines">EST</td>
+<td class="l m b1 r1 l0 t0 lines">1998 Winter</td>
+<td class="l m b1 r1 l0 t0 lines">1998</td>
+<td class="l m b1 r1 l0 t0 lines">Winter</td>
+<td class="l m b1 r1 l0 t0 lines">Nagano</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing Men's 50 kilometres</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">44</td>
+<td class="l m b1 r1 l0 t0 lines">Meelis Aasme</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">29</td>
+<td class="l m b1 r1 l0 t0 lines">182</td>
+<td class="l m b1 r1 l0 t0 lines">73</td>
+<td class="l m b1 r1 l0 t0 lines">Estonia</td>
+<td class="l m b1 r1 l0 t0 lines">EST</td>
+<td class="l m b1 r1 l0 t0 lines">2002 Winter</td>
+<td class="l m b1 r1 l0 t0 lines">2002</td>
+<td class="l m b1 r1 l0 t0 lines">Winter</td>
+<td class="l m b1 r1 l0 t0 lines">Salt Lake City</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing Men's 15 kilometres</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">44</td>
+<td class="l m b1 r1 l0 t0 lines">Meelis Aasme</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">29</td>
+<td class="l m b1 r1 l0 t0 lines">182</td>
+<td class="l m b1 r1 l0 t0 lines">73</td>
+<td class="l m b1 r1 l0 t0 lines">Estonia</td>
+<td class="l m b1 r1 l0 t0 lines">EST</td>
+<td class="l m b1 r1 l0 t0 lines">2002 Winter</td>
+<td class="l m b1 r1 l0 t0 lines">2002</td>
+<td class="l m b1 r1 l0 t0 lines">Winter</td>
+<td class="l m b1 r1 l0 t0 lines">Salt Lake City</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing Men's 50 kilometres</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">44</td>
+<td class="l m b1 r1 l0 t0 lines">Meelis Aasme</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">29</td>
+<td class="l m b1 r1 l0 t0 lines">182</td>
+<td class="l m b1 r1 l0 t0 lines">73</td>
+<td class="l m b1 r1 l0 t0 lines">Estonia</td>
+<td class="l m b1 r1 l0 t0 lines">EST</td>
+<td class="l m b1 r1 l0 t0 lines">2002 Winter</td>
+<td class="l m b1 r1 l0 t0 lines">2002</td>
+<td class="l m b1 r1 l0 t0 lines">Winter</td>
+<td class="l m b1 r1 l0 t0 lines">Salt Lake City</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing</td>
+<td class="l m b1 r1 l0 t0 lines">Cross Country Skiing Men's 4 x 10 kilometres Relay</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">49</td>
+<td class="l m b1 r1 l0 t0 lines">Moonika Aava</td>
+<td class="l m b1 r1 l0 t0 lines">F</td>
+<td class="l m b1 r1 l0 t0 lines">24</td>
+<td class="l m b1 r1 l0 t0 lines">168</td>
+<td class="l m b1 r1 l0 t0 lines">65</td>
+<td class="l m b1 r1 l0 t0 lines">Estonia</td>
+<td class="l m b1 r1 l0 t0 lines">EST</td>
+<td class="l m b1 r1 l0 t0 lines">2004 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">2004</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Athina</td>
+<td class="l m b1 r1 l0 t0 lines">Athletics</td>
+<td class="l m b1 r1 l0 t0 lines">Athletics Women's Javelin Throw</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">49</td>
+<td class="l m b1 r1 l0 t0 lines">Moonika Aava</td>
+<td class="l m b1 r1 l0 t0 lines">F</td>
+<td class="l m b1 r1 l0 t0 lines">28</td>
+<td class="l m b1 r1 l0 t0 lines">168</td>
+<td class="l m b1 r1 l0 t0 lines">65</td>
+<td class="l m b1 r1 l0 t0 lines">Estonia</td>
+<td class="l m b1 r1 l0 t0 lines">EST</td>
+<td class="l m b1 r1 l0 t0 lines">2008 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">2008</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Beijing</td>
+<td class="l m b1 r1 l0 t0 lines">Athletics</td>
+<td class="l m b1 r1 l0 t0 lines">Athletics Women's Javelin Throw</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">57</td>
+<td class="l m b1 r1 l0 t0 lines">Borislav Abadzhiev</td>
+<td class="l m b1 r1 l0 t0 lines">M</td>
+<td class="l m b1 r1 l0 t0 lines">24</td>
+<td class="l m b1 r1 l0 t0 lines">176</td>
+<td class="l m b1 r1 l0 t0 lines">66</td>
+<td class="l m b1 r1 l0 t0 lines">Bulgaria</td>
+<td class="l m b1 r1 l0 t0 lines">BUL</td>
+<td class="l m b1 r1 l0 t0 lines">1988 Summer</td>
+<td class="l m b1 r1 l0 t0 lines">1988</td>
+<td class="l m b1 r1 l0 t0 lines">Summer</td>
+<td class="l m b1 r1 l0 t0 lines">Seoul</td>
+<td class="l m b1 r1 l0 t0 lines">Boxing</td>
+<td class="l m b1 r1 l0 t0 lines">Boxing Men's Light-Welterweight</td>
+<td class="l m b1 r1 l0 t0 lines">NA</td>
+</tr>
+</table></div></figure>
+</div>
+<ol class="lower-alpha">
+<li id="li-91"><div class="para" id="p-158">Indicate the variable type of each column.</div></li>
+<li id="li-92"><div class="para logical" id="p-159">
+<div class="para">Some of the rows have missing data indicated with NA in the data cell. Propose what you would do to deal with the missing (and duplicate) data in each of the following scenarios.</div>
+<ol class="lower-roman">
+<li id="li-93"><div class="para" id="p-160">You want to compute the average height of athletes of different sports.</div></li>
+<li id="li-94"><div class="para" id="p-161">You want to determine which countries earn the most gold, silver, and bronze medals.</div></li>
+</ol>
+</div></li>
+</ol>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="section-3-1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-3-3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical"><ul class="disc">
+<li><div class="para">To <dfn class="terminology">select</dfn> a particular column from our data set we would write:<code class="code-inline tex2jax_ignore">df[ColumnName]</code>. If we have multiple columns, we need to give write a list of all the column names we need (or splice from the <code class="code-inline tex2jax_ignore">df.columns</code> list). There are other ways to do this, but this is one of the more direct ways. For the titanic dataset, select the <code class="code-inline tex2jax_ignore">survived</code>, <code class="code-inline tex2jax_ignore">age</code>, and <code class="code-inline tex2jax_ignore">boat</code> columns.</div></li>
+<li><div class="para">To <dfn class="terminology">filter</dfn> particular rows based on a logical expression (think ==, &gt;, .isin(), etc) we would write:<code class="code-inline tex2jax_ignore">df[df[ColumnName]=="Pugs"]</code> If we had multiple filters or wanted to do filtering at the same time as selecting we would need to write:<code class="code-inline tex2jax_ignore">df.loc[(FILTER 1) &amp; (FILTER 2), [ColumnName1, ColumnName2]]</code> where the `&amp;` acts like `and` for our logical expressions. For the titanic dataset, select the <code class="code-inline tex2jax_ignore">survived</code>, <code class="code-inline tex2jax_ignore">age</code>, and <code class="code-inline tex2jax_ignore">boat</code> columns and filter the dataset so we only have <code class="code-inline tex2jax_ignore">female</code> passengers.</div></li>
+<li><div class="para">To make a new column based on previous columns (<dfn class="terminology">mutate</dfn>) we will do an assignment for our new columns as follows:<code class="code-inline tex2jax_ignore">df[NewColumn]=Stuff with previous columns</code> How we get the stuff with previous columns is always interesting! For the Titanic dataset, create a new column that is just the cabin letter for the passengers who have a cabin entry.</div></li>
+<li><div class="para">To <dfn class="terminology">sort</dfn> by particular column(s) we would write: <code class="code-inline tex2jax_ignore">df.sort_values(by=Columns, ascending=True)</code> It will automatically go from smallest to biggest, to go the other way we will need to change `ascending` to `False`. For the Titanic dataset, find who the youngest person was on the ship and who was the oldest.</div></li>
+<li><div class="para">
+<dfn class="terminology">Grouping</dfn> breaks our dataset into many little pieces so we can study it by subgroup. We would write: <code class="code-inline tex2jax_ignore">df.groupby([Column1, Column2])</code> Grouping is almost always used with aggregate which applies a function over a column.</div></li>
+<li><div class="para">
+<dfn class="terminology">Aggregate</dfn> applies a function over an entire column (or portion of column if grouped first). We would write: <code class="code-inline tex2jax_ignore"> df.agg(['sum', 'min', 'max', 'mean'])</code> or <code class="code-inline tex2jax_ignore">df.agg({'Column1':['sum', 'mean'], 'Column2':['min', 'max']})</code> You can also pass it functions you wrote yourself! For the Titanic dataset, find the average age of people who survived and the average age of people who did not survive. How does compare to the average age of female/male passengers?</div></li>
+</ul></div>
+<span class="incontext"><a href="section-3-4.html#p-173" class="internal">in-context</a></span>
+</body>
+</html>

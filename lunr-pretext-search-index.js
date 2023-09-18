@@ -109,27 +109,27 @@ var ptx_lunr_docs = [
   "body": "Pick a topic from class or another of your choosing relating to data science and ethics. Read an article or a blog post about your issue (cite source in some easy to find way). Discuss in 1-2 pages (typed) the new technology and potential (or actual) harms to humans, fairness, and justice. Some example topics include:  College rankings  Credit Scores  Workplace scheduling technology\/monitoring truck drivers  Workplace personality tests  Home loans  "
 },
 {
-  "id": "section-1-1",
+  "id": "section-3-1",
   "level": "1",
-  "url": "section-1-1.html",
+  "url": "section-3-1.html",
   "type": "Section",
   "number": "3.1",
   "title": "Data Verbs",
-  "body": " Data Verbs  Inspired by workshop presentation by Todd Iverson and Chris Malone, Winona State University, for Project NExT at MathFest 2021.  Brief Introduction to Data Types  All of our data is classfied into different categories which helps computers process our instructions to it. Essentially, these categories make it easier for it to tell us what actions we can and cannot do to the data values. For example, if we had a column storing the height of basketball players it would be incoherent to try to make these numbers upper case where as making the names upper case is a task we can carry out.  The main data types are as follows:   Boolean: only two possible values, True or False.  Integers: whole numbers with no decimal places.  Numerical\/Float: All other numbers, usually with decimal places.  Character: a single letter or special symbol, think one key stroke from the keyboard.  String: A serise of characters including spaces.    Data Types  matching data types   Match each column in the data table below to its data type    Example Data Table    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West        A  Integer    B  Character    C  Boolean    D  Float    E  String     Each data type has certain functions that we can do to them. Here is a non-exhaustive list of the functions that we can do to data types.   Functions for Data Table    Boolean  Integer  Float  Character  String    Equals? Sum Sum Uppercase Upper\/lower case    AND Count Count Lowercase Join\/split    OR Abs Abs Equals Count substring    NOT Mult. Mult.\/Div. Find    Sum Greater\/less than Greater\/less than Strip    Count Mod div. Equals\/ Length    Average Equals? Most math     As we get further into working with data, we will get a better knowldge of how to implement these functions. When you start using a computer with data science, you might run into a type error which means that your data type and the function you are trying to use are incompatable. Having a mental chart like the one above can be helpful when trying to resolve this type of error.   First Data Verbs  Data verbs are actions we can do to a data set. We will be collection and using these throughout this class.  Our first data verb is Select where we choose a group of columns to be working with. Below is the result when we Select A,B,C        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C    5 a True    3 a True    4 b False    2 b True    3 c False    5 c False    4 c True      Our next data verb is Filter where we choose a some rows that meet a condition. Below is the result when we Filter by B== a        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West      Our next data verb is Mutate where we create a new column based on another. Below is the result when we Mutate F=A+2        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E  F    5 a True 46.7 North 7    3 a True 35.6 West 5    4 b False 10.8 East 6    2 b True 124.6 North 4    3 c False 4.8 South 5    5 c False 4.7 East 7    4 c True 7.4 West 6      Our next data verb is Sort where we order rows based on their entries in a column(s). Below is the result when we Sort by D, descending        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E    2 b True 124.6 North    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    4 c True 7.4 West    3 c False 4.8 South    5 c False 4.7 East        Original data table for following exercises    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West     Test yourself! multi data verbs Determine which data verb was applied get the following result. Select all that apply.    C  D  E    True 46.7 NORTH    True 35.6 WEST    True 124.6 NORTH    True 7.4 WEST        Select    Yes, columns C,D, and E were selected.      Filter    Yes, this data set was filtered by C==True or filtered by E==North or West.      Mutate    Yes, notice how column E is now in upper case.      Sort    Our rows have not changed relative order.     Test yourself! multi data verbs Determine which data verb was applied get the following result. Select all that apply.    E  F(from A)  G (from B)    East 8 25    East 10 11        Select    Yes, columns E, F, and G were selected.      Filter    Yes, this data set was filtered by E==East.      Mutate    Yes, both columns F and G are made from previous columns (A and B respectively). Can you determine the operation?      Sort    Our rows have not changed relative order.       More Data Verbs  We are now entering more complex data verb land, but these are some of the most useful!  Our next data verb is Group where we split our data into smaller portions according to a key value in a column. Below is the result when we Group by B        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West        4 b False 10.8 East    2 b True 124.6 North        3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West      On its own grouping is not useful, but when paired with our next data verb it is really powerful!  Our next data verb is Aggregate where we apply a function over all rows in a column. Below is the result when we Aggregate sum        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D    26 186 4 234.6      Our next data verbs are about merging datasets together. This is important to know because sometimes our data is in different places and we want to bring it together. There are three main ways to merge datasets:   Union - use when columns are the same, glues rows of one dataset to the end of another  Intersect - only takes rows that are the same between the two datasets  Difference - only takes rows that are in one dataset but not the other    Brainstrom situations where you would want to use each of these data table mergers.    Setting up verb sentences  Now that we have our data verbs, we can start using them to talk about how we would like to start answering our data science questions! Below is a sample of a data table about places that sell burritos. First, what data type is each column?    Location BurritoType Date Neighborhood Address Yelp Google Chips Cost  Taco Stand California 2\/12\/2016 La Jolla 621 Pearl St 4.5 4.4 7.49  Lola's 7 Up Market and Deli Shredded beef 2\/29\/2016 Carlsbad 3292 Roosevelt St 4.5 4.9 6  Cancun Mexican and Seafood California 3\/20\/2016 Encinitas 1766 N Coast Hwy 4.5 4.1 x 6.99  Mikes Taco Club California 3\/23\/2016 Ocean Beach 5060 Newport Ave 4.5 4.9 8.59  La Perla Cocina Addiction 3\/30\/2016 Pacific Beach 745 Emerald St 4.5 4.7 7.99  California Burritos California Everything 4\/15\/2016 Linda Vista 7754 Starling Dr 4.5 4.4 x 6.25  Mi Asador Mexican and Seafood California 4\/27\/2016 Oceanside 4750 Oceanside Blvd 4.5 4.4 x 6.89   If our question is Which location in La Jolla has the highest rated burrito? we can answer this using our data verbs. First, we would want to Filter the neighborhood column so it only shows us places in La Jolla. Then we would want to Mutate creating a new column which is the combination of the two ratings (either by summing them or finding the average). Finally we would Sort by this combined rating column in descending order (leaving the biggest entry as the first one). Then the first row would give us our desired location!  Data Verb Sentences For the questions below, determine which data verbs you would need to achieve this task! Sometimes it can be helpful to physically sketch what the final table would look like and then use the verbs to get to your desired table.  Which burrito type is the highest rated?  Which burrito type costs the most?  Does coming with chips increase ratings?    Data verbs are a helpful framework to help get us thinking like a data scientists when we start using technology. What is nice about this framework is you can apply it to any programming language that you use- you just need to learn the commands for your data verbs!   "
+  "body": " Data Verbs  Inspired by workshop presentation by Todd Iverson and Chris Malone, Winona State University, for Project NExT at MathFest 2021.  Brief Introduction to Data Types  All of our data is classified into different categories which helps computers process our instructions to it. Essentially, these categories make it easier for it to tell us what actions we can and cannot do to the data values. For example, if we had a column storing the height of basketball players it would be incoherent to try to make these numbers upper case where as making the names upper case is a task we can carry out.  The main data types are as follows:   Boolean: only two possible values, True or False.  Integers: whole numbers with no decimal places.  Numerical\/Float: All other numbers, usually with decimal places.  Character: a single letter or special symbol, think one key stroke from the keyboard.  String: A series of characters including spaces.    Data Types  matching data types   Match each column in the data table below to its data type  Example Data Table    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West          A  Integer    B  Character    C  Boolean    D  Float    E  String     Each data type has certain functions that we can do to them. Here is a non-exhaustive list of the functions that we can do to data types.   Functions for Data Table    Boolean  Integer  Float  Character  String    Equals? Sum Sum Uppercase Upper\/lower case    AND Count Count Lowercase Join\/split    OR Abs Abs Equals Count substring    NOT Mult. Mult.\/Div. Find    Sum Greater\/less than Greater\/less than Strip    Count Mod div. Equals\/ Length    Average Equals? Most math     As we get further into working with data, we will get a better knowledge of how to implement these functions. When you start using a computer with data science, you might run into a type error which means that your data type and the function you are trying to use are incompatible. Having a mental chart like the one above can be helpful when trying to resolve this type of error.   First Data Verbs  Data verbs are actions we can do to a data set. We will be collection and using these throughout this class.  Our first data verb is Select where we choose a group of columns to be working with. Below is the result when we Select A,B,C        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C    5 a True    3 a True    4 b False    2 b True    3 c False    5 c False    4 c True      Our next data verb is Filter where we choose a some rows that meet a condition. Below is the result when we Filter by B== a        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West      Our next data verb is Mutate where we create a new column based on another. Below is the result when we Mutate F=A+2        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E  F    5 a True 46.7 North 7    3 a True 35.6 West 5    4 b False 10.8 East 6    2 b True 124.6 North 4    3 c False 4.8 South 5    5 c False 4.7 East 7    4 c True 7.4 West 6      Our next data verb is Sort where we order rows based on their entries in a column(s). Below is the result when we Sort by D, descending        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E    2 b True 124.6 North    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    4 c True 7.4 West    3 c False 4.8 South    5 c False 4.7 East        Original data table for following exercises    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West     Test yourself! multi data verbs Determine which data verb was applied get the following result. Select all that apply.    C  D  E    True 46.7 NORTH    True 35.6 WEST    True 124.6 NORTH    True 7.4 WEST        Select    Yes, columns C,D, and E were selected.      Filter    Yes, this data set was filtered by C==True or filtered by E==North or West.      Mutate    Yes, notice how column E is now in upper case.      Sort    Our rows have not changed relative order.     Test yourself! multi data verbs Determine which data verb was applied get the following result. Select all that apply.    E  F(from A)  G (from B)    East 8 25    East 10 11        Select    Yes, columns E, F, and G were selected.      Filter    Yes, this data set was filtered by E==East.      Mutate    Yes, both columns F and G are made from previous columns (A and B respectively). Can you determine the operation?      Sort    Our rows have not changed relative order.       More Data Verbs  We are now entering more complex data verb land, but these are some of the most useful!  Our next data verb is Group where we split our data into smaller portions according to a key value in a column. Below is the result when we Group by B        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West        A  B  C  D  E    4 b False 10.8 East    2 b True 124.6 North        A  B  C  D  E    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West      On its own grouping is not useful, but when paired with our next data verb it is really powerful!  Our next data verb is Aggregate where we apply a function over all rows in a column. Below is the result when we Aggregate sum        A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West         A  B  C  D    26 186 4 234.6      Our next data verbs are about merging datasets together. This is important to know because sometimes our data is in different places and we want to bring it together. There are three main ways to merge datasets:   Union - use when columns are the same, glues rows of one dataset to the end of another  Intersect - only takes rows that are the same between the two datasets  Difference - only takes rows that are in one dataset but not the other    Brainstrom situations where you would want to use each of these data table mergers.    Setting up verb sentences  Now that we have our data verbs, we can start using them to talk about how we would like to start answering our data science questions! Below is a sample of a data table about places that sell burritos. First, what data type is each column?    Location BurritoType Date Neighborhood Address Yelp Google Chips Cost  Taco Stand California 2\/12\/2016 La Jolla 621 Pearl St 4.5 4.4 7.49  Lola's 7 Up Market and Deli Shredded beef 2\/29\/2016 Carlsbad 3292 Roosevelt St 4.5 4.9 6  Cancun Mexican and Seafood California 3\/20\/2016 Encinitas 1766 N Coast Hwy 4.5 4.1 x 6.99  Mikes Taco Club California 3\/23\/2016 Ocean Beach 5060 Newport Ave 4.5 4.9 8.59  La Perla Cocina Addiction 3\/30\/2016 Pacific Beach 745 Emerald St 4.5 4.7 7.99  California Burritos California Everything 4\/15\/2016 Linda Vista 7754 Starling Dr 4.5 4.4 x 6.25  Mi Asador Mexican and Seafood California 4\/27\/2016 Oceanside 4750 Oceanside Blvd 4.5 4.4 x 6.89   If our question is Which location in La Jolla has the highest rated burrito? we can answer this using our data verbs. First, we would want to Filter the neighborhood column so it only shows us places in La Jolla. Then we would want to Mutate creating a new column which is the combination of the two ratings (either by summing them or finding the average). Finally we would Sort by this combined rating column in descending order (leaving the biggest entry as the first one). Then the first row would give us our desired location!  Data Verb Sentences For the questions below, determine which data verbs you would need to achieve this task! Sometimes it can be helpful to physically sketch what the final table would look like and then use the verbs to get to your desired table.  Which burrito type is the highest rated?  Which burrito type costs the most?  Does coming with chips increase ratings?    Data verbs are a helpful framework to help get us thinking like a data scientists when we start using technology. What is nice about this framework is you can apply it to any programming language that you use- you just need to learn the commands for your data verbs!    Below is a list of our data verbs. Categorize the verbs into groups depending if they happen to the columns or rows.  Select  Filter  Mutate  Sort  Group  Aggregate   What is a good system to help use our verbs to answer our data questions?  What do you predict some challenges could be when using data verbs?   "
 },
 {
   "id": "matching-data-types",
   "level": "2",
-  "url": "section-1-1.html#matching-data-types",
+  "url": "section-3-1.html#matching-data-types",
   "type": "Activity",
   "number": "3.1.1",
   "title": "Data Types.",
-  "body": " Data Types  matching data types   Match each column in the data table below to its data type    Example Data Table    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West        A  Integer    B  Character    C  Boolean    D  Float    E  String    "
+  "body": " Data Types  matching data types   Match each column in the data table below to its data type  Example Data Table    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West          A  Integer    B  Character    C  Boolean    D  Float    E  String    "
 },
 {
   "id": "table-4",
   "level": "2",
-  "url": "section-1-1.html#table-4",
+  "url": "section-3-1.html#table-4",
   "type": "Table",
   "number": "3.1.2",
   "title": "Functions for Data Table",
@@ -138,7 +138,7 @@ var ptx_lunr_docs = [
 {
   "id": "p-87",
   "level": "2",
-  "url": "section-1-1.html#p-87",
+  "url": "section-3-1.html#p-87",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -147,7 +147,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-5",
   "level": "2",
-  "url": "section-1-1.html#table-5",
+  "url": "section-3-1.html#table-5",
   "type": "Table",
   "number": "3.1.3",
   "title": "",
@@ -156,7 +156,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-6",
   "level": "2",
-  "url": "section-1-1.html#table-6",
+  "url": "section-3-1.html#table-6",
   "type": "Table",
   "number": "3.1.4",
   "title": "",
@@ -165,7 +165,7 @@ var ptx_lunr_docs = [
 {
   "id": "p-90",
   "level": "2",
-  "url": "section-1-1.html#p-90",
+  "url": "section-3-1.html#p-90",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -174,7 +174,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-7",
   "level": "2",
-  "url": "section-1-1.html#table-7",
+  "url": "section-3-1.html#table-7",
   "type": "Table",
   "number": "3.1.5",
   "title": "",
@@ -183,7 +183,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-8",
   "level": "2",
-  "url": "section-1-1.html#table-8",
+  "url": "section-3-1.html#table-8",
   "type": "Table",
   "number": "3.1.6",
   "title": "",
@@ -192,7 +192,7 @@ var ptx_lunr_docs = [
 {
   "id": "p-93",
   "level": "2",
-  "url": "section-1-1.html#p-93",
+  "url": "section-3-1.html#p-93",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -201,7 +201,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-9",
   "level": "2",
-  "url": "section-1-1.html#table-9",
+  "url": "section-3-1.html#table-9",
   "type": "Table",
   "number": "3.1.7",
   "title": "",
@@ -210,7 +210,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-10",
   "level": "2",
-  "url": "section-1-1.html#table-10",
+  "url": "section-3-1.html#table-10",
   "type": "Table",
   "number": "3.1.8",
   "title": "",
@@ -219,7 +219,7 @@ var ptx_lunr_docs = [
 {
   "id": "p-96",
   "level": "2",
-  "url": "section-1-1.html#p-96",
+  "url": "section-3-1.html#p-96",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -228,7 +228,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-11",
   "level": "2",
-  "url": "section-1-1.html#table-11",
+  "url": "section-3-1.html#table-11",
   "type": "Table",
   "number": "3.1.9",
   "title": "",
@@ -237,7 +237,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-12",
   "level": "2",
-  "url": "section-1-1.html#table-12",
+  "url": "section-3-1.html#table-12",
   "type": "Table",
   "number": "3.1.10",
   "title": "",
@@ -246,7 +246,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-13",
   "level": "2",
-  "url": "section-1-1.html#table-13",
+  "url": "section-3-1.html#table-13",
   "type": "Table",
   "number": "3.1.11",
   "title": "Original data table for following exercises",
@@ -255,7 +255,7 @@ var ptx_lunr_docs = [
 {
   "id": "data-verb-mult-one",
   "level": "2",
-  "url": "section-1-1.html#data-verb-mult-one",
+  "url": "section-3-1.html#data-verb-mult-one",
   "type": "Exercise",
   "number": "3.1.2.1",
   "title": "Test yourself!",
@@ -264,7 +264,7 @@ var ptx_lunr_docs = [
 {
   "id": "data-verb-mult-two",
   "level": "2",
-  "url": "section-1-1.html#data-verb-mult-two",
+  "url": "section-3-1.html#data-verb-mult-two",
   "type": "Exercise",
   "number": "3.1.2.2",
   "title": "Test yourself!",
@@ -273,7 +273,7 @@ var ptx_lunr_docs = [
 {
   "id": "p-119",
   "level": "2",
-  "url": "section-1-1.html#p-119",
+  "url": "section-3-1.html#p-119",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -282,7 +282,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-16",
   "level": "2",
-  "url": "section-1-1.html#table-16",
+  "url": "section-3-1.html#table-16",
   "type": "Table",
   "number": "3.1.14",
   "title": "",
@@ -291,16 +291,16 @@ var ptx_lunr_docs = [
 {
   "id": "table-17",
   "level": "2",
-  "url": "section-1-1.html#table-17",
+  "url": "section-3-1.html#table-17",
   "type": "Table",
   "number": "3.1.15",
   "title": "",
-  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West        4 b False 10.8 East    2 b True 124.6 North        3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
+  "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West        A  B  C  D  E    4 b False 10.8 East    2 b True 124.6 North        A  B  C  D  E    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
 },
 {
   "id": "p-123",
   "level": "2",
-  "url": "section-1-1.html#p-123",
+  "url": "section-3-1.html#p-123",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -309,7 +309,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-18",
   "level": "2",
-  "url": "section-1-1.html#table-18",
+  "url": "section-3-1.html#table-18",
   "type": "Table",
   "number": "3.1.16",
   "title": "",
@@ -318,7 +318,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-19",
   "level": "2",
-  "url": "section-1-1.html#table-19",
+  "url": "section-3-1.html#table-19",
   "type": "Table",
   "number": "3.1.17",
   "title": "",
@@ -327,7 +327,7 @@ var ptx_lunr_docs = [
 {
   "id": "p-127",
   "level": "2",
-  "url": "section-1-1.html#p-127",
+  "url": "section-3-1.html#p-127",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -336,7 +336,7 @@ var ptx_lunr_docs = [
 {
   "id": "p-128",
   "level": "2",
-  "url": "section-1-1.html#p-128",
+  "url": "section-3-1.html#p-128",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -345,7 +345,7 @@ var ptx_lunr_docs = [
 {
   "id": "p-129",
   "level": "2",
-  "url": "section-1-1.html#p-129",
+  "url": "section-3-1.html#p-129",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -354,7 +354,7 @@ var ptx_lunr_docs = [
 {
   "id": "activity-2",
   "level": "2",
-  "url": "section-1-1.html#activity-2",
+  "url": "section-3-1.html#activity-2",
   "type": "Activity",
   "number": "3.1.2",
   "title": "",
@@ -363,7 +363,7 @@ var ptx_lunr_docs = [
 {
   "id": "table-20",
   "level": "2",
-  "url": "section-1-1.html#table-20",
+  "url": "section-3-1.html#table-20",
   "type": "Table",
   "number": "3.1.18",
   "title": "",
@@ -372,7 +372,7 @@ var ptx_lunr_docs = [
 {
   "id": "p-133",
   "level": "2",
-  "url": "section-1-1.html#p-133",
+  "url": "section-3-1.html#p-133",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -381,11 +381,137 @@ var ptx_lunr_docs = [
 {
   "id": "activity-3",
   "level": "2",
-  "url": "section-1-1.html#activity-3",
+  "url": "section-3-1.html#activity-3",
   "type": "Activity",
   "number": "3.1.3",
   "title": "Data Verb Sentences.",
   "body": "Data Verb Sentences For the questions below, determine which data verbs you would need to achieve this task! Sometimes it can be helpful to physically sketch what the final table would look like and then use the verbs to get to your desired table.  Which burrito type is the highest rated?  Which burrito type costs the most?  Does coming with chips increase ratings?   "
+},
+{
+  "id": "exercise-6",
+  "level": "2",
+  "url": "section-3-1.html#exercise-6",
+  "type": "Exercise",
+  "number": "3.1.5.1",
+  "title": "",
+  "body": "Below is a list of our data verbs. Categorize the verbs into groups depending if they happen to the columns or rows.  Select  Filter  Mutate  Sort  Group  Aggregate  "
+},
+{
+  "id": "exercise-7",
+  "level": "2",
+  "url": "section-3-1.html#exercise-7",
+  "type": "Exercise",
+  "number": "3.1.5.2",
+  "title": "",
+  "body": "What is a good system to help use our verbs to answer our data questions? "
+},
+{
+  "id": "exercise-8",
+  "level": "2",
+  "url": "section-3-1.html#exercise-8",
+  "type": "Exercise",
+  "number": "3.1.5.3",
+  "title": "",
+  "body": "What do you predict some challenges could be when using data verbs? "
+},
+{
+  "id": "section-3-2",
+  "level": "1",
+  "url": "section-3-2.html",
+  "type": "Section",
+  "number": "3.2",
+  "title": "Cleaning Data",
+  "body": " Cleaning Data  Cleaning is where we use our data verbs in order to put our dataset in a format that is easier for future use. Usually we perform cleaning when:  Data is not in right format (think variable type)  Data is not in consistent format  Missing or blank values     Why would it be important for all data in a column to have the same variable type?  Having our data in the same format allows us to easily use our data verbs later on whether we are filtering, mutating, or performing aggregate functions. It ensures that the column contains perdictable values so we can easily give commands to the computer.   How can we handle missing values?  Our options come down to delete column, delete row, fill entry with value (zero, min\/max, average, random), or ignore. Which one we use depends on what the variable means.   Consider the data table below and list what needs to be cleaned in each column. How should we handle the missing values? How would you use your data verbs to carry out the cleaning?  Dirty Data Table    A  B  C  D  E    5 a True 46.7 North    three a True 35.6    4 b No 10.8    2 b y    3 c 0 4.8    5.0 c n 4.7 East    4      Especially around missing values, we need to be considerate before we handle them. Questions to ask ourselves about missing values before deciding:  Is a value missing because of human error or intentional? Having a missing weight value could be because someone forgot to enter it or maybe the object is outside the limits of the scale. This is an important distinction and we need to understand what our question is before moving forward with missing values.  How important is this piece of data? If we are not going to be using a column for our analysis, then we do not need to make a decision about dealing with a missing value.   Consider the dataset about Olympic Athletes with a sample shown below.    ID Name Sex Age Height Weight Team NOC Games Year Season City Sport Event Medal  3 Gunnar Nielsen Aaby M 24 NA NA Denmark DEN 1920 Summer 1920 Summer Antwerpen Football Football Men's Football NA  9 Antti Sami Aalto M 26 186 96 Finland FIN 2002 Winter 2002 Winter Salt Lake City Ice Hockey Ice Hockey Men's Ice Hockey NA  14 Pirjo Hannele Aalto (Mattila-) F 32 171 65 Finland FIN 1994 Winter 1994 Winter Lillehammer Biathlon Biathlon Women's 7.5 kilometres Sprint NA  18 Timo Antero Aaltonen M 31 189 130 Finland FIN 2000 Summer 2000 Summer Sydney Athletics Athletics Men's Shot Put NA  21 Ragnhild Margrethe Aamodt F 27 163 NA Norway NOR 2008 Summer 2008 Summer Beijing Handball Handball Women's Handball Gold  22 Andreea Aanei F 22 170 125 Romania ROU 2016 Summer 2016 Summer Rio de Janeiro Weightlifting Weightlifting Women's Super-Heavyweight NA  30 Pepijn Aardewijn M 26 189 72 Netherlands NED 1996 Summer 1996 Summer Atlanta Rowing Rowing Men's Lightweight Double Sculls Silver  30 Pepijn Aardewijn M 30 189 72 Netherlands NED 2000 Summer 2000 Summer Sydney Rowing Rowing Men's Lightweight Double Sculls NA 3 1 Evald rma (rman-) M 24 174 70 Estonia EST 1936 Summer 1936 Summer Berlin Athletics Athletics Men's Pole Vault NA  39 Lars Thorlaksn Aas M 33 NA NA Norway NOR 1912 Summer 1912 Summer Stockholm Fencing \"Fencing Men's Foil, Individual\" NA  39 Lars Thorlaksn Aas M 33 NA NA Norway NOR 1912 Summer 1912 Summer Stockholm Fencing \"Fencing Men's epee, Individual\" NA  39 Lars Thorlaksn Aas M 33 NA NA Norway NOR 1912 Summer 1912 Summer Stockholm Fencing \"Fencing Men's epee, Team\" NA  44 Meelis Aasme M 25 182 73 Estonia EST 1998 Winter 1998 Winter Nagano Cross Country Skiing Cross Country Skiing Men's 30 kilometres NA  44 Meelis Aasme M 25 182 73 Estonia EST 1998 Winter 1998 Winter Nagano Cross Country Skiing Cross Country Skiing Men's 50 kilometres NA  44 Meelis Aasme M 29 182 73 Estonia EST 2002 Winter 2002 Winter Salt Lake City Cross Country Skiing Cross Country Skiing Men's 15 kilometres NA  44 Meelis Aasme M 29 182 73 Estonia EST 2002 Winter 2002 Winter Salt Lake City Cross Country Skiing Cross Country Skiing Men's 50 kilometres NA  44 Meelis Aasme M 29 182 73 Estonia EST 2002 Winter 2002 Winter Salt Lake City Cross Country Skiing Cross Country Skiing Men's 4 x 10 kilometres Relay NA  49 Moonika Aava F 24 168 65 Estonia EST 2004 Summer 2004 Summer Athina Athletics Athletics Women's Javelin Throw NA  49 Moonika Aava F 28 168 65 Estonia EST 2008 Summer 2008 Summer Beijing Athletics Athletics Women's Javelin Throw NA  57 Borislav Abadzhiev M 24 176 66 Bulgaria BUL 1988 Summer 1988 Summer Seoul Boxing Boxing Men's Light-Welterweight NA     Indicate the variable type of each column.  Some of the rows have missing data indicated with NA in the data cell. Propose what you would do to deal with the missing (and duplicate) data in each of the following scenarios.  You want to compute the average height of athletes of different sports.  You want to determine which countries earn the most gold, silver, and bronze medals.       "
+},
+{
+  "id": "question-1",
+  "level": "2",
+  "url": "section-3-2.html#question-1",
+  "type": "Question",
+  "number": "3.2.1",
+  "title": "",
+  "body": " Why would it be important for all data in a column to have the same variable type? "
+},
+{
+  "id": "question-2",
+  "level": "2",
+  "url": "section-3-2.html#question-2",
+  "type": "Question",
+  "number": "3.2.2",
+  "title": "",
+  "body": " How can we handle missing values? "
+},
+{
+  "id": "activity-4",
+  "level": "2",
+  "url": "section-3-2.html#activity-4",
+  "type": "Activity",
+  "number": "3.2.1",
+  "title": "",
+  "body": " Consider the data table below and list what needs to be cleaned in each column. How should we handle the missing values? How would you use your data verbs to carry out the cleaning?  Dirty Data Table    A  B  C  D  E    5 a True 46.7 North    three a True 35.6    4 b No 10.8    2 b y    3 c 0 4.8    5.0 c n 4.7 East    4     "
+},
+{
+  "id": "exercise-9",
+  "level": "2",
+  "url": "section-3-2.html#exercise-9",
+  "type": "Exercise",
+  "number": "3.2.1",
+  "title": "",
+  "body": "Consider the dataset about Olympic Athletes with a sample shown below.    ID Name Sex Age Height Weight Team NOC Games Year Season City Sport Event Medal  3 Gunnar Nielsen Aaby M 24 NA NA Denmark DEN 1920 Summer 1920 Summer Antwerpen Football Football Men's Football NA  9 Antti Sami Aalto M 26 186 96 Finland FIN 2002 Winter 2002 Winter Salt Lake City Ice Hockey Ice Hockey Men's Ice Hockey NA  14 Pirjo Hannele Aalto (Mattila-) F 32 171 65 Finland FIN 1994 Winter 1994 Winter Lillehammer Biathlon Biathlon Women's 7.5 kilometres Sprint NA  18 Timo Antero Aaltonen M 31 189 130 Finland FIN 2000 Summer 2000 Summer Sydney Athletics Athletics Men's Shot Put NA  21 Ragnhild Margrethe Aamodt F 27 163 NA Norway NOR 2008 Summer 2008 Summer Beijing Handball Handball Women's Handball Gold  22 Andreea Aanei F 22 170 125 Romania ROU 2016 Summer 2016 Summer Rio de Janeiro Weightlifting Weightlifting Women's Super-Heavyweight NA  30 Pepijn Aardewijn M 26 189 72 Netherlands NED 1996 Summer 1996 Summer Atlanta Rowing Rowing Men's Lightweight Double Sculls Silver  30 Pepijn Aardewijn M 30 189 72 Netherlands NED 2000 Summer 2000 Summer Sydney Rowing Rowing Men's Lightweight Double Sculls NA 3 1 Evald rma (rman-) M 24 174 70 Estonia EST 1936 Summer 1936 Summer Berlin Athletics Athletics Men's Pole Vault NA  39 Lars Thorlaksn Aas M 33 NA NA Norway NOR 1912 Summer 1912 Summer Stockholm Fencing \"Fencing Men's Foil, Individual\" NA  39 Lars Thorlaksn Aas M 33 NA NA Norway NOR 1912 Summer 1912 Summer Stockholm Fencing \"Fencing Men's epee, Individual\" NA  39 Lars Thorlaksn Aas M 33 NA NA Norway NOR 1912 Summer 1912 Summer Stockholm Fencing \"Fencing Men's epee, Team\" NA  44 Meelis Aasme M 25 182 73 Estonia EST 1998 Winter 1998 Winter Nagano Cross Country Skiing Cross Country Skiing Men's 30 kilometres NA  44 Meelis Aasme M 25 182 73 Estonia EST 1998 Winter 1998 Winter Nagano Cross Country Skiing Cross Country Skiing Men's 50 kilometres NA  44 Meelis Aasme M 29 182 73 Estonia EST 2002 Winter 2002 Winter Salt Lake City Cross Country Skiing Cross Country Skiing Men's 15 kilometres NA  44 Meelis Aasme M 29 182 73 Estonia EST 2002 Winter 2002 Winter Salt Lake City Cross Country Skiing Cross Country Skiing Men's 50 kilometres NA  44 Meelis Aasme M 29 182 73 Estonia EST 2002 Winter 2002 Winter Salt Lake City Cross Country Skiing Cross Country Skiing Men's 4 x 10 kilometres Relay NA  49 Moonika Aava F 24 168 65 Estonia EST 2004 Summer 2004 Summer Athina Athletics Athletics Women's Javelin Throw NA  49 Moonika Aava F 28 168 65 Estonia EST 2008 Summer 2008 Summer Beijing Athletics Athletics Women's Javelin Throw NA  57 Borislav Abadzhiev M 24 176 66 Bulgaria BUL 1988 Summer 1988 Summer Seoul Boxing Boxing Men's Light-Welterweight NA     Indicate the variable type of each column.  Some of the rows have missing data indicated with NA in the data cell. Propose what you would do to deal with the missing (and duplicate) data in each of the following scenarios.  You want to compute the average height of athletes of different sports.  You want to determine which countries earn the most gold, silver, and bronze medals.     "
+},
+{
+  "id": "section-3-3",
+  "level": "1",
+  "url": "section-3-3.html",
+  "type": "Section",
+  "number": "3.3",
+  "title": "Data Verbs in Excel",
+  "body": " Data Verbs in Excel  Let's revisit our questions about the burrito data set. Let's answer this using Excel. We can do most of our data verbs if we turn our data set into a table. For group and aggregate we will need to use a pivot table. We can pull our variables into rows, columns, value - where we can choose our aggregate function. This is not the full extent of what a pivot table can do but is helpful for us for quick data analysis.  "
+},
+{
+  "id": "section-3-4",
+  "level": "1",
+  "url": "section-3-4.html",
+  "type": "Section",
+  "number": "3.4",
+  "title": "Data Verbs in Python",
+  "body": " Data Verbs in Python  A bit more programming  Today, we are going to get a bit more sophisticated in our programming skills. We will be focusing on functions and loops. A function is a recipe of directions that has inputs (ingredients) and an output (cake). Some functions are internally built into the object (like being able to measure flour) and others are external (like baking a cake).  Internal functions (sometimes called methods) happen after the variable name like so flour.measure() where flour is the variable name and measure() is a function that acts on flour . Sometimes things need to go into the parenthesis like what unit we can to measure in. flour.measure(\"cups\") This would not only measure the flour but do so in our desire unit, cups!  Other functions that are more like baking a cake have all their inputs in parenthesis. bake(flour, sugar, egg)  Packages are a special collection of functions that other people have written that we can use. To use a function from a package, we first have to import them into our notebook. Typical Packages:  Pandas - great for data, create a dataframe which has lots of neat features like our data verbs  NumPy - great for math like square roots. Has arrays which are nice for data manipulation  MatPlotLib.pyplots - MatLab-like plotting, basic visuals  Seaborn - more sophisticated plotting and making visuals  SkLearn - many algorithms and datasets for data analysis  When importing packages, you can either import the entire package or particular parts. All of these packages have documentation online (usually) with good examples of how to use their functions.  If a function comes from a package, then its name might include the package it came from. import pandas as pd pd.read_csv(FILE_NAME) Here read_csv() is a function from the pandas package which we named pd . Load the pandas package and read the Titanic Dataset using the following URL: URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\"  Loading Data  import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)    Data Verbs   To select a particular column from our data set we would write: df[ColumnName] . If we have multiple columns, we need to give write a list of all the column names we need (or splice from the df.columns list). There are other ways to do this, but this is one of the more direct ways. For the titanic dataset, select the survived , age , and boat columns.  To filter particular rows based on a logical expression (think ==, >, .isin(), etc) we would write: df[df[ColumnName]==\"Pugs\"] If we had multiple filters or wanted to do filtering at the same time as selecting we would need to write: df.loc[(FILTER 1) & (FILTER 2), [ColumnName1, ColumnName2]] where the `&` acts like `and` for our logical expressions. For the titanic dataset, select the survived , age , and boat columns and filter the dataset so we only have female passengers.  To make a new column based on previous columns ( mutate ) we will do an assignment for our new columns as follows: df[NewColumn]=Stuff with previous columns How we get the stuff with previous columns is always interesting! For the Titanic dataset, create a new column that is just the cabin letter for the passengers who have a cabin entry.  To sort by particular column(s) we would write: df.sort_values(by=Columns, ascending=True) It will automatically go from smallest to biggest, to go the other way we will need to change `ascending` to `False`. For the Titanic dataset, find who the youngest person was on the ship and who was the oldest.   Grouping breaks our dataset into many little pieces so we can study it by subgroup. We would write: df.groupby([Column1, Column2]) Grouping is almost always used with aggregate which applies a function over a column.   Aggregate applies a function over an entire column (or portion of column if grouped first). We would write: df.agg(['sum', 'min', 'max', 'mean']) or df.agg({'Column1':['sum', 'mean'], 'Column2':['min', 'max']}) You can also pass it functions you wrote yourself! For the Titanic dataset, find the average age of people who survived and the average age of people who did not survive. How does compare to the average age of female\/male passengers?    "
+},
+{
+  "id": "p-163",
+  "level": "2",
+  "url": "section-3-4.html#p-163",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "function "
+},
+{
+  "id": "p-166",
+  "level": "2",
+  "url": "section-3-4.html#p-166",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Packages "
+},
+{
+  "id": "program-activecode-python",
+  "level": "2",
+  "url": "section-3-4.html#program-activecode-python",
+  "type": "Checkpoint",
+  "number": "3.4.1",
+  "title": "Loading Data.",
+  "body": "Loading Data  import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)  "
+},
+{
+  "id": "p-173",
+  "level": "2",
+  "url": "section-3-4.html#p-173",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "select filter mutate sort Grouping Aggregate "
 },
 {
   "id": "section-4-1",
@@ -451,9 +577,9 @@ var ptx_lunr_docs = [
   "body": " Naive Bayes Classifier  I didn't retype my notes, but here is how you do math. Inline: . As an unlabeled equation: As a labeled equation:   Here is an example of a table:   Bike Ride Data            Weather  Temperature  Humidity  Wind  Bike Ride?    Rainy  F  High  13 mph  False     "
 },
 {
-  "id": "table-21",
+  "id": "table-23",
   "level": "2",
-  "url": "section-6-2.html#table-21",
+  "url": "section-6-2.html#table-23",
   "type": "Table",
   "number": "6.2.1",
   "title": "Bike Ride Data",

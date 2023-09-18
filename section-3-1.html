@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Wrangling</title>
+<title>Data Verbs</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -59,7 +59,8 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -77,6 +78,37 @@ window.MathJax = {
 <link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.1.4/prefix-runtime.d3f96040775bf7ec.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.1.4/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.1.4/prefix-runestone.3a5641c4e1fe869e.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.1.4/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.1.4/prefix-runestone.cec40a61180efd41.css">
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
@@ -227,9 +259,31 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="chapter-3.html" class="internal"><span class="codenumber">3</span> <span class="title">Dealing with Data</span></a></div>
 <ul class="structural">
-<li class="active"><div class="toc-item"><a href="section-3-1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Wrangling</span></a></div></li>
-<li><div class="toc-item"><a href="section-3-2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Feature engineering</span></a></div></li>
-<li><div class="toc-item"><a href="section-3-3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Cleaning</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="section-3-1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Data Verbs</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3-1.html#subsection-1" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Brief Introduction to Data Types</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-3-1.html#subsection-2" class="internal"><span class="codenumber">3.1.2</span> <span class="title">First Data Verbs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-3-1.html#exercises-4" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="section-3-1.html#subsection-3" class="internal"><span class="codenumber">3.1.3</span> <span class="title">More Data Verbs</span></a></div></li>
+<li><div class="toc-item"><a href="section-3-1.html#subsection-4" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Setting up verb sentences</span></a></div></li>
+<li><div class="toc-item"><a href="section-3-1.html#exercises-5" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-3-2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Cleaning Data</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-3-2.html#exercises-6" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="section-3-3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Data Verbs in Excel</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-3-4.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Data Verbs in Python</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3-4.html#subsection-5" class="internal"><span class="codenumber">3.4.1</span> <span class="title">A bit more programming</span></a></div></li>
+<li><div class="toc-item"><a href="section-3-4.html#subsection-6" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Data Verbs</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -287,8 +341,1085 @@ window.MathJax = {
 <li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-3-1"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Wrangling</span>
-</h2></section></div>
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Data Verbs</span>
+</h2>
+<div class="para" id="p-75">Inspired by workshop presentation by Todd Iverson and Chris Malone, Winona State University, for Project NExT at MathFest 2021.</div>
+<section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.1</span> <span class="title">Brief Introduction to Data Types</span>
+</h3>
+<div class="para" id="p-76">All of our data is classified into different categories which helps computers process our instructions to it. Essentially, these categories make it easier for it to tell us what actions we can and cannot do to the data values. For example, if we had a column storing the height of basketball players it would be incoherent to try to make these numbers upper case where as making the names upper case is a task we can carry out.</div>
+<div class="para" id="p-77">The main data types are as follows:</div>
+<ul class="disc">
+<li id="li-57"><div class="para" id="p-78">
+<em class="emphasis">Boolean:</em> only two possible values, True or False.</div></li>
+<li id="li-58"><div class="para" id="p-79">
+<em class="emphasis">Integers:</em> whole numbers with no decimal places.</div></li>
+<li id="li-59"><div class="para" id="p-80">
+<em class="emphasis">Numerical/Float:</em> All other numbers, usually with decimal places.</div></li>
+<li id="li-60"><div class="para" id="p-81">
+<em class="emphasis">Character:</em> a single letter or special symbol, think one key stroke from the keyboard.</div></li>
+<li id="li-61"><div class="para" id="p-82">
+<em class="emphasis">String:</em> A series of characters including spaces.</div></li>
+</ul>
+<article class="activity project-like" id="matching-data-types"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Data Types.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="matching-data-types">
+<span data-subcomponent="question"><div class="para" id="p-83">Match each column in the data table below to its data type <figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.1<span class="period">.</span></span><span class="space"> </span>Example Data Table</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure>
+</div></span><li data-subcomponent="draggable" id="matching-data-types_drag1">A</li>
+<li data-subcomponent="dropzone" for="matching-data-types_drag1">Integer</li>
+<li data-subcomponent="draggable" id="matching-data-types_drag2">B</li>
+<li data-subcomponent="dropzone" for="matching-data-types_drag2">Character</li>
+<li data-subcomponent="draggable" id="matching-data-types_drag3">C</li>
+<li data-subcomponent="dropzone" for="matching-data-types_drag3">Boolean</li>
+<li data-subcomponent="draggable" id="matching-data-types_drag4">D</li>
+<li data-subcomponent="dropzone" for="matching-data-types_drag4">Float</li>
+<li data-subcomponent="draggable" id="matching-data-types_drag5">E</li>
+<li data-subcomponent="dropzone" for="matching-data-types_drag5">String</li>
+</ul></div></div></article><div class="para" id="p-84">Each data type has certain functions that we can do to them. Here is a non-exhaustive list of the functions that we can do to data types.</div>
+<figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.2<span class="period">.</span></span><span class="space"> </span>Functions for Data Table</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t0 lines">Boolean</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">Integer</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">Float</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">Character</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">String</th>
+</tr>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">Equals?</td>
+<td class="l m b0 r1 l0 t0 lines">Sum</td>
+<td class="l m b0 r1 l0 t0 lines">Sum</td>
+<td class="l m b0 r1 l0 t0 lines">Uppercase</td>
+<td class="l m b0 r1 l0 t0 lines">Upper/lower case</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">AND</td>
+<td class="l m b0 r1 l0 t0 lines">Count</td>
+<td class="l m b0 r1 l0 t0 lines">Count</td>
+<td class="l m b0 r1 l0 t0 lines">Lowercase</td>
+<td class="l m b0 r1 l0 t0 lines">Join/split</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">OR</td>
+<td class="l m b0 r1 l0 t0 lines">Abs</td>
+<td class="l m b0 r1 l0 t0 lines">Abs</td>
+<td class="l m b0 r1 l0 t0 lines">Equals</td>
+<td class="l m b0 r1 l0 t0 lines">Count substring</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">NOT</td>
+<td class="l m b0 r1 l0 t0 lines">Mult.</td>
+<td class="l m b0 r1 l0 t0 lines">Mult./Div.</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">Find</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">Sum</td>
+<td class="l m b0 r1 l0 t0 lines">Greater/less than</td>
+<td class="l m b0 r1 l0 t0 lines">Greater/less than</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">Strip</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">Count</td>
+<td class="l m b0 r1 l0 t0 lines">Mod div.</td>
+<td class="l m b0 r1 l0 t0 lines">Equals/</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines">Length</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">Average</td>
+<td class="l m b0 r1 l0 t0 lines">Equals?</td>
+<td class="l m b0 r1 l0 t0 lines">Most math</td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+<td class="l m b0 r1 l0 t0 lines"></td>
+</tr>
+</table></div></figure><div class="para" id="p-85">As we get further into working with data, we will get a better knowledge of how to implement these functions. When you start using a computer with data science, you might run into a <em class="emphasis">type error</em> which means that your data type and the function you are trying to use are incompatible. Having a mental chart like the one above can be helpful when trying to resolve this type of error.</div></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.2</span> <span class="title">First Data Verbs</span>
+</h3>
+<div class="para" id="p-86">Data verbs are actions we can do to a data set. We will be collection and using these throughout this class.</div>
+<div class="para" id="p-87">Our first data verb is <dfn class="terminology">Select</dfn> where we choose a group of columns to be working with. Below is the result when we <em class="emphasis">Select A,B,C</em>
+</div>
+<ul class="disc cols2">
+<li id="li-62"><div class="para" id="p-88"><figure class="table table-like" id="table-5"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure></div></li>
+<li id="li-63"><div class="para" id="p-89"><figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.4<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+</tr>
+</table></div></figure></div></li>
+</ul>
+<div class="para" id="p-90">Our next data verb is <dfn class="terminology">Filter</dfn> where we choose a some rows that meet a condition. Below is the result when we <em class="emphasis">Filter by B== a</em>
+</div>
+<ul class="disc cols2">
+<li id="li-64"><div class="para" id="p-91"><figure class="table table-like" id="table-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.5<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure></div></li>
+<li id="li-65"><div class="para" id="p-92"><figure class="table table-like" id="table-8"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.6<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure></div></li>
+</ul>
+<div class="para" id="p-93">Our next data verb is <dfn class="terminology">Mutate</dfn> where we create a new column based on another. Below is the result when we <em class="emphasis">Mutate F=A+2</em>
+</div>
+<ul class="disc cols2">
+<li id="li-66"><div class="para" id="p-94"><figure class="table table-like" id="table-9"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure></div></li>
+<li id="li-67"><div class="para" id="p-95"><figure class="table table-like" id="table-10"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.8<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">F</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+<td class="l m b1 r1 l0 t0 lines">7</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+<td class="l m b1 r1 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+<td class="l m b1 r1 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+<td class="l m b1 r1 l0 t0 lines">7</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+</tr>
+</table></div></figure></div></li>
+</ul>
+<div class="para" id="p-96">Our next data verb is <dfn class="terminology">Sort</dfn> where we order rows based on their entries in a column(s). Below is the result when we <em class="emphasis">Sort by D, descending</em>
+</div>
+<ul class="disc cols2">
+<li id="li-68"><div class="para" id="p-97"><figure class="table table-like" id="table-11"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.9<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure></div></li>
+<li id="li-69"><div class="para" id="p-98"><figure class="table table-like" id="table-12"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.10<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+</table></div></figure></div></li>
+</ul>
+<section class="exercises" id="exercises-4"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h4>
+<div class="para" id="p-99"><figure class="table table-like" id="table-13"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.11<span class="period">.</span></span><span class="space"> </span>Original data table for following exercises</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure></div>
+<article class="exercise exercise-like" id="data-verb-mult-one"><h5 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Test yourself!</span>
+</h5>
+<div class="ptx-runestone-container"><div class="runestone"><ul data-component="multiplechoice" id="data-verb-mult-one" data-multipleanswers="true">
+<div class="para" id="p-100">Determine which data verb was applied get the following result. Select all that apply. <figure class="table table-like" id="table-14"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.12<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">NORTH</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">WEST</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">NORTH</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">WEST</td>
+</tr>
+</table></div></figure>
+</div>
+<li data-component="answer" id="data-verb-mult-one_opt_a" data-correct=""><div class="para" id="p-101">Select</div></li>
+<li data-component="feedback" id="data-verb-mult-one_opt_a"><div class="para" id="p-102">Yes, columns C,D, and E were selected.</div></li>
+<li data-component="answer" id="data-verb-mult-one_opt_b" data-correct=""><div class="para" id="p-103">Filter</div></li>
+<li data-component="feedback" id="data-verb-mult-one_opt_b"><div class="para" id="p-104">Yes, this data set was filtered by C==True or filtered by E==North or West.</div></li>
+<li data-component="answer" id="data-verb-mult-one_opt_c" data-correct=""><div class="para" id="p-105">Mutate</div></li>
+<li data-component="feedback" id="data-verb-mult-one_opt_c"><div class="para" id="p-106">Yes, notice how column E is now in upper case.</div></li>
+<li data-component="answer" id="data-verb-mult-one_opt_d"><div class="para" id="p-107">Sort</div></li>
+<li data-component="feedback" id="data-verb-mult-one_opt_d"><div class="para" id="p-108">Our rows have not changed relative order.</div></li>
+</ul></div></div></article><article class="exercise exercise-like" id="data-verb-mult-two"><h5 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Test yourself!</span>
+</h5>
+<div class="ptx-runestone-container"><div class="runestone"><ul data-component="multiplechoice" id="data-verb-mult-two" data-multipleanswers="true">
+<div class="para" id="p-109">Determine which data verb was applied get the following result. Select all that apply. <figure class="table table-like" id="table-15"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.13<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">E</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">F(from A)</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">G (from B)</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">East</td>
+<td class="l m b1 r1 l0 t0 lines">8</td>
+<td class="l m b1 r1 l0 t0 lines">25</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">East</td>
+<td class="l m b1 r1 l0 t0 lines">10</td>
+<td class="l m b1 r1 l0 t0 lines">11</td>
+</tr>
+</table></div></figure>
+</div>
+<li data-component="answer" id="data-verb-mult-two_opt_a" data-correct=""><div class="para" id="p-110">Select</div></li>
+<li data-component="feedback" id="data-verb-mult-two_opt_a"><div class="para" id="p-111">Yes, columns E, F, and G were selected.</div></li>
+<li data-component="answer" id="data-verb-mult-two_opt_b" data-correct=""><div class="para" id="p-112">Filter</div></li>
+<li data-component="feedback" id="data-verb-mult-two_opt_b"><div class="para" id="p-113">Yes, this data set was filtered by E==East.</div></li>
+<li data-component="answer" id="data-verb-mult-two_opt_c" data-correct=""><div class="para" id="p-114">Mutate</div></li>
+<li data-component="feedback" id="data-verb-mult-two_opt_c"><div class="para" id="p-115">Yes, both columns F and G are made from previous columns (A and B respectively). Can you determine the operation?</div></li>
+<li data-component="answer" id="data-verb-mult-two_opt_d"><div class="para" id="p-116">Sort</div></li>
+<li data-component="feedback" id="data-verb-mult-two_opt_d"><div class="para" id="p-117">Our rows have not changed relative order.</div></li>
+</ul></div></div></article></section></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.3</span> <span class="title">More Data Verbs</span>
+</h3>
+<div class="para" id="p-118">We are now entering more complex data verb land, but these are some of the most useful!</div>
+<div class="para" id="p-119">Our next data verb is <dfn class="terminology">Group</dfn> where we split our data into smaller portions according to a key value in a column. Below is the result when we <em class="emphasis">Group by B</em>
+</div>
+<ul class="disc cols2">
+<li id="li-70"><div class="para" id="p-120"><figure class="table table-like" id="table-16"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.14<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure></div></li>
+<li id="li-71"><div class="para" id="p-121"><figure class="table table-like" id="table-17"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.15<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t0 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">E</th>
+</tr>
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t0 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t0 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b3 r1 l1 t0 lines">3</td>
+<td class="l m b3 r1 l0 t0 lines">a</td>
+<td class="l m b3 r1 l0 t0 lines">True</td>
+<td class="l m b3 r1 l0 t0 lines">35.6</td>
+<td class="l m b3 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b3 r1 l1 t0 lines">2</td>
+<td class="l m b3 r1 l0 t0 lines">b</td>
+<td class="l m b3 r1 l0 t0 lines">True</td>
+<td class="l m b3 r1 l0 t0 lines">124.6</td>
+<td class="l m b3 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure></div></li>
+</ul>
+<div class="para" id="p-122">On its own grouping is not useful, but when paired with our next data verb it is really powerful!</div>
+<div class="para" id="p-123">Our next data verb is <dfn class="terminology">Aggregate</dfn> where we apply a function over all rows in a column. Below is the result when we <em class="emphasis">Aggregate sum</em>
+</div>
+<ul class="disc cols2">
+<li id="li-72"><div class="para" id="p-124"><figure class="table table-like" id="table-18"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.16<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">E</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">46.7</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">a</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">35.6</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">10.8</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">2</td>
+<td class="l m b1 r1 l0 t0 lines">b</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">124.6</td>
+<td class="l m b1 r1 l0 t0 lines">North</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">3</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.8</td>
+<td class="l m b1 r1 l0 t0 lines">South</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">5</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">False</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines">East</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">c</td>
+<td class="l m b1 r1 l0 t0 lines">True</td>
+<td class="l m b1 r1 l0 t0 lines">7.4</td>
+<td class="l m b1 r1 l0 t0 lines">West</td>
+</tr>
+</table></div></figure></div></li>
+<li id="li-73"><div class="para" id="p-125"><figure class="table table-like" id="table-19"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.17<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">A</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">B</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">C</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">D</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">26</td>
+<td class="l m b1 r1 l0 t0 lines">186</td>
+<td class="l m b1 r1 l0 t0 lines">4</td>
+<td class="l m b1 r1 l0 t0 lines">234.6</td>
+</tr>
+</table></div></figure></div></li>
+</ul>
+<div class="para" id="p-126">Our next data verbs are about merging datasets together. This is important to know because sometimes our data is in different places and we want to bring it together. There are three main ways to merge datasets:</div>
+<ol class="decimal">
+<li id="li-74"><div class="para" id="p-127">
+<dfn class="terminology">Union</dfn>- use when columns are the same, glues rows of one dataset to the end of another</div></li>
+<li id="li-75"><div class="para" id="p-128">
+<dfn class="terminology">Intersect</dfn>- only takes rows that are the same between the two datasets</div></li>
+<li id="li-76"><div class="para" id="p-129">
+<dfn class="terminology">Difference</dfn>- only takes rows that are in one dataset but not the other</div></li>
+</ol>
+<article class="activity project-like" id="activity-2"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-130">Brainstrom situations where you would want to use each of these data table mergers.</div></article></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.4</span> <span class="title">Setting up verb sentences</span>
+</h3>
+<div class="para" id="p-131">Now that we have our data verbs, we can start using them to talk about how we would like to start answering our data science questions! Below is a sample of a data table about places that sell burritos. First, what data type is each column?</div>
+<div class="para" id="p-132"><figure class="table table-like" id="table-20"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.18<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b3 r1 l1 t1 lines">Location</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">BurritoType</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Date</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Neighborhood</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Address</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Yelp</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Google</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Chips</th>
+<th scope="col" class="l m b3 r1 l0 t1 lines">Cost</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Taco Stand</td>
+<td class="l m b1 r1 l0 t0 lines">California</td>
+<td class="l m b1 r1 l0 t0 lines">2/12/2016</td>
+<td class="l m b1 r1 l0 t0 lines">La Jolla</td>
+<td class="l m b1 r1 l0 t0 lines">621 Pearl St</td>
+<td class="l m b1 r1 l0 t0 lines">4.5</td>
+<td class="l m b1 r1 l0 t0 lines">4.4</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">7.49</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Lola's 7 Up Market and Deli</td>
+<td class="l m b1 r1 l0 t0 lines">Shredded beef</td>
+<td class="l m b1 r1 l0 t0 lines">2/29/2016</td>
+<td class="l m b1 r1 l0 t0 lines">Carlsbad</td>
+<td class="l m b1 r1 l0 t0 lines">3292 Roosevelt St</td>
+<td class="l m b1 r1 l0 t0 lines">4.5</td>
+<td class="l m b1 r1 l0 t0 lines">4.9</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Cancun Mexican and Seafood</td>
+<td class="l m b1 r1 l0 t0 lines">California</td>
+<td class="l m b1 r1 l0 t0 lines">3/20/2016</td>
+<td class="l m b1 r1 l0 t0 lines">Encinitas</td>
+<td class="l m b1 r1 l0 t0 lines">1766 N Coast Hwy</td>
+<td class="l m b1 r1 l0 t0 lines">4.5</td>
+<td class="l m b1 r1 l0 t0 lines">4.1</td>
+<td class="l m b1 r1 l0 t0 lines">x</td>
+<td class="l m b1 r1 l0 t0 lines">6.99</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Mikes Taco Club</td>
+<td class="l m b1 r1 l0 t0 lines">California</td>
+<td class="l m b1 r1 l0 t0 lines">3/23/2016</td>
+<td class="l m b1 r1 l0 t0 lines">Ocean Beach</td>
+<td class="l m b1 r1 l0 t0 lines">5060 Newport Ave</td>
+<td class="l m b1 r1 l0 t0 lines">4.5</td>
+<td class="l m b1 r1 l0 t0 lines">4.9</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">8.59</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">La Perla Cocina</td>
+<td class="l m b1 r1 l0 t0 lines">Addiction</td>
+<td class="l m b1 r1 l0 t0 lines">3/30/2016</td>
+<td class="l m b1 r1 l0 t0 lines">Pacific Beach</td>
+<td class="l m b1 r1 l0 t0 lines">745 Emerald St</td>
+<td class="l m b1 r1 l0 t0 lines">4.5</td>
+<td class="l m b1 r1 l0 t0 lines">4.7</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">7.99</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">California Burritos</td>
+<td class="l m b1 r1 l0 t0 lines">California Everything</td>
+<td class="l m b1 r1 l0 t0 lines">4/15/2016</td>
+<td class="l m b1 r1 l0 t0 lines">Linda Vista</td>
+<td class="l m b1 r1 l0 t0 lines">7754 Starling Dr</td>
+<td class="l m b1 r1 l0 t0 lines">4.5</td>
+<td class="l m b1 r1 l0 t0 lines">4.4</td>
+<td class="l m b1 r1 l0 t0 lines">x</td>
+<td class="l m b1 r1 l0 t0 lines">6.25</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Mi Asador Mexican and Seafood</td>
+<td class="l m b1 r1 l0 t0 lines">California</td>
+<td class="l m b1 r1 l0 t0 lines">4/27/2016</td>
+<td class="l m b1 r1 l0 t0 lines">Oceanside</td>
+<td class="l m b1 r1 l0 t0 lines">4750 Oceanside Blvd</td>
+<td class="l m b1 r1 l0 t0 lines">4.5</td>
+<td class="l m b1 r1 l0 t0 lines">4.4</td>
+<td class="l m b1 r1 l0 t0 lines">x</td>
+<td class="l m b1 r1 l0 t0 lines">6.89</td>
+</tr>
+</table></div></figure></div>
+<div class="para" id="p-133">If our question is <em class="emphasis">Which location in La Jolla has the highest rated burrito?</em> we can answer this using our data verbs. First, we would want to <dfn class="terminology">Filter</dfn> the neighborhood column so it only shows us places in La Jolla. Then we would want to <dfn class="terminology">Mutate</dfn> creating a new column which is the combination of the two ratings (either by summing them or finding the average). Finally we would <dfn class="terminology">Sort</dfn> by this combined rating column in descending order (leaving the biggest entry as the first one). Then the first row would give us our desired location!</div>
+<article class="activity project-like" id="activity-3"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Data Verb Sentences.</span>
+</h4> For the questions below, determine which data verbs you would need to achieve this task! Sometimes it can be helpful to physically sketch what the final table would look like and then use the verbs to get to your desired table. <ol class="decimal">
+<li id="li-77"><div class="para" id="p-134">Which burrito type is the highest rated?</div></li>
+<li id="li-78"><div class="para" id="p-135">Which burrito type costs the most?</div></li>
+<li id="li-79"><div class="para" id="p-136">Does coming with chips increase ratings?</div></li>
+</ol></article><div class="para" id="p-137">Data verbs are a helpful framework to help get us thinking like a data scientists when we start using technology. What is nice about this framework is you can apply it to any programming language that you use- you just need to learn the commands for your data verbs!</div></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.1.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-6"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-138">Below is a list of our data verbs. Categorize the verbs into groups depending if they happen to the columns or rows.</div>
+<ul class="disc">
+<li id="li-80"><div class="para" id="p-139">Select</div></li>
+<li id="li-81"><div class="para" id="p-140">Filter</div></li>
+<li id="li-82"><div class="para" id="p-141">Mutate</div></li>
+<li id="li-83"><div class="para" id="p-142">Sort</div></li>
+<li id="li-84"><div class="para" id="p-143">Group</div></li>
+<li id="li-85"><div class="para" id="p-144">Aggregate</div></li>
+</ul></article><article class="exercise exercise-like" id="exercise-7"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-145">What is a good system to help use our verbs to answer our data questions?</div></article><article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-146">What do you predict some challenges could be when using data verbs?</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chapter-3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-3-2.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
