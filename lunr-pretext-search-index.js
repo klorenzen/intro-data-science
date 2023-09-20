@@ -514,6 +514,96 @@ var ptx_lunr_docs = [
   "body": "select filter mutate sort Grouping Aggregate "
 },
 {
+  "id": "section-3-4",
+  "level": "1",
+  "url": "section-3-4.html",
+  "type": "Section",
+  "number": "3.5",
+  "title": "Functions in Python",
+  "body": " Functions in Python  Lists and Dictionaries  Lists are an important data type that we will use frequently. A Lists store other data types (including other lists) and are mutable meaning we can change the entries. To make a list we put our entries into square brackets separated by commas. We call them with an index or the number they are in order. Python begins all indices with zero, so the first entry has index 0. For example, here is a list:   my_list=['a', 'b', 'c', 4, 10]  To print the fourth entry in the list we would write my_list[3] . Try this below:  We can reassign indices to values by using = which is the assignment operator. For example my_list[3]=7%5 reassigns the fourth entry to the remainder of seven divided by five. We can also use special methods of our lists including  my_list.append(x) which would add x to the end of the list,  my_list.pop(2) which would remove the index 2 entry from the list, and  my_list.remove(x) which removes element x from the list  Try these with values inside the parenthesis.  If we want to quickly create a list of numbers that are increasing by a set amount, we can use range() function. The input is the start and stop+1. If only one input is given, it starts at 0 and ends at stop-1. This function is a generator meaning that we have to tell it we would like it to make a list with the command list(range(start, stop+1)) . Using range() , make a list that is the numbers 3 through 13 .  Dictionaries are helpful when doing cleaning and feature extraction. Dictionaries are like lists expect they are unordered so they do not have an order to them. They have two pieces: keys and values. To make a dictionary we put our keys-value pairs between curly braces separated by commas. We indicate which entry is the key and which one is the value using a colon. For example,   my_dict={\"apple\":\"fruit\", \"bean\":\"veggie\"}  Like lists, dictionaries are changable, meaning we can change, add, or remove items after the dictionary has been created. First, use the key \"apple\" to call the value \"fruit\" by using it like an index of a list. Try reassigning the value of the key \"apple\" then try reassigning the value in a dictionary of a that does not exist like 10. What do you notice?  Create a dictionary with duplicate keys, what happens when you print the duplicate key value?   Writing own functions  Now that we have our data verbs we can have more fun gathering information from data. Today we will be exploring how we can mutate columns with more sophistication. In addition to using other people's functions, we can also write our own. This is really useful when we notice that we are doing a repetitive process. If we wanted to write a function that added two to a number it would look like this:    def addTwo(x): result=x+2 return result    Here the def means were are defining a new function, addTwo() is the name of our function that we will use to call again, x is our input variable and : means we are about to give our recipe. Notice the next line is tabbed over, this is important. Once we leave the tabbed lines, we are no longer giving recipe instructions. The other important part in the return which is followed by the product we want from our function. This is optional. Write a function that determines whether a number is even or odd.     if statements, for loops, and while loops  Some other programming ideas we will be using are if statements. An if statement is some part of the program that only runs if something is true. For example   if x<0: x=x*-1 np.squareroot(x)   Similar to a function definition, only the tabbed part happens if x<0 . We can also add an else which will allow us to run different lines if it is not true. For example   if x==0: x+=1 else: x=x\/10  A for loop is a program that will do something to every object in a list (iterable object). It has a variable that is the thing that changes as well as the list that the variable will become. For example   for x in [1,2,3,4,5,6]: print(x*7)  A *while* loop is similar to a for loop although it does not go through a list. It will stop once a logical expression is no longer satisfied. For example   x=1 while x<10: print(x+2) x=x+1  Be cautious with while loops that you update the variable otherwise they will run forever.   Write a script that prints all the squares of the odd number between 1 and 10.    Mutating with functions  Now that we have more python tools under our belt, we can start to learn how to use these while trying to mutate columns. For this section we will be focusing on the Titanic dataset. The Titanic dataset has a list of all the people onboard the Titanic Oceanliner before it met its tragic end by hitting an iceberg. It is full of interesting information and we will try to extract it all!  Here is a quick list of some functions that may or may not be helpful as we try to use our data verbs!  df.isna() - turns all entries to True if it is blank (or has NaN in them) and False otherwise  df.dropna(axis=0, how=\"all\", inplace=False) - returns a dataset where rows with all blank entries are dropped, note that this does not save the new dataset  df[ColName].unique() - returns all unique entries in a particular column  df[ColName].value_counts() - returns all unique entries and the number of times they each occur  df[ColName].map(dict) - returns a new column where entries in original column are turned into new entries according to the dictionary (keys-old entries, values-new entries)  df[ColName].apply(func) - returns a new column where entries in original column are turned into new entries according to the dictionary    Playing with Titanic Dataset  Perform the following tasks on the dataset  Remove any rows with all blank entries  What percentage of the passengers were men? What percentage of survivors were men?  How many different life boats were on the ship? How many people were on each one?  For each life boat, what was the percentage of male? What percentage were female?  Make a new column that classifies the fare a passenger paid for their ticket into one of four groups: less than 10, more than 10 less than 50, more than 50 less than 100, and more than 100. Find the percentage of survivors for each fare class.  Find the percentage of survivors by gender and fare class. How does the male survival rates broken down by fare classes compare to the overall percentage of the male survivors? What might this tell you about important factors to determining whether someone survived?      "
+},
+{
+  "id": "p-180",
+  "level": "2",
+  "url": "section-3-4.html#p-180",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Lists "
+},
+{
+  "id": "p-187",
+  "level": "2",
+  "url": "section-3-4.html#p-187",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "range() "
+},
+{
+  "id": "p-188",
+  "level": "2",
+  "url": "section-3-4.html#p-188",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Dictionaries "
+},
+{
+  "id": "p-195",
+  "level": "2",
+  "url": "section-3-4.html#p-195",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "if "
+},
+{
+  "id": "p-199",
+  "level": "2",
+  "url": "section-3-4.html#p-199",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "for "
+},
+{
+  "id": "p-201",
+  "level": "2",
+  "url": "section-3-4.html#p-201",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "for "
+},
+{
+  "id": "p-203",
+  "level": "2",
+  "url": "section-3-4.html#p-203",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "while "
+},
+{
+  "id": "activity-5",
+  "level": "2",
+  "url": "section-3-4.html#activity-5",
+  "type": "Activity",
+  "number": "3.5.1",
+  "title": "",
+  "body": " Write a script that prints all the squares of the odd number between 1 and 10.  "
+},
+{
+  "id": "activity-6",
+  "level": "2",
+  "url": "section-3-4.html#activity-6",
+  "type": "Activity",
+  "number": "3.5.2",
+  "title": "Playing with Titanic Dataset.",
+  "body": "Playing with Titanic Dataset  Perform the following tasks on the dataset  Remove any rows with all blank entries  What percentage of the passengers were men? What percentage of survivors were men?  How many different life boats were on the ship? How many people were on each one?  For each life boat, what was the percentage of male? What percentage were female?  Make a new column that classifies the fare a passenger paid for their ticket into one of four groups: less than 10, more than 10 less than 50, more than 50 less than 100, and more than 100. Find the percentage of survivors for each fare class.  Find the percentage of survivors by gender and fare class. How does the male survival rates broken down by fare classes compare to the overall percentage of the male survivors? What might this tell you about important factors to determining whether someone survived?    "
+},
+{
   "id": "section-4-1",
   "level": "1",
   "url": "section-4-1.html",

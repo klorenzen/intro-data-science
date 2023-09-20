@@ -9,10 +9,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">As discussed in <a href="section-6-6.html" class="internal" title="Section 6.6: K-Means Clustering">Section 6.6</a>, identifying outliers is an important part of data analysis. It is also one of the more dangerous decisions that a data analyst can make. Labeling a unique observation as an outlier can remove valuable information that should be retained from our data set if decided haphazardly or incorrectly. Unfortunately, in high dimensional space, nearly any particular observation might be considered an outlier in at least some feature(s).</div>
-<span class="incontext"><a href="section-9-3.html#p-187" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para">If we want to quickly create a list of numbers that are increasing by a set amount, we can use <dfn class="terminology"><code class="code-inline tex2jax_ignore">range()</code></dfn> function. The input is the start and stop+1. If only one input is given, it starts at 0 and ends at stop-1. This function is a generator meaning that we have to tell it we would like it to make a list with the command <code class="code-inline tex2jax_ignore">list(range(start, stop+1))</code>. Using <code class="code-inline tex2jax_ignore">range()</code>, make a list that is the numbers <code class="code-inline tex2jax_ignore">3</code> through <code class="code-inline tex2jax_ignore">13</code>.<pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage"></script></pre>
+</div>
+<span class="incontext"><a href="section-3-4.html#p-187" class="internal">in-context</a></span>
 </body>
 </html>

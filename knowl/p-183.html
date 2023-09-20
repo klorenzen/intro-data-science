@@ -9,10 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">Tips for STEM written and oral communication.</div>
-<span class="incontext"><a href="section-5-2.html#p-183" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">We can reassign indices to values by using <code class="code-inline tex2jax_ignore">=</code> which is the assignment operator. For example <code class="code-inline tex2jax_ignore">my_list[3]=7%5</code> reassigns the fourth entry to the remainder of seven divided by five. We can also use special methods of our lists including</div>
+<ul class="disc">
+<li><div class="para">
+<code class="code-inline tex2jax_ignore">my_list.append(x)</code> which would add <code class="code-inline tex2jax_ignore">x</code> to the end of the list,</div></li>
+<li><div class="para">
+<code class="code-inline tex2jax_ignore">my_list.pop(2)</code> which would remove the index 2 entry from the list, and</div></li>
+<li><div class="para">
+<code class="code-inline tex2jax_ignore">my_list.remove(x)</code> which removes element <code class="code-inline tex2jax_ignore">x</code> from the list</div></li>
+</ul>
+<div class="para">Try these with values inside the parenthesis. <pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage"></script></pre>
+</div>
+</div>
+<span class="incontext"><a href="section-3-4.html#p-183" class="internal">in-context</a></span>
 </body>
 </html>

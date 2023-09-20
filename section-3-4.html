@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Data Verbs in Python</title>
+<title>Functions in Python</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -59,7 +59,13 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
@@ -224,7 +230,7 @@ eBookConfig.enable_chatcodes =  false;
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-3-3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter-3.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="chapter-4.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-3-4.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter-3.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="chapter-4.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
@@ -277,11 +283,20 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural"><li><div class="toc-item"><a href="section-3-2.html#exercises-6" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li><div class="toc-item"><a href="section-3-3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Data Verbs in Excel</span></a></div></li>
-<li class="active">
+<li>
 <div class="toc-item"><a href="section-3-4.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Data Verbs in Python</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="section-3-4.html#subsection-5" class="internal"><span class="codenumber">3.4.1</span> <span class="title">A bit more programming</span></a></div></li>
 <li><div class="toc-item"><a href="section-3-4.html#subsection-6" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Data Verbs</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="section-3-4.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Functions in Python</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3-4.html#subsection-7" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Lists and Dictionaries</span></a></div></li>
+<li><div class="toc-item"><a href="section-3-4.html#subsection-8" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Writing own functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-3-4.html#subsection-9" class="internal"><span class="codenumber">3.5.3</span> <span class="title">if statements, for loops, and while loops</span></a></div></li>
+<li><div class="toc-item"><a href="section-3-4.html#subsection-10" class="internal"><span class="codenumber">3.5.4</span> <span class="title">Mutating with functions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -341,55 +356,114 @@ eBookConfig.enable_chatcodes =  false;
 <li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-3-4"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Data Verbs in Python</span>
+<span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Functions in Python</span>
 </h2>
-<section class="subsection" id="subsection-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">A bit more programming</span>
+<section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.1</span> <span class="title">Lists and Dictionaries</span>
 </h3>
-<div class="para" id="p-163">Today, we are going to get a bit more sophisticated in our programming skills. We will be focusing on <em class="emphasis">functions</em> and <em class="emphasis">loops.</em> A <dfn class="terminology">function</dfn> is a recipe of directions that has inputs (ingredients) and an output (cake). Some functions are internally built into the object (like being able to measure flour) and others are external (like baking a cake).</div>
-<div class="para" id="p-164">Internal functions (sometimes called methods) happen after the variable name like so <code class="code-inline tex2jax_ignore">flour.measure()</code> where <code class="code-inline tex2jax_ignore">flour</code> is the variable name and <code class="code-inline tex2jax_ignore">measure()</code> is a function that acts on <code class="code-inline tex2jax_ignore">flour</code>. Sometimes things need to go into the parenthesis like what unit we can to measure in.<code class="code-inline tex2jax_ignore">flour.measure("cups")</code> This would not only measure the flour but do so in our desire unit, cups!</div>
-<div class="para" id="p-165">Other functions that are more like baking a cake have all their inputs in parenthesis. <code class="code-inline tex2jax_ignore">
-bake(flour, sugar, egg)
-</code>
+<div class="para" id="p-180">Lists are an important data type that we will use frequently. A <dfn class="terminology">Lists</dfn> store other data types (including other lists) and are mutable meaning we can change the entries. To make a list we put our entries into square brackets separated by commas. We call them with an index or the number they are in order. Python begins all indices with zero, so the first entry has index 0. For example, here is a list:</div>
+<blockquote class="blockquote" id="blockquote-1"><div class="para" id="p-181"><code class="code-inline tex2jax_ignore">
+my_list=['a', 'b', 'c', 4, 10]
+</code></div></blockquote>
+<div class="para" id="p-182">To print the fourth entry in the list we would write <code class="code-inline tex2jax_ignore">my_list[3]</code>. Try this below: <pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage"></script></pre>
 </div>
-<div class="para logical" id="p-166">
-<div class="para">
-<dfn class="terminology">Packages</dfn> are a special collection of functions that other people have written that we can use. To use a function from a package, we first have to import them into our notebook. Typical Packages:</div>
+<div class="para logical" id="p-183">
+<div class="para">We can reassign indices to values by using <code class="code-inline tex2jax_ignore">=</code> which is the assignment operator. For example <code class="code-inline tex2jax_ignore">my_list[3]=7%5</code> reassigns the fourth entry to the remainder of seven divided by five. We can also use special methods of our lists including</div>
 <ul class="disc">
-<li id="li-95"><div class="para" id="p-167">Pandas - great for data, create a dataframe which has lots of neat features like our data verbs</div></li>
-<li id="li-96"><div class="para" id="p-168">NumPy - great for math like square roots. Has arrays which are nice for data manipulation</div></li>
-<li id="li-97"><div class="para" id="p-169">MatPlotLib.pyplots - MatLab-like plotting, basic visuals</div></li>
-<li id="li-98"><div class="para" id="p-170">Seaborn - more sophisticated plotting and making visuals</div></li>
-<li id="li-99"><div class="para" id="p-171">SkLearn - many algorithms and datasets for data analysis</div></li>
+<li id="li-106"><div class="para" id="p-184">
+<code class="code-inline tex2jax_ignore">my_list.append(x)</code> which would add <code class="code-inline tex2jax_ignore">x</code> to the end of the list,</div></li>
+<li id="li-107"><div class="para" id="p-185">
+<code class="code-inline tex2jax_ignore">my_list.pop(2)</code> which would remove the index 2 entry from the list, and</div></li>
+<li id="li-108"><div class="para" id="p-186">
+<code class="code-inline tex2jax_ignore">my_list.remove(x)</code> which removes element <code class="code-inline tex2jax_ignore">x</code> from the list</div></li>
 </ul>
-<div class="para">When importing packages, you can either import the entire package or particular parts. All of these packages have documentation online (usually) with good examples of how to use their functions.</div>
+<div class="para">Try these with values inside the parenthesis. <pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage"></script></pre>
 </div>
-<div class="para" id="p-172">If a function comes from a package, then its name might include the package it came from.<code class="code-inline tex2jax_ignore">
-import pandas as pd
-pd.read_csv(FILE_NAME)
-</code> Here <code class="code-inline tex2jax_ignore">read_csv()</code> is a function from the <code class="code-inline tex2jax_ignore">pandas</code> package which we named <code class="code-inline tex2jax_ignore">pd</code>. Load the pandas package and read the Titanic Dataset using the following URL: <code class="code-inline tex2jax_ignore">URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
-</code>
 </div>
-<article class="exercise exercise-like" id="program-activecode-python"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-program-activecode-python"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Loading Data.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-program-activecode-python"><article class="exercise exercise-like"><div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="load-data"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="load-data_editor" data-question_label="" data-codelens="true">import pandas as pd
-URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
-pd.read_csv(URL)
-</textarea></div></div></div></article></div></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">Data Verbs</span>
+<div class="para" id="p-187">If we want to quickly create a list of numbers that are increasing by a set amount, we can use <dfn class="terminology"><code class="code-inline tex2jax_ignore">range()</code></dfn> function. The input is the start and stop+1. If only one input is given, it starts at 0 and ends at stop-1. This function is a generator meaning that we have to tell it we would like it to make a list with the command <code class="code-inline tex2jax_ignore">list(range(start, stop+1))</code>. Using <code class="code-inline tex2jax_ignore">range()</code>, make a list that is the numbers <code class="code-inline tex2jax_ignore">3</code> through <code class="code-inline tex2jax_ignore">13</code>.<pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage"></script></pre>
+</div>
+<div class="para" id="p-188">Dictionaries are helpful when doing cleaning and feature extraction. <dfn class="terminology">Dictionaries</dfn> are like lists expect they are unordered so they do not have an order to them. They have two pieces: keys and values. To make a dictionary we put our keys-value pairs between curly braces separated by commas. We indicate which entry is the key and which one is the value using a colon. For example,</div>
+<blockquote class="blockquote" id="blockquote-2"><div class="para" id="p-189"><code class="code-inline tex2jax_ignore">
+my_dict={"apple":"fruit", "bean":"veggie"}
+</code></div></blockquote>
+<div class="para" id="p-190">Like lists, dictionaries are changable, meaning we can change, add, or remove items after the dictionary has been created. First, use the key <code class="code-inline tex2jax_ignore">"apple"</code> to call the value <code class="code-inline tex2jax_ignore">"fruit"</code> by using it like an index of a list. <pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage"></script></pre> Try reassigning the value of the key <code class="code-inline tex2jax_ignore">"apple"</code> then try reassigning the value in a dictionary of a that does not exist like 10. What do you notice?</div>
+<div class="para" id="p-191">Create a dictionary with duplicate keys, what happens when you print the duplicate key value? <pre class="ptx-sagecell sagecell-sage" id="sage-5"><script type="text/x-sage"></script></pre>
+</div></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.2</span> <span class="title">Writing own functions</span>
 </h3>
-<div class="para logical" id="p-173"><ul class="disc">
-<li id="li-100"><div class="para" id="p-174">To <dfn class="terminology">select</dfn> a particular column from our data set we would write:<code class="code-inline tex2jax_ignore">df[ColumnName]</code>. If we have multiple columns, we need to give write a list of all the column names we need (or splice from the <code class="code-inline tex2jax_ignore">df.columns</code> list). There are other ways to do this, but this is one of the more direct ways. For the titanic dataset, select the <code class="code-inline tex2jax_ignore">survived</code>, <code class="code-inline tex2jax_ignore">age</code>, and <code class="code-inline tex2jax_ignore">boat</code> columns.</div></li>
-<li id="li-101"><div class="para" id="p-175">To <dfn class="terminology">filter</dfn> particular rows based on a logical expression (think ==, &gt;, .isin(), etc) we would write:<code class="code-inline tex2jax_ignore">df[df[ColumnName]=="Pugs"]</code> If we had multiple filters or wanted to do filtering at the same time as selecting we would need to write:<code class="code-inline tex2jax_ignore">df.loc[(FILTER 1) &amp; (FILTER 2), [ColumnName1, ColumnName2]]</code> where the `&amp;` acts like `and` for our logical expressions. For the titanic dataset, select the <code class="code-inline tex2jax_ignore">survived</code>, <code class="code-inline tex2jax_ignore">age</code>, and <code class="code-inline tex2jax_ignore">boat</code> columns and filter the dataset so we only have <code class="code-inline tex2jax_ignore">female</code> passengers.</div></li>
-<li id="li-102"><div class="para" id="p-176">To make a new column based on previous columns (<dfn class="terminology">mutate</dfn>) we will do an assignment for our new columns as follows:<code class="code-inline tex2jax_ignore">df[NewColumn]=Stuff with previous columns</code> How we get the stuff with previous columns is always interesting! For the Titanic dataset, create a new column that is just the cabin letter for the passengers who have a cabin entry.</div></li>
-<li id="li-103"><div class="para" id="p-177">To <dfn class="terminology">sort</dfn> by particular column(s) we would write: <code class="code-inline tex2jax_ignore">df.sort_values(by=Columns, ascending=True)</code> It will automatically go from smallest to biggest, to go the other way we will need to change `ascending` to `False`. For the Titanic dataset, find who the youngest person was on the ship and who was the oldest.</div></li>
-<li id="li-104"><div class="para" id="p-178">
-<dfn class="terminology">Grouping</dfn> breaks our dataset into many little pieces so we can study it by subgroup. We would write: <code class="code-inline tex2jax_ignore">df.groupby([Column1, Column2])</code> Grouping is almost always used with aggregate which applies a function over a column.</div></li>
-<li id="li-105"><div class="para" id="p-179">
-<dfn class="terminology">Aggregate</dfn> applies a function over an entire column (or portion of column if grouped first). We would write: <code class="code-inline tex2jax_ignore"> df.agg(['sum', 'min', 'max', 'mean'])</code> or <code class="code-inline tex2jax_ignore">df.agg({'Column1':['sum', 'mean'], 'Column2':['min', 'max']})</code> You can also pass it functions you wrote yourself! For the Titanic dataset, find the average age of people who survived and the average age of people who did not survive. How does compare to the average age of female/male passengers?</div></li>
-</ul></div></section></section></div>
+<div class="para" id="p-192">Now that we have our data verbs we can have more fun gathering information from data. Today we will be exploring how we can mutate columns with more sophistication. In addition to using other people's functions, we can also write our own. This is really useful when we notice that we are doing a repetitive process. If we wanted to write a function that added two to a number it would look like this:</div>
+<blockquote class="blockquote" id="blockquote-3"><div class="para" id="p-193"><code class="code-inline tex2jax_ignore">def addTwo(x):
+    result=x+2
+    return result</code></div></blockquote>
+<div class="para" id="p-194">Here the <code class="code-inline tex2jax_ignore">def</code> means were are defining a new function, <code class="code-inline tex2jax_ignore">addTwo()</code> is the name of our function that we will use to call again, <code class="code-inline tex2jax_ignore">x</code> is our input variable and <code class="code-inline tex2jax_ignore">:</code> means we are about to give our recipe. Notice the next line is tabbed over, this is important. Once we leave the tabbed lines, we are no longer giving recipe instructions. The other important part in the <code class="code-inline tex2jax_ignore">return</code> which is followed by the product we want from our function. This is optional. Write a function that determines whether a number is even or odd.</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-6"><script type="text/x-sage"></script></pre></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.3</span> <span class="title">if statements, for loops, and while loops</span>
+</h3>
+<div class="para" id="p-195">Some other programming ideas we will be using are <em class="emphasis">if</em> statements. An <dfn class="terminology">if</dfn> statement is some part of the program that only runs if something is true. For example</div>
+<blockquote class="blockquote" id="blockquote-4"><div class="para" id="p-196"><code class="code-inline tex2jax_ignore">
+if x&lt;0:
+    x=x*-1
+np.squareroot(x)</code></div></blockquote>
+<div class="para" id="p-197">Similar to a function definition, only the tabbed part happens if <code class="code-inline tex2jax_ignore">x&lt;0</code>. We can also add an <code class="code-inline tex2jax_ignore">else</code> which will allow us to run different lines if it is not true. For example</div>
+<blockquote class="blockquote" id="blockquote-5"><div class="para" id="p-198"><code class="code-inline tex2jax_ignore">
+if x==0:
+    x+=1
+else:
+    x=x/10
+</code></div></blockquote>
+<div class="para" id="p-199">A <dfn class="terminology">for</dfn> loop is a program that will do something to every object in a list (iterable object). It has a variable that is the thing that changes as well as the list that the variable will become. For example</div>
+<blockquote class="blockquote" id="blockquote-6"><div class="para" id="p-200"><code class="code-inline tex2jax_ignore">
+for x in [1,2,3,4,5,6]:
+    print(x*7)
+</code></div></blockquote>
+<div class="para" id="p-201">A *while* loop is similar to a <dfn class="terminology">for</dfn> loop although it does not go through a list. It will stop once a logical expression is no longer satisfied. For example</div>
+<blockquote class="blockquote" id="blockquote-7"><div class="para" id="p-202"><code class="code-inline tex2jax_ignore">
+x=1
+while x&lt;10:
+    print(x+2)
+    x=x+1
+</code></div></blockquote>
+<div class="para" id="p-203">Be cautious with <dfn class="terminology">while</dfn> loops that you update the variable otherwise they will run forever.</div>
+<article class="activity project-like" id="activity-5"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-204">Write a script that prints all the squares of the odd number between 1 and 10. <pre class="ptx-sagecell sagecell-sage" id="sage-7"><script type="text/x-sage"></script></pre>
+</div></article></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.4</span> <span class="title">Mutating with functions</span>
+</h3>
+<div class="para" id="p-205">Now that we have more python tools under our belt, we can start to learn how to use these while trying to mutate columns. For this section we will be focusing on the Titanic dataset. The Titanic dataset has a list of all the people onboard the Titanic Oceanliner before it met its tragic end by hitting an iceberg. It is full of interesting information and we will try to extract it all!</div>
+<div class="para logical" id="p-206">
+<div class="para">Here is a quick list of some functions that may or may not be helpful as we try to use our data verbs!</div>
+<ol class="decimal">
+<li id="li-109"><div class="para" id="p-207">
+<code class="code-inline tex2jax_ignore">df.isna()</code> - turns all entries to True if it is blank (or has NaN in them) and False otherwise</div></li>
+<li id="li-110"><div class="para" id="p-208">
+<code class="code-inline tex2jax_ignore">df.dropna(axis=0, how="all", inplace=False)</code> - returns a dataset where rows with <em class="emphasis">all</em> blank entries are dropped, note that this does not save the new dataset</div></li>
+<li id="li-111"><div class="para" id="p-209">
+<code class="code-inline tex2jax_ignore">df[ColName].unique()</code> - returns all unique entries in a particular column</div></li>
+<li id="li-112"><div class="para" id="p-210">
+<code class="code-inline tex2jax_ignore">df[ColName].value_counts()</code> - returns all unique entries and the number of times they each occur</div></li>
+<li id="li-113"><div class="para" id="p-211">
+<code class="code-inline tex2jax_ignore">df[ColName].map(dict)</code> - returns a new column where entries in original column are turned into new entries according to the dictionary (keys-old entries, values-new entries)</div></li>
+<li id="li-114"><div class="para" id="p-212">
+<code class="code-inline tex2jax_ignore">df[ColName].apply(func)</code> - returns a new column where entries in original column are turned into new entries according to the dictionary</div></li>
+</ol>
+</div>
+<article class="activity project-like" id="activity-6"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Playing with Titanic Dataset.</span>
+</h4> <div class="para logical" id="p-213">
+<div class="para">Perform the following tasks on the dataset</div>
+<ol class="lower-alpha">
+<li id="li-115"><div class="para" id="p-214">Remove any rows with all blank entries</div></li>
+<li id="li-116"><div class="para" id="p-215">What percentage of the passengers were men? What percentage of survivors were men?</div></li>
+<li id="li-117"><div class="para" id="p-216">How many different life boats were on the ship? How many people were on each one?</div></li>
+<li id="li-118"><div class="para" id="p-217">For each life boat, what was the percentage of male? What percentage were female?</div></li>
+<li id="li-119"><div class="para" id="p-218">Make a new column that classifies the <code class="code-inline tex2jax_ignore">fare</code> a passenger paid for their ticket into one of four groups: less than 10, more than 10 less than 50, more than 50 less than 100, and more than 100. Find the percentage of survivors for each fare class.</div></li>
+<li id="li-120"><div class="para" id="p-219">Find the percentage of survivors by gender and fare class. How does the male survival rates broken down by fare classes compare to the overall percentage of the male survivors? What might this tell you about important factors to determining whether someone survived?</div></li>
+</ol>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="section-3-3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chapter-4.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="section-3-4.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chapter-4.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer">
