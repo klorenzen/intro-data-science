@@ -1,0 +1,136 @@
+<section xml:id="section-3-4">
+	<title>Functions in Python</title>
+	<subsection><title>Lists and Dictionaries</title>
+<p>Lists are an important data type that we will use frequently. A <term>Lists</term> store other data types (including other lists) and are mutable meaning we can change the entries. To make a list we put our entries into square brackets separated by commas. We call them with an index or the number they are in order. Python begins all indices with zero, so the first entry has index 0. For example, here is a list:</p>
+
+<blockquote><p>
+<c>
+my_list=['a', 'b', 'c', 4, 10]
+</c></p></blockquote>
+
+<p>To print the fourth entry in the list we would write <c>my_list[3]</c>. Try this below: <sage /></p>
+
+<p> We can reassign indices to values by using <c>=</c> which is the assignment operator. For example <c>my_list[3]=7%5</c> reassigns the fourth entry to the remainder of seven divided by five. We can also use special methods of our lists including
+<ul>
+<li><p><c>my_list.append(x)</c> which would add <c>x</c> to the end of the list,</p></li>
+<li><p><c>my_list.pop(2)</c> which would remove the index 2 entry from the list, and </p></li>
+<li><p><c>my_list.remove(x)</c> which removes element <c>x</c> from the list</p></li>
+</ul>
+
+	Try these with values inside the parenthesis. <sage /></p>
+
+	<p>If we want to quickly create a list of numbers that are increasing by a set amount, we can use <term><c>range()</c></term> function. The input is the start and stop+1. If only one input is given, it starts at 0 and ends at stop-1. This function is a generator meaning that we have to tell it we would like it to make a list with the command <c>list(range(start, stop+1))</c>. 
+
+Using <c>range()</c>, make a list that is the numbers <c>3</c> through <c>13</c>.<sage /></p>
+
+
+<p>Dictionaries are helpful when doing cleaning and feature extraction. <term>Dictionaries</term> are like lists expect they are unordered so they do not have an order to them. They have two pieces: keys and values. To make a dictionary we put our keys-value pairs between curly braces separated by commas. We indicate which entry is the key and which one is the value using a colon. For example,</p>
+<blockquote><p>
+<c>
+my_dict={"apple":"fruit", "bean":"veggie"}
+</c></p></blockquote>
+<p>Like lists, dictionaries are changable, meaning we can change, add, or remove items after the dictionary has been created. First, use the key <c>"apple"</c> to call the value <c>"fruit"</c> by using it like an index of a list. <sage /> 
+
+Try reassigning the value of the key <c>"apple"</c> then try reassigning the value in a dictionary of a that does not exist like 10. What do you notice?</p>
+
+<p>Create a dictionary with duplicate keys, what happens when you print the duplicate key value? <sage /></p> 
+	</subsection>
+
+	<subsection><title>Writing own functions</title>
+		<p> Now that we have our data verbs we can have more fun gathering information from data. Today we will be exploring how we can mutate columns with more sophistication. 
+
+			In addition to using other people's functions, we can also write our own. This is really useful when we notice that we are doing a repetitive process. If we wanted to write a function that added two to a number it would look like this:</p>
+<blockquote>
+	<p>
+<c>def addTwo(x):
+    result=x+2
+    return result</c>
+</p>
+</blockquote>
+<p>
+Here the <c>def</c> means were are defining a new function, <c>addTwo()</c> is the name of our function that we will use to call again, <c>x</c> is our input variable and <c>:</c> means we are about to give our recipe. Notice the next line is tabbed over, this is important. Once we leave the tabbed lines, we are no longer giving recipe instructions.
+
+The other important part in the <c>return</c> which is followed by the product we want from our function. This is optional. 
+
+Write a function that determines whether a number is even or odd. 
+</p>
+<sage />
+	</subsection>
+
+	<subsection>
+		<title>if statements, for loops, and while loops</title>
+		<p>Some other programming ideas we will be using are <em>if</em> statements. An <term>if</term> statement is some part of the program that only runs if something is true. For example</p>
+
+<blockquote>
+	<p><c>
+if x&lt;0:
+    x=x*-1
+np.squareroot(x)</c></p>
+</blockquote>
+
+<p>Similar to a function definition, only the tabbed part happens if <c>x&lt;0</c>. We can also add an <c>else</c> which will allow us to run different lines if it is not true. For example</p>
+
+<blockquote>
+	<p><c>
+if x==0:
+    x+=1
+else:
+    x=x/10
+</c></p></blockquote>
+
+<p>A <term>for</term> loop is a program that will do something to every object in a list (iterable object). It has a variable that is the thing that changes as well as the list that the variable will become. For example</p>
+
+<blockquote>
+	<p><c>
+for x in [1,2,3,4,5,6]:
+    print(x*7)
+</c></p></blockquote>
+
+<p>A *while* loop is similar to a <term>for</term> loop although it does not go through a list. It will stop once a logical expression is no longer satisfied. For example</p>
+
+<blockquote>
+	<p><c>
+x=1
+while x&lt;10:
+    print(x+2)
+    x=x+1
+</c></p></blockquote>
+
+<p>Be cautious with <term>while</term> loops that you update the variable otherwise they will run forever. </p>
+
+<activity>
+	<statement><p>Write a script that prints all the squares of the odd number between 1 and 10.
+		<sage /></p></statement>
+	</activity>
+</subsection>
+
+<subsection><title>Mutating with functions</title>
+
+	<p>Now that we have more python tools under our belt, we can start to learn how to use these while trying to mutate columns. For this section we will be focusing on the Titanic dataset. The Titanic dataset has a list of all the people onboard the Titanic Oceanliner before it met its tragic end by hitting an iceberg. It is full of interesting information and we will try to extract it all!</p>
+
+	<p>Here is a quick list of some functions that may or may not be helpful as we try to use our data verbs!
+		<ol marker="1.">
+			<li><p><c>df.isna()</c> - turns all entries to True if it is blank (or has NaN in them) and False otherwise</p></li>
+			<li><p><c>df.dropna(axis=0, how="all", inplace=False)</c> - returns a dataset where rows with <em>all</em> blank entries are dropped, note that this does not save the new dataset</p></li>
+			<li><p><c>df[ColName].unique()</c> - returns all unique entries in a particular column</p></li>
+			<li><p><c>df[ColName].value_counts()</c> - returns all unique entries and the number of times they each occur</p></li>
+			<li><p><c>df[ColName].map(dict)</c> - returns a new column where entries in original column are turned into new entries according to the dictionary (keys-old entries, values-new entries)</p></li>
+			<li><p><c>df[ColName].apply(func)</c> - returns a new column where entries in original column are turned into new entries according to the dictionary</p></li>
+		</ol>
+	</p>
+
+	<activity><title>Playing with Titanic Dataset</title>
+		<p>Perform the following tasks on the dataset
+			<ol marker="a.">
+				<li><p>Remove any rows with all blank entries</p></li>
+				<li><p>What percentage of the passengers were men? What percentage of survivors were men?</p></li>
+				<li><p>How many different life boats were on the ship? How many people were on each one?</p></li>
+				<li><p>For each life boat, what was the percentage of male? What percentage were female?</p></li>
+				<li><p>Make a new column that classifies the <c>fare</c> a passenger paid for their ticket into one of four groups: less than 10, more than 10 less than 50, more than 50 less than 100, and more than 100. Find the percentage of survivors for each fare class.</p></li>
+				<li><p>Find the percentage of survivors by gender and fare class. How does the male survival rates broken down by fare classes compare to the overall percentage of the male survivors? What might this tell you about important factors to determining whether someone survived?</p></li>
+			</ol>
+		</p>
+	</activity>
+
+</subsection>
+</section>

@@ -9,9 +9,7 @@ A <term>function</term> is a recipe of directions that has inputs (ingredients) 
 
 This would not only measure the flour but do so in our desire unit, cups!</p>
 
-<p>Other functions that are more like baking a cake have all their inputs in parenthesis. <c>
-bake(flour, sugar, egg)
-</c></p>
+<p>Other functions that are more like baking a cake have all their inputs in parenthesis. <c>bake(flour, sugar, egg)</c></p>
 
 
 <p><term>Packages</term> are a special collection of functions that other people have written that we can use. To use a function from a package, we first have to import them into our notebook. 
@@ -28,8 +26,7 @@ Typical Packages:
 When importing packages, you can either import the entire package or particular parts. All of these packages have documentation online (usually) with good examples of how to use their functions. 
 </p>
 
-<p>If a function comes from a package, then its name might include the package it came from.<c>
-import pandas as pd
+<p>If a function comes from a package, then its name might include the package it came from.<c>import pandas as pd
 pd.read_csv(FILE_NAME)
 </c>
 

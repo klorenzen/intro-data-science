@@ -16,6 +16,8 @@
 </section>
 
 <xi:include  href="python-data-verbs.ptx" />
+<xi:include  href="func-python.ptx" />
+
 
 <!--ToDo
       <section xml:id="section-3-1">

@@ -676,7 +676,7 @@
            <row>
           	<cell> </cell><cell></cell><cell></cell><cell></cell><cell></cell>
           </row>
-          <row header="yes" bottom="major">
+          <row bottom="major">
                <cell>A </cell>
                   <cell> B</cell>
                   <cell>C</cell>
@@ -692,7 +692,7 @@
           <row>
           	<cell> </cell><cell></cell><cell></cell><cell></cell><cell></cell>
           </row>
-          <row header="yes" bottom="major">
+          <row bottom="major">
                <cell>A </cell>
                   <cell> B</cell>
                   <cell>C</cell>
