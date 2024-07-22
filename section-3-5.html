@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Python Fundementals</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Introduction to Data Science">
+<meta property="book:author" content="Adam Blumenthal">
+<meta property="book:author" content="Cassidy Faye Krause">
+<meta property="book:author" content="Kate Lorenzen">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.3.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runtime.740db250e511e1cc.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.9813637ef2f0e0ee.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.f64dcc3632d7a0c3.css">
+<style>
+#section-1-1-7-2-1-1 { counter-set: section-1-1-7-2-1-1 0; }
+#section-1-1-7-2-1-1 > li::marker { content: ""counter(section-1-1-7-2-1-1,lower-alpha)"."; }
+#section-1-1-7-2-1-1 > li { counter-increment: section-1-1-7-2-1-1; }
+#section-1-1-10-1-3-1 { counter-set: section-1-1-10-1-3-1 0; }
+#section-1-1-10-1-3-1 > li::marker { content: ""counter(section-1-1-10-1-3-1,lower-alpha)"."; }
+#section-1-1-10-1-3-1 > li { counter-increment: section-1-1-10-1-3-1; }
+#section-1-2-4-2-1-1 { counter-set: section-1-2-4-2-1-1 0; }
+#section-1-2-4-2-1-1 > li::marker { content: ""counter(section-1-2-4-2-1-1,lower-alpha)"."; }
+#section-1-2-4-2-1-1 > li { counter-increment: section-1-2-4-2-1-1; }
+#section-1-2-6-1-1-1 { counter-set: section-1-2-6-1-1-1 0; }
+#section-1-2-6-1-1-1 > li::marker { content: ""counter(section-1-2-6-1-1-1,lower-alpha)"."; }
+#section-1-2-6-1-1-1 > li { counter-increment: section-1-2-6-1-1-1; }
+#intro-ethics-6-2-1-1 { counter-set: intro-ethics-6-2-1-1 0; }
+#intro-ethics-6-2-1-1 > li::marker { content: ""counter(intro-ethics-6-2-1-1,lower-alpha)"."; }
+#intro-ethics-6-2-1-1 > li { counter-increment: intro-ethics-6-2-1-1; }
+#intro-ethics-7-2-1 { counter-set: intro-ethics-7-2-1 0; }
+#intro-ethics-7-2-1 > li::marker { content: ""counter(intro-ethics-7-2-1,decimal)"."; }
+#intro-ethics-7-2-1 > li { counter-increment: intro-ethics-7-2-1; }
+#intro-ethics-7-2-1-1-1-3 { counter-set: intro-ethics-7-2-1-1-1-3 0; }
+#intro-ethics-7-2-1-1-1-3 > li::marker { content: ""counter(intro-ethics-7-2-1-1-1-3,lower-alpha)"."; }
+#intro-ethics-7-2-1-1-1-3 > li { counter-increment: intro-ethics-7-2-1-1-1-3; }
+#intro-ethics-7-2-1-2-1-3 { counter-set: intro-ethics-7-2-1-2-1-3 0; }
+#intro-ethics-7-2-1-2-1-3 > li::marker { content: ""counter(intro-ethics-7-2-1-2-1-3,lower-alpha)"."; }
+#intro-ethics-7-2-1-2-1-3 > li { counter-increment: intro-ethics-7-2-1-2-1-3; }
+#intro-ethics-7-2-1-3-1-3 { counter-set: intro-ethics-7-2-1-3-1-3 0; }
+#intro-ethics-7-2-1-3-1-3 > li::marker { content: ""counter(intro-ethics-7-2-1-3-1-3,lower-alpha)"."; }
+#intro-ethics-7-2-1-3-1-3 > li { counter-increment: intro-ethics-7-2-1-3-1-3; }
+#intro-ethics-7-2-1-4-1-3 { counter-set: intro-ethics-7-2-1-4-1-3 0; }
+#intro-ethics-7-2-1-4-1-3 > li::marker { content: ""counter(intro-ethics-7-2-1-4-1-3,lower-alpha)"."; }
+#intro-ethics-7-2-1-4-1-3 > li { counter-increment: intro-ethics-7-2-1-4-1-3; }
+#intro-ethics-7-2-1-5-1-3 { counter-set: intro-ethics-7-2-1-5-1-3 0; }
+#intro-ethics-7-2-1-5-1-3 > li::marker { content: ""counter(intro-ethics-7-2-1-5-1-3,lower-alpha)"."; }
+#intro-ethics-7-2-1-5-1-3 > li { counter-increment: intro-ethics-7-2-1-5-1-3; }
+#intro-ethics-9-1-2 { counter-set: intro-ethics-9-1-2 0; }
+#intro-ethics-9-1-2 > li::marker { content: ""counter(intro-ethics-9-1-2,lower-alpha)"."; }
+#intro-ethics-9-1-2 > li { counter-increment: intro-ethics-9-1-2; }
+#section-3-1-5-9 { counter-set: section-3-1-5-9 0; }
+#section-3-1-5-9 > li::marker { content: ""counter(section-3-1-5-9,decimal)"."; }
+#section-3-1-5-9 > li { counter-increment: section-3-1-5-9; }
+#section-3-1-6-5-2 { counter-set: section-3-1-6-5-2 0; }
+#section-3-1-6-5-2 > li::marker { content: ""counter(section-3-1-6-5-2,decimal)"."; }
+#section-3-1-6-5-2 > li { counter-increment: section-3-1-6-5-2; }
+#section-3-2-9-1-1-2 { counter-set: section-3-2-9-1-1-2 0; }
+#section-3-2-9-1-1-2 > li::marker { content: ""counter(section-3-2-9-1-1-2,lower-alpha)"."; }
+#section-3-2-9-1-1-2 > li { counter-increment: section-3-2-9-1-1-2; }
+#section-3-2-9-1-1-2-2-1-1 { counter-set: section-3-2-9-1-1-2-2-1-1 0; }
+#section-3-2-9-1-1-2-2-1-1 > li::marker { content: ""counter(section-3-2-9-1-1-2-2-1-1,lower-roman)"."; }
+#section-3-2-9-1-1-2-2-1-1 > li { counter-increment: section-3-2-9-1-1-2-2-1-1; }
+#section-3-5-6-3-1 { counter-set: section-3-5-6-3-1 0; }
+#section-3-5-6-3-1 > li::marker { content: ""counter(section-3-5-6-3-1,decimal)"."; }
+#section-3-5-6-3-1 > li { counter-increment: section-3-5-6-3-1; }
+#section-3-5-6-4-2-1 { counter-set: section-3-5-6-4-2-1 0; }
+#section-3-5-6-4-2-1 > li::marker { content: ""counter(section-3-5-6-4-2-1,lower-alpha)"."; }
+#section-3-5-6-4-2-1 > li { counter-increment: section-3-5-6-4-2-1; }
+</style>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Introduction to Data Science:</span> <span class="subtitle">A Project-Based Learning Approach</span></a></h1>
+<p class="byline">Adam Blumenthal, Cassidy Faye Krause, Kate Lorenzen</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section-3-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter-3.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-1.html" class="internal"><span class="codenumber">1</span> <span class="title">You <em class="emphasis">ARE</em> a Data Scientist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-1-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is Data Science?</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-1-1.html#section-1-1-10" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-1-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Asking Interesting Questions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-1-2.html#section-1-2-6" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-2.html" class="internal"><span class="codenumber">2</span> <span class="title">Data Ethics</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="intro-ethics.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to Data Ethics</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="intro-ethics.html#intro-ethics-9" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chapter-3.html" class="internal"><span class="codenumber">3</span> <span class="title">Dealing with Data</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-3-1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Data Verbs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-1.html#section-3-1-3" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Brief Introduction to Data Types</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="section-3-1.html#section-3-1-4" class="internal"><span class="codenumber">3.1.2</span> <span class="title">First Data Verbs</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-3-1.html#section-3-1-4-11" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-1.html#section-3-1-5" class="internal"><span class="codenumber">3.1.3</span> <span class="title">More Data Verbs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-1.html#section-3-1-6" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Setting up verb sentences</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-3-1.html#section-3-1-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-3-2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Cleaning Data</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-3-2.html#section-3-2-9" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-3-3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Data Verbs in Excel</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-3-4.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Data Verbs in Python</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-4.html#section-3-4-5" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-4.html#section-3-4-6" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Data Verbs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="section-3-5.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Python Fundementals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-5.html#section-3-5-2" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Data Types and Logical Expressions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-5.html#section-3-5-3" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Lists and Dictionaries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-5.html#section-3-5-4" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Writing our own functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-5.html#section-3-5-5" class="internal"><span class="codenumber">3.5.4</span> <span class="title">if statements, for loops, and while loops</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-3-5.html#section-3-5-6" class="internal"><span class="codenumber">3.5.5</span> <span class="title">Mutating with functions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-4.html" class="internal"><span class="codenumber">4</span> <span class="title">Data Visualizations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-4-1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic sampling techniques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-4-2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">True, easy to understand, not misleading</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-4-3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Principles of Design</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-5.html" class="internal"><span class="codenumber">5</span> <span class="title">Communication in Data Science</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-5-1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Communicating with self</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-5-2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Communicating with others</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-6.html" class="internal"><span class="codenumber">6</span> <span class="title">Statistics and Machine Learning</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-6-1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Under and over sampling techniques</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-6-2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Naive Bayes Classifier</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-6-3.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Linear and Logistic Regression</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-6-4.html" class="internal"><span class="codenumber">6.4</span> <span class="title">K-Nearest Neighbors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-6-5.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Decision Trees</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-6-6.html" class="internal"><span class="codenumber">6.6</span> <span class="title">K-Means Clustering</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-6-7.html" class="internal"><span class="codenumber">6.7</span> <span class="title">Principal Component Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-6-8.html" class="internal"><span class="codenumber">6.8</span> <span class="title">Neural Nets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chapter-7.html" class="internal"><span class="codenumber">7</span> <span class="title">Graph-based Models</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-8.html" class="internal"><span class="codenumber">8</span> <span class="title">Preparing a Project</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-8-1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">How to ask a data science question</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-8-2.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Data acquisition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-8-3.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Choosing your tools</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-9.html" class="internal"><span class="codenumber">9</span> <span class="title">Projects</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-9-1.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Sports</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-9-2.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Finance</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-9-3.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Environmental</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-9-3.html#section-9-3-1" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Minimum Covariance Determinant</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-9-4.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Marketing</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-9-5.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Social networks</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-9-6.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Psychology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-9-7.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Health sciences</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-3-5"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.5</span><span class="space"> </span><span class="title">Python Fundementals</span>
+</h2>
+<section class="subsection" id="section-3-5-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="space"> </span><span class="title">Data Types and Logical Expressions</span>
+</h3>
+<div class="para logical" id="section-3-5-2-2">
+<div class="para">We will start with the basic variable types. Our data usually comes as one of these.</div>
+<ul class="disc" id="section-3-5-2-2-1">
+<li id="section-3-5-2-2-1-1"><div class="para" id="section-3-5-2-2-1-1-1">Numerical: Whole numbers <code class="code-inline tex2jax_ignore">int</code>, decimal numbers <code class="code-inline tex2jax_ignore">float</code>
+</div></li>
+<li id="section-3-5-2-2-1-2"><div class="para" id="section-3-5-2-2-1-2-1">Text: Single characters <code class="code-inline tex2jax_ignore">char</code>, strings of characters <code class="code-inline tex2jax_ignore">str</code>
+</div></li>
+<li id="section-3-5-2-2-1-3"><div class="para" id="section-3-5-2-2-1-3-1">Binary: Boolean, True or False <code class="code-inline tex2jax_ignore">bool</code>
+</div></li>
+</ul>
+</div>
+<div class="para" id="section-3-5-2-3">We store our data as a variable which we give a name to. To assign a name, we use <code class="code-inline tex2jax_ignore">=</code>. For example <code class="code-inline tex2jax_ignore">x=2</code> gives <code class="code-inline tex2jax_ignore">2</code> the name <code class="code-inline tex2jax_ignore">x</code>. This allows us to use the name down the road. We can also reassign the name to a different value of data. For example, <code class="code-inline tex2jax_ignore">x=x+5</code> would take our old value of <code class="code-inline tex2jax_ignore">x</code>, add <code class="code-inline tex2jax_ignore">5</code>, and then reassign the variable <code class="code-inline tex2jax_ignore">x</code> to this new value. Try it below! <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="first-var"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="first-var_editor" data-question_label="" data-codelens="true">x=2
+x=x+5
+print(x)
+</textarea></div></div></div>
+</div>
+<div class="para logical" id="section-3-5-2-4">
+<div class="para">This comes up a lot, so much so that there are short cuts for this.</div>
+<ul class="disc" id="section-3-5-2-4-1">
+<li id="section-3-5-2-4-1-1"><div class="para" id="section-3-5-2-4-1-1-1">
+<code class="code-inline tex2jax_ignore">x+=5</code> is the same as <code class="code-inline tex2jax_ignore">x=x+5</code>
+</div></li>
+<li id="section-3-5-2-4-1-2"><div class="para" id="section-3-5-2-4-1-2-1">
+<code class="code-inline tex2jax_ignore">x-=5</code> is the same as <code class="code-inline tex2jax_ignore">x=x-5</code>
+</div></li>
+</ul>
+<div class="para">Assign <code class="code-inline tex2jax_ignore">x</code> the value <code class="code-inline tex2jax_ignore">2</code>. Add <code class="code-inline tex2jax_ignore">3</code> to <code class="code-inline tex2jax_ignore">x</code>, reassign this value to <code class="code-inline tex2jax_ignore">x</code>. <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="sec-var"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="sec-var_editor" data-question_label="" data-codelens="true">
+</textarea></div></div></div>
+</div>
+</div>
+<div class="para logical" id="section-3-5-2-5">
+<div class="para">With every type of data there are different types of operations we can do to it. For <code class="code-inline tex2jax_ignore">int</code> and <code class="code-inline tex2jax_ignore">float</code> we can do the following operations with the code.</div>
+<ul class="disc" id="section-3-5-2-5-3"></ul>
+</div>
+<div class="para" id="section-3-5-2-6">Try some of these out in the cell below. If you need heavy duty math operations, use the package <code class="code-inline tex2jax_ignore">NumPy</code>. <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="ints-flts"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="ints-flts_editor" data-question_label="" data-codelens="true">
+</textarea></div></div></div>
+</div>
+<div class="para logical" id="section-3-5-2-7">
+<div class="para">For <code class="code-inline tex2jax_ignore">char</code> and <code class="code-inline tex2jax_ignore">str</code> we can do the following operations with the code.</div>
+<ul class="disc" id="section-3-5-2-7-3"></ul>
+<div class="para">Try some of these out in the cell below. <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="chars-str"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="chars-str_editor" data-question_label="" data-codelens="true">my_string="My string is the best string"
+print(my_string[5])
+</textarea></div></div></div>
+</div>
+</div>
+<div class="para logical" id="section-3-5-2-8">
+<div class="para">Finally, we will look at <code class="code-inline tex2jax_ignore">bool</code> opperations. We will use these often for filtering our data. A boolean variable is either true or false. We can form boolean variables through checking comparisons. In addition there are boolean operators that allow us to have multiple comparisons at once.</div>
+<ul class="disc" id="section-3-5-2-8-2"></ul>
+<div class="para">To compare, we can use the following expressions.</div>
+<ul class="disc" id="section-3-5-2-8-3"></ul>
+<div class="para">Try some of these out in the cell below. How does the comparison change for <code class="code-inline tex2jax_ignore">char</code> and <code class="code-inline tex2jax_ignore">str</code> variables? <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="bools"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="bools_editor" data-question_label="" data-codelens="true">
+</textarea></div></div></div> In addition, we commonly use <code class="code-inline tex2jax_ignore">in</code> to check membership</div>
+</div></section><section class="subsection" id="section-3-5-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="space"> </span><span class="title">Lists and Dictionaries</span>
+</h3>
+<div class="para" id="section-3-5-3-2">Lists are an important data type that we will use frequently. A <dfn class="terminology">Lists</dfn> store other data types (including other lists) and are mutable meaning we can change the entries. To make a list we put our entries into square brackets separated by commas. We call them with an <dfn class="terminology">index</dfn> or the number they are in order. Python begins all indices with zero, so the first entry has index 0. For example, here is a list:</div>
+<blockquote class="blockquote" id="section-3-5-3-3"><div class="para" id="section-3-5-3-3-1"><code class="code-inline tex2jax_ignore">my_list=['a', 'b', 'c', 4, 10]
+</code></div></blockquote>
+<div class="para" id="section-3-5-3-4">To print the fourth entry in the list we would write <code class="code-inline tex2jax_ignore">my_list[3]</code>. Try this below: <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="first-list"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="first-list_editor" data-question_label="" data-codelens="true">my_list=['a', 'b', 'c', 4, 10]
+print(my_list)
+</textarea></div></div></div>
+</div>
+<div class="para logical" id="section-3-5-3-5">
+<div class="para">We can reassign indices to values by using <code class="code-inline tex2jax_ignore">=</code> which is the assignment operator. For example <code class="code-inline tex2jax_ignore">my_list[3]=7%5</code> reassigns the fourth entry to the remainder of seven divided by five. We can also use special methods of our lists including</div>
+<ul class="disc" id="section-3-5-3-5-3">
+<li id="section-3-5-3-5-3-1"><div class="para" id="section-3-5-3-5-3-1-1">
+<code class="code-inline tex2jax_ignore">my_list.append(x)</code> which would add <code class="code-inline tex2jax_ignore">x</code> to the end of the list,</div></li>
+<li id="section-3-5-3-5-3-2"><div class="para" id="section-3-5-3-5-3-2-1">
+<code class="code-inline tex2jax_ignore">my_list.pop(2)</code> which would remove the index 2 entry from the list, and</div></li>
+<li id="section-3-5-3-5-3-3"><div class="para" id="section-3-5-3-5-3-3-1">
+<code class="code-inline tex2jax_ignore">my_list.remove(x)</code> which removes element <code class="code-inline tex2jax_ignore">x</code> from the list</div></li>
+</ul>
+<div class="para">Try these below. <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="amend-list"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="amend-list_editor" data-question_label="" data-codelens="true">my_list=['a', 'b', 'c', 4, 10]
+my_list.append()
+print(my_list)
+</textarea></div></div></div>
+</div>
+</div>
+<div class="para" id="section-3-5-3-6">If we want to select a portion of a list we can do a <dfn class="terminology">splice</dfn>. The syntax is <code class="code-inline tex2jax_ignore">my_list[1:3]</code> which will return entries indexed <code class="code-inline tex2jax_ignore">1,2</code>. You can also use negative numbers to grab entries. Try it below to see what happens. <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="splice-list"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="splice-list_editor" data-question_label="" data-codelens="true">my_list=['a', 'b', 'c', 4, 10]
+print(my_list[1:3])
+</textarea></div></div></div>
+</div>
+<div class="para" id="section-3-5-3-7">If we want to quickly create a list of numbers that are increasing by a set amount, we can use <dfn class="terminology"><code class="code-inline tex2jax_ignore">range()</code></dfn> function. The input is the start and stop+1. If only one input is given, it starts at 0 and ends at stop-1. This function is a generator meaning that we have to tell it we would like it to make a list with the command <code class="code-inline tex2jax_ignore">list(range(start, stop+1))</code>. Using <code class="code-inline tex2jax_ignore">range()</code>, make a list that is the numbers <code class="code-inline tex2jax_ignore">3</code> through <code class="code-inline tex2jax_ignore">13</code>.<div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="first-one"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="first-one_editor" data-question_label="" data-codelens="true">print(list(range(13)))
+</textarea></div></div></div>
+</div>
+<div class="para" id="section-3-5-3-8">Dictionaries are helpful when doing cleaning and feature extraction. <dfn class="terminology">Dictionaries</dfn> are like lists expect they are unordered, instead of a index we have a key. Dictionaries use the keys to return the <dfn class="terminology">values</dfn>. To make a dictionary we put our keys-value pairs between curly braces separated by commas. We indicate which entry is the key and which one is the value using a colon. For example,</div>
+<blockquote class="blockquote" id="section-3-5-3-9"><div class="para" id="section-3-5-3-9-1"><code class="code-inline tex2jax_ignore">
+my_dict={"apple":"fruit", "bean":"veggie"}
+</code></div></blockquote>
+<div class="para" id="section-3-5-3-10">Here, <code class="code-inline tex2jax_ignore">"apple"</code> is the key for the value <code class="code-inline tex2jax_ignore">"fruit"</code>. Like lists, dictionaries are changable, meaning we can change, add, or remove items after the dictionary has been created. First, use the key <code class="code-inline tex2jax_ignore">"apple"</code> to call the value <code class="code-inline tex2jax_ignore">"fruit"</code> by using it like an index of a list. <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="first-ditc"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="first-ditc_editor" data-question_label="" data-codelens="true">my_dict={"apple":"fruit", "bean":"veggie"}
+print(my_dict)
+</textarea></div></div></div> Try reassigning the value of the key <code class="code-inline tex2jax_ignore">"apple"</code> then try reassigning the value of a key that does not exist in our dictionary like <code class="code-inline tex2jax_ignore">"porkchop"</code>. What do you notice? <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="amend-ditc"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="amend-ditc_editor" data-question_label="" data-codelens="true">my_dict={"apple":"fruit", "bean":"veggie"}
+print(my_dict)
+</textarea></div></div></div>
+</div>
+<div class="para" id="section-3-5-3-11">Create a dictionary with duplicate keys, what happens when you print the duplicate key value? <div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id="dup-key-ditc"><textarea data-lang="python" data-timelimit="25000" data-audio="" data-coach="true" style="visibility: hidden;" id="dup-key-ditc_editor" data-question_label="" data-codelens="true">
+</textarea></div></div></div>
+</div></section><section class="subsection" id="section-3-5-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="space"> </span><span class="title">Writing our own functions</span>
+</h3>
+<div class="para" id="section-3-5-4-2">Now that we have our data verbs we can have more fun gathering information from data. Today we will be exploring how we can mutate columns with more sophistication. In addition to using other people’s functions, we can also write our own. This is really useful when we notice that we are doing a repetitive process. If we wanted to write a function that added two to a number it would look like this:</div>
+<blockquote class="blockquote" id="section-3-5-4-3"><div class="para" id="section-3-5-4-3-1"><code class="code-inline tex2jax_ignore">def addTwo(x):
+    result=x+2
+    return result</code></div></blockquote>
+<div class="para" id="section-3-5-4-4">Here the <code class="code-inline tex2jax_ignore">def</code> means were are defining a new function, <code class="code-inline tex2jax_ignore">addTwo()</code> is the name of our function that we will use to call again, <code class="code-inline tex2jax_ignore">x</code> is our input variable and <code class="code-inline tex2jax_ignore">:</code> means we are about to give our recipe. Notice the next line is tabbed over, this is important. Once we leave the tabbed lines, we are no longer giving recipe instructions. The other important part in the <code class="code-inline tex2jax_ignore">return</code> which is followed by the product we want from our function. This is optional. Write a function that determines whether a number is even or odd.</div>
+<pre id="section-3-5-4-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"></script></pre></section><section class="subsection" id="section-3-5-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="space"> </span><span class="title">if statements, for loops, and while loops</span>
+</h3>
+<div class="para" id="section-3-5-5-2">Some other programming ideas we will be using are <em class="emphasis">if</em> statements. An <dfn class="terminology">if</dfn> statement is some part of the program that only runs if something is true. For example</div>
+<blockquote class="blockquote" id="section-3-5-5-3"><div class="para" id="section-3-5-5-3-1"><code class="code-inline tex2jax_ignore">
+if x&lt;0:
+    x=x*-1
+np.squareroot(x)</code></div></blockquote>
+<div class="para" id="section-3-5-5-4">Similar to a function definition, only the tabbed part happens if <code class="code-inline tex2jax_ignore">x&lt;0</code>. We can also add an <code class="code-inline tex2jax_ignore">else</code> which will allow us to run different lines if it is not true. For example</div>
+<blockquote class="blockquote" id="section-3-5-5-5"><div class="para" id="section-3-5-5-5-1"><code class="code-inline tex2jax_ignore">
+if x==0:
+    x+=1
+else:
+    x=x/10
+</code></div></blockquote>
+<div class="para" id="section-3-5-5-6">A <dfn class="terminology">for</dfn> loop is a program that will do something to every object in a list (iterable object). It has a variable that is the thing that changes as well as the list that the variable will become. For example</div>
+<blockquote class="blockquote" id="section-3-5-5-7"><div class="para" id="section-3-5-5-7-1"><code class="code-inline tex2jax_ignore">
+for x in [1,2,3,4,5,6]:
+    print(x*7)
+</code></div></blockquote>
+<div class="para" id="section-3-5-5-8">A *while* loop is similar to a <dfn class="terminology">for</dfn> loop although it does not go through a list. It will stop once a logical expression is no longer satisfied. For example</div>
+<blockquote class="blockquote" id="section-3-5-5-9"><div class="para" id="section-3-5-5-9-1"><code class="code-inline tex2jax_ignore">
+x=1
+while x&lt;10:
+    print(x+2)
+    x=x+1
+</code></div></blockquote>
+<div class="para" id="section-3-5-5-10">Be cautious with <dfn class="terminology">while</dfn> loops that you update the variable otherwise they will run forever.</div>
+<article class="activity project-like" id="section-3-5-5-11"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="section-3-5-5-11-1-1">Write a script that prints all the squares of the odd number between 1 and 10. <pre id="section-3-5-5-11-1-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"></script></pre>
+</div></article></section><section class="subsection" id="section-3-5-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="space"> </span><span class="title">Mutating with functions</span>
+</h3>
+<div class="para" id="section-3-5-6-2">Now that we have more python tools under our belt, we can start to learn how to use these while trying to mutate columns. For this section we will be focusing on the Titanic dataset. The Titanic dataset has a list of all the people onboard the Titanic Oceanliner before it met its tragic end by hitting an iceberg. It is full of interesting information and we will try to extract it all!</div>
+<div class="para logical" id="section-3-5-6-3">
+<div class="para">Here is a quick list of some functions that may or may not be helpful as we try to use our data verbs!</div>
+<ol class="decimal" id="section-3-5-6-3-1">
+<li id="section-3-5-6-3-1-1"><div class="para" id="section-3-5-6-3-1-1-1">
+<code class="code-inline tex2jax_ignore">df.isna()</code> - turns all entries to True if it is blank (or has NaN in them) and False otherwise</div></li>
+<li id="section-3-5-6-3-1-2"><div class="para" id="section-3-5-6-3-1-2-1">
+<code class="code-inline tex2jax_ignore">df.dropna(axis=0, how="all", inplace=False)</code> - returns a dataset where rows with <em class="emphasis">all</em> blank entries are dropped, note that this does not save the new dataset</div></li>
+<li id="section-3-5-6-3-1-3"><div class="para" id="section-3-5-6-3-1-3-1">
+<code class="code-inline tex2jax_ignore">df[ColName].unique()</code> - returns all unique entries in a particular column</div></li>
+<li id="section-3-5-6-3-1-4"><div class="para" id="section-3-5-6-3-1-4-1">
+<code class="code-inline tex2jax_ignore">df[ColName].value_counts()</code> - returns all unique entries and the number of times they each occur</div></li>
+<li id="section-3-5-6-3-1-5"><div class="para" id="section-3-5-6-3-1-5-1">
+<code class="code-inline tex2jax_ignore">df[ColName].map(dict)</code> - returns a new column where entries in original column are turned into new entries according to the dictionary (keys-old entries, values-new entries)</div></li>
+<li id="section-3-5-6-3-1-6"><div class="para" id="section-3-5-6-3-1-6-1">
+<code class="code-inline tex2jax_ignore">df[ColName].apply(func)</code> - returns a new column where entries in original column are turned into new entries according to the dictionary</div></li>
+</ol>
+</div>
+<article class="activity project-like" id="section-3-5-6-4"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Playing with Titanic Dataset.</span>
+</h4> <div class="para logical" id="section-3-5-6-4-2">
+<div class="para">Perform the following tasks on the dataset</div>
+<ol class="lower-alpha" id="section-3-5-6-4-2-1">
+<li id="section-3-5-6-4-2-1-1"><div class="para" id="section-3-5-6-4-2-1-1-1">Remove any rows with all blank entries</div></li>
+<li id="section-3-5-6-4-2-1-2"><div class="para" id="section-3-5-6-4-2-1-2-1">What percentage of the passengers were men? What percentage of survivors were men?</div></li>
+<li id="section-3-5-6-4-2-1-3"><div class="para" id="section-3-5-6-4-2-1-3-1">How many different life boats were on the ship? How many people were on each one?</div></li>
+<li id="section-3-5-6-4-2-1-4"><div class="para" id="section-3-5-6-4-2-1-4-1">For each life boat, what was the percentage of male? What percentage were female?</div></li>
+<li id="section-3-5-6-4-2-1-5"><div class="para" id="section-3-5-6-4-2-1-5-1">Make a new column that classifies the <code class="code-inline tex2jax_ignore">fare</code> a passenger paid for their ticket into one of four groups: less than 10, more than 10 less than 50, more than 50 less than 100, and more than 100. Find the percentage of survivors for each fare class.</div></li>
+<li id="section-3-5-6-4-2-1-6"><div class="para" id="section-3-5-6-4-2-1-6-1">Find the percentage of survivors by gender and fare class. How does the male survival rates broken down by fare classes compare to the overall percentage of the male survivors? What might this tell you about important factors to determining whether someone survived?</div></li>
+</ol>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-3-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

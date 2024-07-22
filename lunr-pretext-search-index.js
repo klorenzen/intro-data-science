@@ -1,13 +1,13 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "colophon-1",
+  "id": "frontmatter-2",
   "level": "1",
-  "url": "colophon-1.html",
+  "url": "frontmatter-2.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": "   example.org   https:\/\/example.org   copyright  "
+  "body": "  example.org   copyright  "
 },
 {
   "id": "section-1-1",
@@ -19,27 +19,27 @@ var ptx_lunr_docs = [
   "body": " What is Data Science?  In the most general terms data science is the process of applying the scientific method to data. In the current information age we live in data is everywhere! We post on social media, wear watches that track our heart beat, take pictures of planets in the universe we never knew existed. We have an unprecedented ability to gather and keep data about our thoughts, our actions, and the universe around us and data science is the study of how to make sense of all this data. At first, this might seem like a daunting task, but data science draws from many other well established fields.  The first field is Mathematics and Statistics. Using statistics we can use the scientific method to draw inference from our data. Hopefully by the end of this class you will be convinced that data science is much more than applied statistics despite how data science draws a lot of inspiration from statistics. Using mathematics we can draw lots of modeling techniques and solutions to tricky issues that arise when dealing with data.  The second field is Computer Science. The data is best accessed through computers and having a solid foundation of working with computers, data types, and programing are certainly helpful! Computer scientists have been studying how to handle large amounts of data for some time. We will draw on programming techniques and ideas of how to process lots of data in an efficient manner from computer science.  Lastly, is an area of expertise! Data comes from somewhere and that context is an important part of how it is used and studied. Data science about behavior on social media will draw ideas and theories from behavioral science. Light patterns gathered from space will draw techniques from astrophysicists. Player performance in a game will draw theories from sports analytics. Not only we will use context to understand where the data is coming from, but these areas will help us ask good and interesting questions about the data.  To be clear, you do not need to be an expert in an area (nor an expert in math, statistics, and computer science) to be a data scientists. But you do need enough of a background that you can make sense of the data and the results. One analogy we can use is that we need to be able to walk before we can run. Knowing enough of these three areas is the ability to walk, and data science allows us run and explore all the data has to offer.   Classification at the Zoo   The local zoo has lots of animals that they house. Each animal is classified into a Kingdom, Genus, Family, and Species (as we remember from a biology class). These are based on certain characteristics which we have gathered data about. Some new animals have arrived and we want to classify them based on the data. Below you have the data for 10 known animals and three unknown animals.  Your first task is to use the data to group your known animals together. How do you know you have good groups?  Now, look at the data of the unknown animals. Predict which groups they belong in.  Explain your method of putting the unknown animals into know groups? Which variables or combination of variables did you use?  Brainstorm ways that you could have done this task easier or better? How would computers help?    Congratulations! You just did Data Science! You are a data scientist! Reviewing your first steps as a data scientist, what might be some other areas where a similar model is used?     Animal Classification    Animal_Name  Class  Hair  Feathers  Eggs  Milk  Airborne  Aquatic  Toothed  Backbone  Venomous  Fins  Legs   antelope 1 1 0 0 1 0 0 1 1 0 0 4  bear 1 1 0 0 1 0 0 1 1 0 0 4  hare 1 1 0 0 1 0 0 1 1 0 0 4  platypus 1 1 0 1 1 0 1 0 1 0 0 4  wolf 1 1 0 0 1 0 0 1 1 0 0 4  chicken 2 0 1 1 0 1 0 0 1 0 0 2  crow 2 0 1 1 0 1 0 0 1 0 0 2  duck 2 0 1 1 0 1 1 0 1 0 0 2  flamingo 2 0 1 1 0 1 0 0 1 0 0 2  gull 2 0 1 1 0 1 1 0 1 0 0 2  ostrich 2 0 1 1 0 0 0 0 1 0 0 2  pitviper 3 0 0 1 0 0 0 1 1 1 0 0  seasnake 3 0 0 0 0 0 1 1 1 1 0 0  slowworm 3 0 0 1 0 0 0 1 1 0 0 0  tortoise 3 0 0 1 0 0 0 0 1 0 0 4  tuatara 3 0 0 1 0 0 0 1 1 0 0 4  bass 4 0 0 1 0 0 1 1 1 0 1 0  catfish 4 0 0 1 0 0 1 1 1 0 1 0  herring 4 0 0 1 0 0 1 1 1 0 1 0  piranha 4 0 0 1 0 0 1 1 1 0 1 0  seahorse 4 0 0 1 0 0 1 1 1 0 1 0  stingray 4 0 0 1 0 0 1 1 1 1 1 0  frog 5 0 0 1 0 0 1 1 1 0 0 4  newt 5 0 0 1 0 0 1 1 1 0 0 4  toad 5 0 0 1 0 0 1 1 1 0 0 4  flea 6 0 0 1 0 0 0 0 0 0 0 6  honeybee 6 1 0 1 0 1 0 0 0 1 0 6  housefly 6 1 0 1 0 1 0 0 0 0 0 6  moth 6 1 0 1 0 1 0 0 0 0 0 6  wasp 6 1 0 1 0 1 0 0 0 1 0 6  clam 7 0 0 1 0 0 0 0 0 0 0 0  lobster 7 0 0 1 0 0 1 0 0 0 0 6  scorpion 7 0 0 0 0 0 0 0 0 1 0 8  slug 7 0 0 1 0 0 0 0 0 0 0 0  starfish 7 0 0 1 0 0 1 0 0 0 0 5  worm 7 0 0 1 0 0 0 0 0 0 0 0   Animal_1  1 0 0 1 0 0 1 1 0 0 2  Animal_2  0 1 1 0 0 1 0 1 0 0 2  Animal_3  0 0 1 0 0 1 0 0 0 0 8    Every data set has two main components data points and variables . In the table, the data points are the rows and each one represents an observation. The variables are the columns and store the information that we gathered about each observation. You might have noticed when classifying the animals that some variables were more important than others. This is a key skill of a data scientist! Practice this idea in the following exercise.   You are given a data set about movies which has the movie title, director, year of release, total gross revenue, genres, and average rating as variables. Below is the first few rows of data.  Movies and Ratings    Title Director Year Gross Revenue Genres Rating    Toy Story John Lasseter 1995 $3.3 billion Adventure, animation, children, comedy, fantasy 8.3    Father of the Bride Part II Charles Shyer 1995 $76.6 million Comedy 6.1    The Hunger Games Gary Ross 2012 $2.97 billion Action, adventure, drama, sci-fi, thriller 7.2    Alvin and the Chipmunks: Chipwrecked Mike Mitchell 2011 $343 million Animation, comedy 4.3    How to Train Your Dragon 2 Dean DeBlois 2014 $618.9 million Action, adventure,animation 7.8    Some like it Hot Billy Wilder 1959 $25 million Comedy, music, romance 8.2      Suppose a person had watched some of these movies and given them ratings. We would like to predict if they would like another movie. Which variables would we want to use?  Describe how you would organize the data according to these variables?  How could you determine if your prediction about the movie for the person were correct?  Now suppose we are a movie production company and we are trying to determine whether to make a particular movie where we already have the script and director whose has made lots of movies for us before. We would like to estimate how much gross revenue we will get so we can set an appropriate budget. Which variables from the data set should we use for our analysis? Should we restrict the values? (If so, which ones and by what restriction.)  Based on what you know about the economy and movie distribution, what are some things we should be cautious about when we get our final answer. In other words, how might some of our data be corrupting our prediction? Brainstorm ways we might be able to get a more accurate answer.     "
 },
 {
-  "id": "exploration-1",
+  "id": "section-1-1-7",
   "level": "2",
-  "url": "section-1-1.html#exploration-1",
+  "url": "section-1-1.html#section-1-1-7",
   "type": "Exploration",
   "number": "1.1.1",
   "title": "Classification at the Zoo.",
   "body": " Classification at the Zoo   The local zoo has lots of animals that they house. Each animal is classified into a Kingdom, Genus, Family, and Species (as we remember from a biology class). These are based on certain characteristics which we have gathered data about. Some new animals have arrived and we want to classify them based on the data. Below you have the data for 10 known animals and three unknown animals.  Your first task is to use the data to group your known animals together. How do you know you have good groups?  Now, look at the data of the unknown animals. Predict which groups they belong in.  Explain your method of putting the unknown animals into know groups? Which variables or combination of variables did you use?  Brainstorm ways that you could have done this task easier or better? How would computers help?    Congratulations! You just did Data Science! You are a data scientist! Reviewing your first steps as a data scientist, what might be some other areas where a similar model is used?   "
 },
 {
-  "id": "table-1",
+  "id": "section-1-1-8",
   "level": "2",
-  "url": "section-1-1.html#table-1",
+  "url": "section-1-1.html#section-1-1-8",
   "type": "Table",
   "number": "1.1.1",
   "title": "Animal Classification",
   "body": " Animal Classification    Animal_Name  Class  Hair  Feathers  Eggs  Milk  Airborne  Aquatic  Toothed  Backbone  Venomous  Fins  Legs   antelope 1 1 0 0 1 0 0 1 1 0 0 4  bear 1 1 0 0 1 0 0 1 1 0 0 4  hare 1 1 0 0 1 0 0 1 1 0 0 4  platypus 1 1 0 1 1 0 1 0 1 0 0 4  wolf 1 1 0 0 1 0 0 1 1 0 0 4  chicken 2 0 1 1 0 1 0 0 1 0 0 2  crow 2 0 1 1 0 1 0 0 1 0 0 2  duck 2 0 1 1 0 1 1 0 1 0 0 2  flamingo 2 0 1 1 0 1 0 0 1 0 0 2  gull 2 0 1 1 0 1 1 0 1 0 0 2  ostrich 2 0 1 1 0 0 0 0 1 0 0 2  pitviper 3 0 0 1 0 0 0 1 1 1 0 0  seasnake 3 0 0 0 0 0 1 1 1 1 0 0  slowworm 3 0 0 1 0 0 0 1 1 0 0 0  tortoise 3 0 0 1 0 0 0 0 1 0 0 4  tuatara 3 0 0 1 0 0 0 1 1 0 0 4  bass 4 0 0 1 0 0 1 1 1 0 1 0  catfish 4 0 0 1 0 0 1 1 1 0 1 0  herring 4 0 0 1 0 0 1 1 1 0 1 0  piranha 4 0 0 1 0 0 1 1 1 0 1 0  seahorse 4 0 0 1 0 0 1 1 1 0 1 0  stingray 4 0 0 1 0 0 1 1 1 1 1 0  frog 5 0 0 1 0 0 1 1 1 0 0 4  newt 5 0 0 1 0 0 1 1 1 0 0 4  toad 5 0 0 1 0 0 1 1 1 0 0 4  flea 6 0 0 1 0 0 0 0 0 0 0 6  honeybee 6 1 0 1 0 1 0 0 0 1 0 6  housefly 6 1 0 1 0 1 0 0 0 0 0 6  moth 6 1 0 1 0 1 0 0 0 0 0 6  wasp 6 1 0 1 0 1 0 0 0 1 0 6  clam 7 0 0 1 0 0 0 0 0 0 0 0  lobster 7 0 0 1 0 0 1 0 0 0 0 6  scorpion 7 0 0 0 0 0 0 0 0 1 0 8  slug 7 0 0 1 0 0 0 0 0 0 0 0  starfish 7 0 0 1 0 0 1 0 0 0 0 5  worm 7 0 0 1 0 0 0 0 0 0 0 0   Animal_1  1 0 0 1 0 0 1 1 0 0 2  Animal_2  0 1 1 0 0 1 0 1 0 0 2  Animal_3  0 0 1 0 0 1 0 0 0 0 8   "
 },
 {
-  "id": "exercise-1",
+  "id": "section-1-1-10-1",
   "level": "2",
-  "url": "section-1-1.html#exercise-1",
+  "url": "section-1-1.html#section-1-1-10-1",
   "type": "Exercise",
   "number": "1.1.1",
   "title": "",
@@ -55,18 +55,18 @@ var ptx_lunr_docs = [
   "body": " Asking Interesting Questions  The first step to doing Data Science is to have data. Data comes in many forms but for the purposes of this section, we will think of data as information stored on a computer. Data is collected about people, countries, natural environment, institutions, and many others. Therefore, most data comes when humans interact with systems that collect data. This could be when you open tiktok on your phone and every like and comment you make. This could be when you swipe your keycard to get into a building. The key insight is that the data collected is reflected of actions of people. We cannot collect data about someone's emotions when they swipe into a building- we can make predictions, we can ask them- but these are not objective pieces of data. -side note about the field of psychology and survey design, but most of the data we will be exploring in this class will deal with objective data-  So, if we only have data about people's reactions to events or other objective, observable facts, what can we tell from data? Well, other objective, observable facts about the future . This is the power of data science! It also shapes the types of questions data science can answer. A good rule of thumb is that data science questions should be future looking (What do I expect to happen?), observable (in the future, I can come back and tell if I was right or wrong), and have un-obvious solutions.   Asking Data Science Questions   For each of the following, explain why they are not good data science questions. Then rephrase them to be good data science questions.  Who won the football game last week?  Does my boyfriend love me?  How many members are on an NBA team?   Despite these being silly, remember today when thinking about data science questions so you do not become an example memorialized in a text.    Later this course, when preparing for projects we will work on how to divise good question (and how to answer it).   For each of the ways that gather is collected around you, brainstorm possible data science questions that are future looking, observable, and have un-obvious solutions.  Number of pictures a person posts a day on a social media site.  Number of times people searched for a particular word each day over several years.  The number of webpages written in every language.  Answers to survey results sent out to thousands of people about flowers.  Number of times a particular player tries to score and the number of times they are successful.     "
 },
 {
-  "id": "exploration-2",
+  "id": "section-1-2-4",
   "level": "2",
-  "url": "section-1-2.html#exploration-2",
+  "url": "section-1-2.html#section-1-2-4",
   "type": "Exploration",
   "number": "1.2.1",
   "title": "Asking Data Science Questions.",
   "body": " Asking Data Science Questions   For each of the following, explain why they are not good data science questions. Then rephrase them to be good data science questions.  Who won the football game last week?  Does my boyfriend love me?  How many members are on an NBA team?   Despite these being silly, remember today when thinking about data science questions so you do not become an example memorialized in a text.   "
 },
 {
-  "id": "exercise-2",
+  "id": "section-1-2-6-1",
   "level": "2",
-  "url": "section-1-2.html#exercise-2",
+  "url": "section-1-2.html#section-1-2-6-1",
   "type": "Exercise",
   "number": "1.2.1",
   "title": "",
@@ -82,27 +82,27 @@ var ptx_lunr_docs = [
   "body": " Introduction to Data Ethics  Data science and algorithms have brought many advances to our society. Think of all the ways that technology has changed over your lifetime (and try to imagine how it has changed over your professor's lifetime). It has become sophisticated enough at recognizing patterns of human behavior that it can predict financial markets and recommend videos to everyone's hyper niche interests. Recently, technology has been released to the public that can write term papers and hold debates with humans. In short, it is amazing what technology can do.  One thing that algorithms are not able to do is put limits on its power. It was reported in the Wall Street Journal that a health data app was reporting to employers the health data (in the aggregate) of their employees including predictions on the number who will develop certain health conditions, including pregnancy. To do this the app was seeing if any employees had stop renewing birth control or had searched for prenatal vitamins or other fertility related searches. This raises questions about the amount of information that we want employers to have about their employees.  Health companies could argue that providing this information to employers helps them make decisions about how many people to staff. But this information could also be used in nefarious ways. Many people have reasons that they want to keep their health data secrete. Data scientists must think about potential abuses of their algorithms and weigh this with the potential benefits instead of only seeing the potential benefit.  In addition to algorithms, we need to consider the data they are using to train their predictions on. Typically algorithms are designed to replicate actions and decisions made by humans. So if the data documents previous injustices, then the algorithm is bound to repeat it.   What are data ethics?   Ethics are about establishing actions that are right vs wrong in a philosophical sense. Before we jump into practical situations, let us muse philosophically about big picture principles of data ethics.  What does living in a fair society mean to you?  What does it mean to be ethical? What does it mean to be acting in a fair and just way?  At their core, why does we use algorithms?  Our ethics tell us that we want the world to be more fair and just. Algorithms and data analysis is about making our world more efficient. How can the data scientist balance these two ideas?   As a data science community, we need to agree in the abstract about moving towards a fair and just society. The balance of this with the desire to have a more efficient world is where lots of work in data ethics need to take place.     Data ethics in the wild  Let's now explore further into some concrete situations where unethical behavior has not been properly followed. After reading each article, use the discussion questions as a springboard to start developing your principles of data ethics.  When good algorithms go sexists   What are some of the ways gender is a contentious variable in data sets?  When should gender be used as a variable in data science? When should it not?  In historic data sets, gender is represented as a binary which clashes with modern ideas. How can we reconcile this as a data science community?  With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. What might be other variables that strongly correspond to gender?  Predict some other variables that are questionable to include in data analysis. You may include applications where these variables should and should not be used.   The A.I. ``Gaydar\" study and the real dangers of big data   What are the problems with trying to predict sexual orientation with facial recognition?  How was the data set collected? What ethical issues with consent do the data scientists face?  Other algorithms try to predict sexual orientation with habitual behavior (like shopping trends). Is this more or less ethical than with facial recognition?  Some organizations try to predict someone’s race based on their name to target voting registration. With a less nefarious application, some might see this project as more ethical. Would the application of predicting sexual orientation using facial recognition make it more or less ethical?  Predict some other variables that are questionable to predict from a data set. You may include applications.   A face is exposed for AOL searcher no. 4417749   What are some problems with releasing 3 months of search history of users?  What are the potential harms of someone’s search history being public?  What is the difference between consent and informed consent? How does this difference effect the ethics of a data set?  Most search engines keep search data. Could applications of this data be considered more or less ethical than others? Give examples.  Predict other data that people give with uninformed consent. How could the release of this data be potentially harmful?   Machine bias risk assessment in criminal sentencing   What are some problems with trying to predict crime?  How did the algorithm receive feedback as to its accuracy? How does its inaccuracy cause harm to people?  With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. So if a data scientists did not want to include race they may also not include zip code. What are some of the questions the model uses (variables)? Are these introducing variables that should be avoided when thinking about a fair and just society? What are some of these variables?  Other types of models instead look at common locations of crimes and send police to patrol those areas. Naturally, police find crime there and report it back to the algorithm. These areas tend to be the poorer neighborhoods in cities. What are some issues with this type of feedback to the algorithm? Does this algorithm seem fair?  In a fair and just society, we must balance public safety with freedom and humanity of everyone. How could algorithm related to crime be improved (if at all) in terms of how humans interpret these results?   The first year of AI college ends in ruin   What are some problems with AI generating text tools use by college students?  What are some potential benefits of students using AI tools to complete their schoolwork? What are some potential harms?  Technology revolutions have always affected classrooms (think about what happened with the invention and popularity of the calculator, typewriter, spell check). How does AI text generation compare?  The article mentioned plagiarism checkers. How do they receive feedback to their accuracy? How does this cause potential harm to people?  One of the goals of education is to equalize people from different socio-economic backgrounds. If technology is unobtainable for groups of people, how can we still guarantee equal access and ability to succeed in school.      This only scratches the surface about how to conduct data science ethically. When conducting data science it is important to weigh the potential benefits with the potential harms to others and our goal of living in a fair and justice world.   Pick a topic from class or another of your choosing relating to data science and ethics. Read an article or a blog post about your issue (cite source in some easy to find way). Discuss in 1-2 pages (typed) the new technology and potential (or actual) harms to humans, fairness, and justice. Some example topics include:  College rankings  Credit Scores  Workplace scheduling technology\/monitoring truck drivers  Workplace personality tests  Home loans    "
 },
 {
-  "id": "exploration-3",
+  "id": "intro-ethics-6",
   "level": "2",
-  "url": "intro-ethics.html#exploration-3",
+  "url": "intro-ethics.html#intro-ethics-6",
   "type": "Exploration",
   "number": "2.1.1",
   "title": "What are data ethics?",
   "body": " What are data ethics?   Ethics are about establishing actions that are right vs wrong in a philosophical sense. Before we jump into practical situations, let us muse philosophically about big picture principles of data ethics.  What does living in a fair society mean to you?  What does it mean to be ethical? What does it mean to be acting in a fair and just way?  At their core, why does we use algorithms?  Our ethics tell us that we want the world to be more fair and just. Algorithms and data analysis is about making our world more efficient. How can the data scientist balance these two ideas?   As a data science community, we need to agree in the abstract about moving towards a fair and just society. The balance of this with the desire to have a more efficient world is where lots of work in data ethics need to take place.   "
 },
 {
-  "id": "exploration-4",
+  "id": "intro-ethics-7",
   "level": "2",
-  "url": "intro-ethics.html#exploration-4",
+  "url": "intro-ethics.html#intro-ethics-7",
   "type": "Exploration",
   "number": "2.1.2",
   "title": "Data ethics in the wild.",
   "body": " Data ethics in the wild  Let's now explore further into some concrete situations where unethical behavior has not been properly followed. After reading each article, use the discussion questions as a springboard to start developing your principles of data ethics.  When good algorithms go sexists   What are some of the ways gender is a contentious variable in data sets?  When should gender be used as a variable in data science? When should it not?  In historic data sets, gender is represented as a binary which clashes with modern ideas. How can we reconcile this as a data science community?  With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. What might be other variables that strongly correspond to gender?  Predict some other variables that are questionable to include in data analysis. You may include applications where these variables should and should not be used.   The A.I. ``Gaydar\" study and the real dangers of big data   What are the problems with trying to predict sexual orientation with facial recognition?  How was the data set collected? What ethical issues with consent do the data scientists face?  Other algorithms try to predict sexual orientation with habitual behavior (like shopping trends). Is this more or less ethical than with facial recognition?  Some organizations try to predict someone’s race based on their name to target voting registration. With a less nefarious application, some might see this project as more ethical. Would the application of predicting sexual orientation using facial recognition make it more or less ethical?  Predict some other variables that are questionable to predict from a data set. You may include applications.   A face is exposed for AOL searcher no. 4417749   What are some problems with releasing 3 months of search history of users?  What are the potential harms of someone’s search history being public?  What is the difference between consent and informed consent? How does this difference effect the ethics of a data set?  Most search engines keep search data. Could applications of this data be considered more or less ethical than others? Give examples.  Predict other data that people give with uninformed consent. How could the release of this data be potentially harmful?   Machine bias risk assessment in criminal sentencing   What are some problems with trying to predict crime?  How did the algorithm receive feedback as to its accuracy? How does its inaccuracy cause harm to people?  With many parts of large cities racially segregated, data scientists have found that using zip codes as a variable is essentially the same as using race as a variable. So if a data scientists did not want to include race they may also not include zip code. What are some of the questions the model uses (variables)? Are these introducing variables that should be avoided when thinking about a fair and just society? What are some of these variables?  Other types of models instead look at common locations of crimes and send police to patrol those areas. Naturally, police find crime there and report it back to the algorithm. These areas tend to be the poorer neighborhoods in cities. What are some issues with this type of feedback to the algorithm? Does this algorithm seem fair?  In a fair and just society, we must balance public safety with freedom and humanity of everyone. How could algorithm related to crime be improved (if at all) in terms of how humans interpret these results?   The first year of AI college ends in ruin   What are some problems with AI generating text tools use by college students?  What are some potential benefits of students using AI tools to complete their schoolwork? What are some potential harms?  Technology revolutions have always affected classrooms (think about what happened with the invention and popularity of the calculator, typewriter, spell check). How does AI text generation compare?  The article mentioned plagiarism checkers. How do they receive feedback to their accuracy? How does this cause potential harm to people?  One of the goals of education is to equalize people from different socio-economic backgrounds. If technology is unobtainable for groups of people, how can we still guarantee equal access and ability to succeed in school.     "
 },
 {
-  "id": "exercise-3",
+  "id": "intro-ethics-9-1",
   "level": "2",
-  "url": "intro-ethics.html#exercise-3",
+  "url": "intro-ethics.html#intro-ethics-9-1",
   "type": "Exercise",
   "number": "2.1.1",
   "title": "",
@@ -127,126 +127,126 @@ var ptx_lunr_docs = [
   "body": " Data Types  matching data types   Match each column in the data table below to its data type  Example Data Table    A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West          A  Integer    B  Character    C  Boolean    D  Float    E  String    "
 },
 {
-  "id": "table-4",
+  "id": "section-3-1-3-7",
   "level": "2",
-  "url": "section-3-1.html#table-4",
+  "url": "section-3-1.html#section-3-1-3-7",
   "type": "Table",
   "number": "3.1.2",
   "title": "Functions for Data Table",
   "body": " Functions for Data Table    Boolean  Integer  Float  Character  String    Equals? Sum Sum Uppercase Upper\/lower case    AND Count Count Lowercase Join\/split    OR Abs Abs Equals Count substring    NOT Mult. Mult.\/Div. Find    Sum Greater\/less than Greater\/less than Strip    Count Mod div. Equals\/ Length    Average Equals? Most math    "
 },
 {
-  "id": "p-87",
+  "id": "section-3-1-4-3",
   "level": "2",
-  "url": "section-3-1.html#p-87",
+  "url": "section-3-1.html#section-3-1-4-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Select "
 },
 {
-  "id": "table-5",
+  "id": "section-3-1-4-4-1-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-5",
+  "url": "section-3-1.html#section-3-1-4-4-1-1-1",
   "type": "Table",
   "number": "3.1.3",
   "title": "",
   "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
 },
 {
-  "id": "table-6",
+  "id": "section-3-1-4-4-2-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-6",
+  "url": "section-3-1.html#section-3-1-4-4-2-1-1",
   "type": "Table",
   "number": "3.1.4",
   "title": "",
   "body": "   A  B  C    5 a True    3 a True    4 b False    2 b True    3 c False    5 c False    4 c True    "
 },
 {
-  "id": "p-90",
+  "id": "section-3-1-4-5",
   "level": "2",
-  "url": "section-3-1.html#p-90",
+  "url": "section-3-1.html#section-3-1-4-5",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Filter "
 },
 {
-  "id": "table-7",
+  "id": "section-3-1-4-6-1-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-7",
+  "url": "section-3-1.html#section-3-1-4-6-1-1-1",
   "type": "Table",
   "number": "3.1.5",
   "title": "",
   "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
 },
 {
-  "id": "table-8",
+  "id": "section-3-1-4-6-2-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-8",
+  "url": "section-3-1.html#section-3-1-4-6-2-1-1",
   "type": "Table",
   "number": "3.1.6",
   "title": "",
   "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    "
 },
 {
-  "id": "p-93",
+  "id": "section-3-1-4-7",
   "level": "2",
-  "url": "section-3-1.html#p-93",
+  "url": "section-3-1.html#section-3-1-4-7",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Mutate "
 },
 {
-  "id": "table-9",
+  "id": "section-3-1-4-8-1-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-9",
+  "url": "section-3-1.html#section-3-1-4-8-1-1-1",
   "type": "Table",
   "number": "3.1.7",
   "title": "",
   "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
 },
 {
-  "id": "table-10",
+  "id": "section-3-1-4-8-2-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-10",
+  "url": "section-3-1.html#section-3-1-4-8-2-1-1",
   "type": "Table",
   "number": "3.1.8",
   "title": "",
   "body": "   A  B  C  D  E  F    5 a True 46.7 North 7    3 a True 35.6 West 5    4 b False 10.8 East 6    2 b True 124.6 North 4    3 c False 4.8 South 5    5 c False 4.7 East 7    4 c True 7.4 West 6    "
 },
 {
-  "id": "p-96",
+  "id": "section-3-1-4-9",
   "level": "2",
-  "url": "section-3-1.html#p-96",
+  "url": "section-3-1.html#section-3-1-4-9",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Sort "
 },
 {
-  "id": "table-11",
+  "id": "section-3-1-4-10-1-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-11",
+  "url": "section-3-1.html#section-3-1-4-10-1-1-1",
   "type": "Table",
   "number": "3.1.9",
   "title": "",
   "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
 },
 {
-  "id": "table-12",
+  "id": "section-3-1-4-10-2-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-12",
+  "url": "section-3-1.html#section-3-1-4-10-2-1-1",
   "type": "Table",
   "number": "3.1.10",
   "title": "",
   "body": "   A  B  C  D  E    2 b True 124.6 North    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    4 c True 7.4 West    3 c False 4.8 South    5 c False 4.7 East    "
 },
 {
-  "id": "table-13",
+  "id": "section-3-1-4-11-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-13",
+  "url": "section-3-1.html#section-3-1-4-11-1-1",
   "type": "Table",
   "number": "3.1.11",
   "title": "Original data table for following exercises",
@@ -271,144 +271,144 @@ var ptx_lunr_docs = [
   "body": "Test yourself! multi data verbs Determine which data verb was applied get the following result. Select all that apply.    E  F(from A)  G (from B)    East 8 25    East 10 11        Select    Yes, columns E, F, and G were selected.      Filter    Yes, this data set was filtered by E==East.      Mutate    Yes, both columns F and G are made from previous columns (A and B respectively). Can you determine the operation?      Sort    Our rows have not changed relative order.    "
 },
 {
-  "id": "p-119",
+  "id": "section-3-1-5-3",
   "level": "2",
-  "url": "section-3-1.html#p-119",
+  "url": "section-3-1.html#section-3-1-5-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Group "
 },
 {
-  "id": "table-16",
+  "id": "section-3-1-5-4-1-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-16",
+  "url": "section-3-1.html#section-3-1-5-4-1-1-1",
   "type": "Table",
   "number": "3.1.14",
   "title": "",
   "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
 },
 {
-  "id": "table-17",
+  "id": "section-3-1-5-4-2-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-17",
+  "url": "section-3-1.html#section-3-1-5-4-2-1-1",
   "type": "Table",
   "number": "3.1.15",
   "title": "",
   "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West        A  B  C  D  E    4 b False 10.8 East    2 b True 124.6 North        A  B  C  D  E    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
 },
 {
-  "id": "p-123",
+  "id": "section-3-1-5-6",
   "level": "2",
-  "url": "section-3-1.html#p-123",
+  "url": "section-3-1.html#section-3-1-5-6",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Aggregate "
 },
 {
-  "id": "table-18",
+  "id": "section-3-1-5-7-1-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-18",
+  "url": "section-3-1.html#section-3-1-5-7-1-1-1",
   "type": "Table",
   "number": "3.1.16",
   "title": "",
   "body": "   A  B  C  D  E    5 a True 46.7 North    3 a True 35.6 West    4 b False 10.8 East    2 b True 124.6 North    3 c False 4.8 South    5 c False 4.7 East    4 c True 7.4 West    "
 },
 {
-  "id": "table-19",
+  "id": "section-3-1-5-7-2-1-1",
   "level": "2",
-  "url": "section-3-1.html#table-19",
+  "url": "section-3-1.html#section-3-1-5-7-2-1-1",
   "type": "Table",
   "number": "3.1.17",
   "title": "",
   "body": "   A  B  C  D    26 186 4 234.6    "
 },
 {
-  "id": "p-127",
+  "id": "section-3-1-5-9-1-1",
   "level": "2",
-  "url": "section-3-1.html#p-127",
+  "url": "section-3-1.html#section-3-1-5-9-1-1",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Union "
 },
 {
-  "id": "p-128",
+  "id": "section-3-1-5-9-2-1",
   "level": "2",
-  "url": "section-3-1.html#p-128",
+  "url": "section-3-1.html#section-3-1-5-9-2-1",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Intersect "
 },
 {
-  "id": "p-129",
+  "id": "section-3-1-5-9-3-1",
   "level": "2",
-  "url": "section-3-1.html#p-129",
+  "url": "section-3-1.html#section-3-1-5-9-3-1",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Difference "
 },
 {
-  "id": "activity-2",
+  "id": "section-3-1-5-10",
   "level": "2",
-  "url": "section-3-1.html#activity-2",
+  "url": "section-3-1.html#section-3-1-5-10",
   "type": "Activity",
   "number": "3.1.2",
   "title": "",
   "body": " Brainstrom situations where you would want to use each of these data table mergers.  "
 },
 {
-  "id": "table-20",
+  "id": "section-3-1-6-3-1",
   "level": "2",
-  "url": "section-3-1.html#table-20",
+  "url": "section-3-1.html#section-3-1-6-3-1",
   "type": "Table",
   "number": "3.1.18",
   "title": "",
   "body": "  Location BurritoType Date Neighborhood Address Yelp Google Chips Cost  Taco Stand California 2\/12\/2016 La Jolla 621 Pearl St 4.5 4.4 7.49  Lola's 7 Up Market and Deli Shredded beef 2\/29\/2016 Carlsbad 3292 Roosevelt St 4.5 4.9 6  Cancun Mexican and Seafood California 3\/20\/2016 Encinitas 1766 N Coast Hwy 4.5 4.1 x 6.99  Mikes Taco Club California 3\/23\/2016 Ocean Beach 5060 Newport Ave 4.5 4.9 8.59  La Perla Cocina Addiction 3\/30\/2016 Pacific Beach 745 Emerald St 4.5 4.7 7.99  California Burritos California Everything 4\/15\/2016 Linda Vista 7754 Starling Dr 4.5 4.4 x 6.25  Mi Asador Mexican and Seafood California 4\/27\/2016 Oceanside 4750 Oceanside Blvd 4.5 4.4 x 6.89  "
 },
 {
-  "id": "p-133",
+  "id": "section-3-1-6-4",
   "level": "2",
-  "url": "section-3-1.html#p-133",
+  "url": "section-3-1.html#section-3-1-6-4",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Filter Mutate Sort "
 },
 {
-  "id": "activity-3",
+  "id": "section-3-1-6-5",
   "level": "2",
-  "url": "section-3-1.html#activity-3",
+  "url": "section-3-1.html#section-3-1-6-5",
   "type": "Activity",
   "number": "3.1.3",
   "title": "Data Verb Sentences.",
   "body": "Data Verb Sentences For the questions below, determine which data verbs you would need to achieve this task! Sometimes it can be helpful to physically sketch what the final table would look like and then use the verbs to get to your desired table.  Which burrito type is the highest rated?  Which burrito type costs the most?  Does coming with chips increase ratings?   "
 },
 {
-  "id": "exercise-6",
+  "id": "section-3-1-7-1",
   "level": "2",
-  "url": "section-3-1.html#exercise-6",
+  "url": "section-3-1.html#section-3-1-7-1",
   "type": "Exercise",
   "number": "3.1.5.1",
   "title": "",
   "body": "Below is a list of our data verbs. Categorize the verbs into groups depending if they happen to the columns or rows.  Select  Filter  Mutate  Sort  Group  Aggregate  "
 },
 {
-  "id": "exercise-7",
+  "id": "section-3-1-7-2",
   "level": "2",
-  "url": "section-3-1.html#exercise-7",
+  "url": "section-3-1.html#section-3-1-7-2",
   "type": "Exercise",
   "number": "3.1.5.2",
   "title": "",
   "body": "What is a good system to help use our verbs to answer our data questions? "
 },
 {
-  "id": "exercise-8",
+  "id": "section-3-1-7-3",
   "level": "2",
-  "url": "section-3-1.html#exercise-8",
+  "url": "section-3-1.html#section-3-1-7-3",
   "type": "Exercise",
   "number": "3.1.5.3",
   "title": "",
@@ -424,36 +424,36 @@ var ptx_lunr_docs = [
   "body": " Cleaning Data  Cleaning is where we use our data verbs in order to put our dataset in a format that is easier for future use. Usually we perform cleaning when:  Data is not in right format (think variable type)  Data is not in consistent format  Missing or blank values     Why would it be important for all data in a column to have the same variable type?  Having our data in the same format allows us to easily use our data verbs later on whether we are filtering, mutating, or performing aggregate functions. It ensures that the column contains perdictable values so we can easily give commands to the computer.   How can we handle missing values?  Our options come down to delete column, delete row, fill entry with value (zero, min\/max, average, random), or ignore. Which one we use depends on what the variable means.   Consider the data table below and list what needs to be cleaned in each column. How should we handle the missing values? How would you use your data verbs to carry out the cleaning?  Dirty Data Table    A  B  C  D  E    5 a True 46.7 North    three a True 35.6    4 b No 10.8    2 b y    3 c 0 4.8    5.0 c n 4.7 East    4      Especially around missing values, we need to be considerate before we handle them. Questions to ask ourselves about missing values before deciding:  Is a value missing because of human error or intentional? Having a missing weight value could be because someone forgot to enter it or maybe the object is outside the limits of the scale. This is an important distinction and we need to understand what our question is before moving forward with missing values.  How important is this piece of data? If we are not going to be using a column for our analysis, then we do not need to make a decision about dealing with a missing value.   Consider the dataset about Olympic Athletes with a sample shown below.    ID Name Sex Age Height Weight Team NOC Games Year Season City Sport Event Medal  3 Gunnar Nielsen Aaby M 24 NA NA Denmark DEN 1920 Summer 1920 Summer Antwerpen Football Football Men's Football NA  9 Antti Sami Aalto M 26 186 96 Finland FIN 2002 Winter 2002 Winter Salt Lake City Ice Hockey Ice Hockey Men's Ice Hockey NA  14 Pirjo Hannele Aalto (Mattila-) F 32 171 65 Finland FIN 1994 Winter 1994 Winter Lillehammer Biathlon Biathlon Women's 7.5 kilometres Sprint NA  18 Timo Antero Aaltonen M 31 189 130 Finland FIN 2000 Summer 2000 Summer Sydney Athletics Athletics Men's Shot Put NA  21 Ragnhild Margrethe Aamodt F 27 163 NA Norway NOR 2008 Summer 2008 Summer Beijing Handball Handball Women's Handball Gold  22 Andreea Aanei F 22 170 125 Romania ROU 2016 Summer 2016 Summer Rio de Janeiro Weightlifting Weightlifting Women's Super-Heavyweight NA  30 Pepijn Aardewijn M 26 189 72 Netherlands NED 1996 Summer 1996 Summer Atlanta Rowing Rowing Men's Lightweight Double Sculls Silver  30 Pepijn Aardewijn M 30 189 72 Netherlands NED 2000 Summer 2000 Summer Sydney Rowing Rowing Men's Lightweight Double Sculls NA 3 1 Evald rma (rman-) M 24 174 70 Estonia EST 1936 Summer 1936 Summer Berlin Athletics Athletics Men's Pole Vault NA  39 Lars Thorlaksn Aas M 33 NA NA Norway NOR 1912 Summer 1912 Summer Stockholm Fencing \"Fencing Men's Foil, Individual\" NA  39 Lars Thorlaksn Aas M 33 NA NA Norway NOR 1912 Summer 1912 Summer Stockholm Fencing \"Fencing Men's epee, Individual\" NA  39 Lars Thorlaksn Aas M 33 NA NA Norway NOR 1912 Summer 1912 Summer Stockholm Fencing \"Fencing Men's epee, Team\" NA  44 Meelis Aasme M 25 182 73 Estonia EST 1998 Winter 1998 Winter Nagano Cross Country Skiing Cross Country Skiing Men's 30 kilometres NA  44 Meelis Aasme M 25 182 73 Estonia EST 1998 Winter 1998 Winter Nagano Cross Country Skiing Cross Country Skiing Men's 50 kilometres NA  44 Meelis Aasme M 29 182 73 Estonia EST 2002 Winter 2002 Winter Salt Lake City Cross Country Skiing Cross Country Skiing Men's 15 kilometres NA  44 Meelis Aasme M 29 182 73 Estonia EST 2002 Winter 2002 Winter Salt Lake City Cross Country Skiing Cross Country Skiing Men's 50 kilometres NA  44 Meelis Aasme M 29 182 73 Estonia EST 2002 Winter 2002 Winter Salt Lake City Cross Country Skiing Cross Country Skiing Men's 4 x 10 kilometres Relay NA  49 Moonika Aava F 24 168 65 Estonia EST 2004 Summer 2004 Summer Athina Athletics Athletics Women's Javelin Throw NA  49 Moonika Aava F 28 168 65 Estonia EST 2008 Summer 2008 Summer Beijing Athletics Athletics Women's Javelin Throw NA  57 Borislav Abadzhiev M 24 176 66 Bulgaria BUL 1988 Summer 1988 Summer Seoul Boxing Boxing Men's Light-Welterweight NA     Indicate the variable type of each column.  Some of the rows have missing data indicated with NA in the data cell. Propose what you would do to deal with the missing (and duplicate) data in each of the following scenarios.  You want to compute the average height of athletes of different sports.  You want to determine which countries earn the most gold, silver, and bronze medals.       "
 },
 {
-  "id": "question-1",
+  "id": "section-3-2-3",
   "level": "2",
-  "url": "section-3-2.html#question-1",
+  "url": "section-3-2.html#section-3-2-3",
   "type": "Question",
   "number": "3.2.1",
   "title": "",
   "body": " Why would it be important for all data in a column to have the same variable type? "
 },
 {
-  "id": "question-2",
+  "id": "section-3-2-5",
   "level": "2",
-  "url": "section-3-2.html#question-2",
+  "url": "section-3-2.html#section-3-2-5",
   "type": "Question",
   "number": "3.2.2",
   "title": "",
   "body": " How can we handle missing values? "
 },
 {
-  "id": "activity-4",
+  "id": "section-3-2-7",
   "level": "2",
-  "url": "section-3-2.html#activity-4",
+  "url": "section-3-2.html#section-3-2-7",
   "type": "Activity",
   "number": "3.2.1",
   "title": "",
   "body": " Consider the data table below and list what needs to be cleaned in each column. How should we handle the missing values? How would you use your data verbs to carry out the cleaning?  Dirty Data Table    A  B  C  D  E    5 a True 46.7 North    three a True 35.6    4 b No 10.8    2 b y    3 c 0 4.8    5.0 c n 4.7 East    4     "
 },
 {
-  "id": "exercise-9",
+  "id": "section-3-2-9-1",
   "level": "2",
-  "url": "section-3-2.html#exercise-9",
+  "url": "section-3-2.html#section-3-2-9-1",
   "type": "Exercise",
   "number": "3.2.1",
   "title": "",
@@ -475,21 +475,30 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "Data Verbs in Python",
-  "body": " Data Verbs in Python  A bit more programming  Today, we are going to get a bit more sophisticated in our programming skills. We will be focusing on functions and loops. A function is a recipe of directions that has inputs (ingredients) and an output (cake). Some functions are internally built into the object (like being able to measure flour) and others are external (like baking a cake).  Internal functions (sometimes called methods) happen after the variable name like so flour.measure() where flour is the variable name and measure() is a function that acts on flour . Sometimes things need to go into the parenthesis like what unit we can to measure in. flour.measure(\"cups\") This would not only measure the flour but do so in our desire unit, cups!  Other functions that are more like baking a cake have all their inputs in parenthesis. bake(flour, sugar, egg)  Packages are a special collection of functions that other people have written that we can use. To use a function from a package, we first have to import them into our notebook. Typical Packages:  Pandas - great for data, create a dataframe which has lots of neat features like our data verbs  NumPy - great for math like square roots. Has arrays which are nice for data manipulation  MatPlotLib.pyplots - MatLab-like plotting, basic visuals  Seaborn - more sophisticated plotting and making visuals  SkLearn - many algorithms and datasets for data analysis  When importing packages, you can either import the entire package or particular parts. All of these packages have documentation online (usually) with good examples of how to use their functions.  If a function comes from a package, then its name might include the package it came from. import pandas as pd pd.read_csv(FILE_NAME) Here read_csv() is a function from the pandas package which we named pd . Load the pandas package and read the Titanic Dataset using the following URL: URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\"  Loading Data  import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)    Data Verbs   To select a particular column from our data set we would write: df[ColumnName] . If we have multiple columns, we need to give write a list of all the column names we need (or splice from the df.columns list). There are other ways to do this, but this is one of the more direct ways. For the titanic dataset, select the survived , age , and boat columns.  To filter particular rows based on a logical expression (think ==, >, .isin(), etc) we would write: df[df[ColumnName]==\"Pugs\"] If we had multiple filters or wanted to do filtering at the same time as selecting we would need to write: df.loc[(FILTER 1) & (FILTER 2), [ColumnName1, ColumnName2]] where the `&` acts like `and` for our logical expressions. For the titanic dataset, select the survived , age , and boat columns and filter the dataset so we only have female passengers.  To make a new column based on previous columns ( mutate ) we will do an assignment for our new columns as follows: df[NewColumn]=Stuff with previous columns How we get the stuff with previous columns is always interesting! For the Titanic dataset, create a new column that is just the cabin letter for the passengers who have a cabin entry.  To sort by particular column(s) we would write: df.sort_values(by=Columns, ascending=True) It will automatically go from smallest to biggest, to go the other way we will need to change `ascending` to `False`. For the Titanic dataset, find who the youngest person was on the ship and who was the oldest.   Grouping breaks our dataset into many little pieces so we can study it by subgroup. We would write: df.groupby([Column1, Column2]) Grouping is almost always used with aggregate which applies a function over a column.   Aggregate applies a function over an entire column (or portion of column if grouped first). We would write: df.agg(['sum', 'min', 'max', 'mean']) or df.agg({'Column1':['sum', 'mean'], 'Column2':['min', 'max']}) You can also pass it functions you wrote yourself! For the Titanic dataset, find the average age of people who survived and the average age of people who did not survive. How does compare to the average age of female\/male passengers?    "
+  "body": " Data Verbs in Python  Today, we are going to dive into working with data in Python. Python is a programming language which helps us tell the computer what to do. Every programming language has syntax or a set of rules that we will learn. For now, let's focus on the big picture and then dive into data.  One thing that is important to know about Python and programing, is that we use variables to represent data. These representive names are used to reference the actual data or object. To assign a piece of data a name we will use = . So for example the code phrase great_number=2 would indicate that anytime later in my code I used great_number the number 2 would show up in its stead when the computer followed my instructions. When naming variables, there should be no spaces which is why many people use underscores.  A more detailed handing of Python will be handled in Section ---reference here---.  Getting Started  The first step is to tell the computer where to find our data. Here and in our Juypter Notebook we will load the data first. We can think of this as having the data open in our Excel Notebook. The code to do this is in this class is as follows: import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL) Let's walk through what each of these pieces mean. This is going to be a yap fest so feel free to skip if you already know what is happening.  The pandas here does not refer to animal but a collection of functions that we will find helpful throughout this semester.  A function is a recipe of directions that has inputs (ingredients) and an output (cake). Some functions are internally built into the object (like being able to measure flour) and others are external (like baking a cake).  The syntax for internal functions (sometimes called methods) happen after the variable name like so flour.measure() where flour is the variable name and measure() is a function that acts on flour . Sometimes things need to go into the parenthesis like what unit we can to measure in. flour.measure(\"cups\") This would not only measure the flour but do so in our desire unit, cups!  The syntas for other functions that are more like baking a cake have all their inputs in parenthesis. bake(flour, sugar, egg)  Packages are a special collection of functions that other people have written that we can use. To use a function from a package, we first have to import them into our notebook. Typical packages we will use for data science:  Pandas - great for data, create a dataframe which has lots of neat features like our data verbs  NumPy - great for math like square roots. Has arrays which are nice for data manipulation  MatPlotLib.pyplots - MatLab-like plotting, basic visuals  Seaborn - more sophisticated plotting and making visuals  SkLearn - many algorithms and datasets for data analysis  When importing packages, you can either import the entire package or particular parts. All of these packages have documentation online with (usually) good examples of how to use their functions.  If a function comes from a package, then its name might include the package it came from. For example: import pandas as pd pd.read_csv(FILE_NAME) Here read_csv() is a function from the pandas package which we named pd . There are many ways to give Pandas and Python a file name. We will start with a URL. Put this URL into your browser, what page does it take you to? URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\"  We are now ready to load our data. Load the pandas package and read the Titanic Dataset using the following URL: URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" . Then name the loaded data as the variable df .  Loading Data  import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)   Let's find out some information about the dataset now that we have it loaded in. First, we can find the number of rows and columns (respectivly) by df.shape . We can find out the name of our columns by df.columns . We can display part of our dataset by using df.head(10) or df.tail(10) to show the first or last 10 entries. Notice how the dataset is displayed is a similar manner to an Excel sheet with cells.  We can find any blank enties by df.isna() , note that this will give us a cell by cell evaluation of either True or False . There are many more things that we can do to our dataset that we will continue to learn. For now, let's hone in on how to implement our dataverbs.   Data Verbs   To select a particular column from our data set we would write: df[ColumnName] . If we have multiple columns, we need to give write a list of all the column names we need (or splice from the df.columns list). There are other ways to do this, but this is one of the more direct ways. For the titanic dataset, select the survived , age , and boat columns.  import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)    To filter particular rows based on a logical expression (--reference--) we would write: df[df[ColumnName]==\"Pugs\"] If we had multiple filters or wanted to do filtering at the same time as selecting we would need to write: df.loc[(FILTER 1) & (FILTER 2), [ColumnName1, ColumnName2]] where the `&` acts like `and` for our logical expressions. For the titanic dataset, select the survived , age , and boat columns and filter the dataset so we only have female passengers.   import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)   To make a new column based on previous columns ( mutate ) we will do an assignment for our new columns as follows: df[NewColumn]=Stuff with previous columns How we get the stuff with previous columns is always interesting! For the Titanic dataset, create a new column that is just the cabin letter for the passengers who have a cabin entry.   import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)   To sort by particular column(s) we would write: df.sort_values(by=Columns, ascending=True) It will automatically go from smallest to biggest, to go the other way we will need to change `ascending` to `False`. For the Titanic dataset, find who the youngest person was on the ship and who was the oldest.   import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)    Grouping breaks our dataset into many little pieces so we can study it by subgroup. We would write: df.groupby([Column1, Column2]) Grouping is almost always used with aggregate which applies a function over a column.   Aggregate applies a function over an entire column (or portion of column if grouped first). We would write: df.agg(['sum', 'min', 'max', 'mean']) or df.agg({'Column1':['sum', 'mean'], 'Column2':['min', 'max']}) You can also pass it functions you wrote yourself! For the Titanic dataset, find the average age of people who survived and the average age of people who did not survive. How does compare to the average age of female\/male passengers?   import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)     "
 },
 {
-  "id": "p-163",
+  "id": "section-3-4-5-2",
   "level": "2",
-  "url": "section-3-4.html#p-163",
+  "url": "section-3-4.html#section-3-4-5-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "load "
+},
+{
+  "id": "section-3-4-5-4",
+  "level": "2",
+  "url": "section-3-4.html#section-3-4-5-4",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "function "
 },
 {
-  "id": "p-166",
+  "id": "section-3-4-5-7",
   "level": "2",
-  "url": "section-3-4.html#p-166",
+  "url": "section-3-4.html#section-3-4-5-7",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -505,99 +514,306 @@ var ptx_lunr_docs = [
   "body": "Loading Data  import pandas as pd URL=\"https:\/\/raw.githubusercontent.com\/klorenzen\/Data-Sets\/main\/titanic.csv\" pd.read_csv(URL)  "
 },
 {
-  "id": "p-173",
+  "id": "section-3-4-6-2",
   "level": "2",
-  "url": "section-3-4.html#p-173",
+  "url": "section-3-4.html#section-3-4-6-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "select filter mutate sort Grouping Aggregate "
 },
 {
-  "id": "section-3-4",
+  "id": "section-3-5",
   "level": "1",
-  "url": "section-3-4.html",
+  "url": "section-3-5.html",
   "type": "Section",
   "number": "3.5",
-  "title": "Functions in Python",
-  "body": " Functions in Python  Lists and Dictionaries  Lists are an important data type that we will use frequently. A Lists store other data types (including other lists) and are mutable meaning we can change the entries. To make a list we put our entries into square brackets separated by commas. We call them with an index or the number they are in order. Python begins all indices with zero, so the first entry has index 0. For example, here is a list:   my_list=['a', 'b', 'c', 4, 10]  To print the fourth entry in the list we would write my_list[3] . Try this below:  We can reassign indices to values by using = which is the assignment operator. For example my_list[3]=7%5 reassigns the fourth entry to the remainder of seven divided by five. We can also use special methods of our lists including  my_list.append(x) which would add x to the end of the list,  my_list.pop(2) which would remove the index 2 entry from the list, and  my_list.remove(x) which removes element x from the list  Try these with values inside the parenthesis.  If we want to quickly create a list of numbers that are increasing by a set amount, we can use range() function. The input is the start and stop+1. If only one input is given, it starts at 0 and ends at stop-1. This function is a generator meaning that we have to tell it we would like it to make a list with the command list(range(start, stop+1)) . Using range() , make a list that is the numbers 3 through 13 .  Dictionaries are helpful when doing cleaning and feature extraction. Dictionaries are like lists expect they are unordered so they do not have an order to them. They have two pieces: keys and values. To make a dictionary we put our keys-value pairs between curly braces separated by commas. We indicate which entry is the key and which one is the value using a colon. For example,   my_dict={\"apple\":\"fruit\", \"bean\":\"veggie\"}  Like lists, dictionaries are changable, meaning we can change, add, or remove items after the dictionary has been created. First, use the key \"apple\" to call the value \"fruit\" by using it like an index of a list. Try reassigning the value of the key \"apple\" then try reassigning the value in a dictionary of a that does not exist like 10. What do you notice?  Create a dictionary with duplicate keys, what happens when you print the duplicate key value?   Writing own functions  Now that we have our data verbs we can have more fun gathering information from data. Today we will be exploring how we can mutate columns with more sophistication. In addition to using other people's functions, we can also write our own. This is really useful when we notice that we are doing a repetitive process. If we wanted to write a function that added two to a number it would look like this:    def addTwo(x): result=x+2 return result    Here the def means were are defining a new function, addTwo() is the name of our function that we will use to call again, x is our input variable and : means we are about to give our recipe. Notice the next line is tabbed over, this is important. Once we leave the tabbed lines, we are no longer giving recipe instructions. The other important part in the return which is followed by the product we want from our function. This is optional. Write a function that determines whether a number is even or odd.     if statements, for loops, and while loops  Some other programming ideas we will be using are if statements. An if statement is some part of the program that only runs if something is true. For example   if x<0: x=x*-1 np.squareroot(x)   Similar to a function definition, only the tabbed part happens if x<0 . We can also add an else which will allow us to run different lines if it is not true. For example   if x==0: x+=1 else: x=x\/10  A for loop is a program that will do something to every object in a list (iterable object). It has a variable that is the thing that changes as well as the list that the variable will become. For example   for x in [1,2,3,4,5,6]: print(x*7)  A *while* loop is similar to a for loop although it does not go through a list. It will stop once a logical expression is no longer satisfied. For example   x=1 while x<10: print(x+2) x=x+1  Be cautious with while loops that you update the variable otherwise they will run forever.   Write a script that prints all the squares of the odd number between 1 and 10.    Mutating with functions  Now that we have more python tools under our belt, we can start to learn how to use these while trying to mutate columns. For this section we will be focusing on the Titanic dataset. The Titanic dataset has a list of all the people onboard the Titanic Oceanliner before it met its tragic end by hitting an iceberg. It is full of interesting information and we will try to extract it all!  Here is a quick list of some functions that may or may not be helpful as we try to use our data verbs!  df.isna() - turns all entries to True if it is blank (or has NaN in them) and False otherwise  df.dropna(axis=0, how=\"all\", inplace=False) - returns a dataset where rows with all blank entries are dropped, note that this does not save the new dataset  df[ColName].unique() - returns all unique entries in a particular column  df[ColName].value_counts() - returns all unique entries and the number of times they each occur  df[ColName].map(dict) - returns a new column where entries in original column are turned into new entries according to the dictionary (keys-old entries, values-new entries)  df[ColName].apply(func) - returns a new column where entries in original column are turned into new entries according to the dictionary    Playing with Titanic Dataset  Perform the following tasks on the dataset  Remove any rows with all blank entries  What percentage of the passengers were men? What percentage of survivors were men?  How many different life boats were on the ship? How many people were on each one?  For each life boat, what was the percentage of male? What percentage were female?  Make a new column that classifies the fare a passenger paid for their ticket into one of four groups: less than 10, more than 10 less than 50, more than 50 less than 100, and more than 100. Find the percentage of survivors for each fare class.  Find the percentage of survivors by gender and fare class. How does the male survival rates broken down by fare classes compare to the overall percentage of the male survivors? What might this tell you about important factors to determining whether someone survived?      "
+  "title": "Python Fundementals",
+  "body": " Python Fundementals  Data Types and Logical Expressions  We will start with the basic variable types. Our data usually comes as one of these.  Numerical: Whole numbers int , decimal numbers float  Text: Single characters char , strings of characters str  Binary: Boolean, True or False bool    We store our data as a variable which we give a name to. To assign a name, we use = . For example x=2 gives 2 the name x . This allows us to use the name down the road. We can also reassign the name to a different value of data. For example, x=x+5 would take our old value of x , add 5 , and then reassign the variable x to this new value. Try it below!  x=2 x=x+5 print(x)    This comes up a lot, so much so that there are short cuts for this.  x+=5 is the same as x=x+5  x-=5 is the same as x=x-5  Assign x the value 2 . Add 3 to x , reassign this value to x .    With every type of data there are different types of operations we can do to it. For int and float we can do the following operations with the code.  Addition, for example 1+2  Multiplication, for example 1*2  Exponents, for example 2**7  Division, for example 1+2  Remainder, for example 7%2    Try some of these out in the cell below. If you need heavy duty math operations, use the package NumPy .   ----astype() pandas add on--- For char and str we can do the following operations with the code.  Addition, for example 'c'+'d'  Multiplication, for example 1*'c'  Indexing, for example my_string=\"My string is the best string\" my_string[5] my_string[6:9]  Locating, for example 'm' in my_string 'LinfieldUniversity'.startswith('Linfield') 'LinfieldUniversity'.find('Uni')  Make upper or lowercase, for example my_string.upper() my_string.lower()  Counting occurances, for example my_string.count('e')  Replacement, for example my_string.replace('i','e')  Removing spaces, for example my_string.strip()  Try some of these out in the cell below. my_string=\"My string is the best string\" print(my_string[5])  Finally, we will look at bool opperations. We will use these often for filtering our data. A boolean variable is either true or false. We can form boolean variables through checking comparisons. In addition there are boolean operators that allow us to have multiple comparisons at once.  AND, returns true if both statements are true True and True or  OR, returns true if at least one statement is true True or True or True | True  Not, returns the opposite boolean varialbe not True or !True  To compare, we can use the following expressions.  Equality, 2 == 3   Not equal 2 != 3  Greater than 2>3  Less than 2 3  Greater than or equal to 2>=3  Less than or equal to 2 =3  Try some of these out in the cell below. How does the comparison change for char and str variables?  In addition, we commonly use in to check membership  Lists and Dictionaries  Lists are an important data type that we will use frequently. A Lists store other data types (including other lists) and are mutable meaning we can change the entries. To make a list we put our entries into square brackets separated by commas. We call them with an index or the number they are in order. Python begins all indices with zero, so the first entry has index 0. For example, here is a list:  my_list=['a', 'b', 'c', 4, 10]  To print the fourth entry in the list we would write my_list[3] . Try this below:  my_list=['a', 'b', 'c', 4, 10] print(my_list)    We can reassign indices to values by using = which is the assignment operator. For example my_list[3]=7%5 reassigns the fourth entry to the remainder of seven divided by five. We can also use special methods of our lists including  my_list.append(x) which would add x to the end of the list,  my_list.pop(2) which would remove the index 2 entry from the list, and  my_list.remove(x) which removes element x from the list  Try these below.  my_list=['a', 'b', 'c', 4, 10] my_list.append() print(my_list)   If we want to select a portion of a list we can do a splice . The syntax is my_list[1:3] which will return entries indexed 1,2 . You can also use negative numbers to grab entries. Try it below to see what happens.  my_list=['a', 'b', 'c', 4, 10] print(my_list[1:3])    If we want to quickly create a list of numbers that are increasing by a set amount, we can use range() function. The input is the start and stop+1. If only one input is given, it starts at 0 and ends at stop-1. This function is a generator meaning that we have to tell it we would like it to make a list with the command list(range(start, stop+1)) . Using range() , make a list that is the numbers 3 through 13 .  print(list(range(13)))   Dictionaries are helpful when doing cleaning and feature extraction. Dictionaries are like lists expect they are unordered, instead of a index we have a key. Dictionaries use the keys to return the values . To make a dictionary we put our keys-value pairs between curly braces separated by commas. We indicate which entry is the key and which one is the value using a colon. For example,   my_dict={\"apple\":\"fruit\", \"bean\":\"veggie\"}  Here, \"apple\" is the key for the value \"fruit\" . Like lists, dictionaries are changable, meaning we can change, add, or remove items after the dictionary has been created. First, use the key \"apple\" to call the value \"fruit\" by using it like an index of a list.  my_dict={\"apple\":\"fruit\", \"bean\":\"veggie\"} print(my_dict)  Try reassigning the value of the key \"apple\" then try reassigning the value of a key that does not exist in our dictionary like \"porkchop\" . What do you notice?  my_dict={\"apple\":\"fruit\", \"bean\":\"veggie\"} print(my_dict)   Create a dictionary with duplicate keys, what happens when you print the duplicate key value?     Writing our own functions  Now that we have our data verbs we can have more fun gathering information from data. Today we will be exploring how we can mutate columns with more sophistication. In addition to using other people's functions, we can also write our own. This is really useful when we notice that we are doing a repetitive process. If we wanted to write a function that added two to a number it would look like this:    def addTwo(x): result=x+2 return result    Here the def means were are defining a new function, addTwo() is the name of our function that we will use to call again, x is our input variable and : means we are about to give our recipe. Notice the next line is tabbed over, this is important. Once we leave the tabbed lines, we are no longer giving recipe instructions. The other important part in the return which is followed by the product we want from our function. This is optional. Write a function that determines whether a number is even or odd.     if statements, for loops, and while loops  Some other programming ideas we will be using are if statements. An if statement is some part of the program that only runs if something is true. For example   if x<0: x=x*-1 np.squareroot(x)   Similar to a function definition, only the tabbed part happens if x<0 . We can also add an else which will allow us to run different lines if it is not true. For example   if x==0: x+=1 else: x=x\/10  A for loop is a program that will do something to every object in a list (iterable object). It has a variable that is the thing that changes as well as the list that the variable will become. For example   for x in [1,2,3,4,5,6]: print(x*7)  A *while* loop is similar to a for loop although it does not go through a list. It will stop once a logical expression is no longer satisfied. For example   x=1 while x<10: print(x+2) x=x+1  Be cautious with while loops that you update the variable otherwise they will run forever.   Write a script that prints all the squares of the odd number between 1 and 10.    Mutating with functions  Now that we have more python tools under our belt, we can start to learn how to use these while trying to mutate columns. For this section we will be focusing on the Titanic dataset. The Titanic dataset has a list of all the people onboard the Titanic Oceanliner before it met its tragic end by hitting an iceberg. It is full of interesting information and we will try to extract it all!  Here is a quick list of some functions that may or may not be helpful as we try to use our data verbs!  df.isna() - turns all entries to True if it is blank (or has NaN in them) and False otherwise  df.dropna(axis=0, how=\"all\", inplace=False) - returns a dataset where rows with all blank entries are dropped, note that this does not save the new dataset  df[ColName].unique() - returns all unique entries in a particular column  df[ColName].value_counts() - returns all unique entries and the number of times they each occur  df[ColName].map(dict) - returns a new column where entries in original column are turned into new entries according to the dictionary (keys-old entries, values-new entries)  df[ColName].apply(func) - returns a new column where entries in original column are turned into new entries according to the dictionary    Playing with Titanic Dataset  Perform the following tasks on the dataset  Remove any rows with all blank entries  What percentage of the passengers were men? What percentage of survivors were men?  How many different life boats were on the ship? How many people were on each one?  For each life boat, what was the percentage of male? What percentage were female?  Make a new column that classifies the fare a passenger paid for their ticket into one of four groups: less than 10, more than 10 less than 50, more than 50 less than 100, and more than 100. Find the percentage of survivors for each fare class.  Find the percentage of survivors by gender and fare class. How does the male survival rates broken down by fare classes compare to the overall percentage of the male survivors? What might this tell you about important factors to determining whether someone survived?      "
 },
 {
-  "id": "p-180",
+  "id": "section-3-5-2-5-3-1",
   "level": "2",
-  "url": "section-3-4.html#p-180",
+  "url": "section-3-5.html#section-3-5-2-5-3-1",
+  "type": "Listing",
+  "number": "3.5.1",
+  "title": "",
+  "body": "Addition, for example 1+2 "
+},
+{
+  "id": "section-3-5-2-5-3-2",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-5-3-2",
+  "type": "Listing",
+  "number": "3.5.2",
+  "title": "",
+  "body": "Multiplication, for example 1*2 "
+},
+{
+  "id": "section-3-5-2-5-3-3",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-5-3-3",
+  "type": "Listing",
+  "number": "3.5.3",
+  "title": "",
+  "body": "Exponents, for example 2**7 "
+},
+{
+  "id": "section-3-5-2-5-3-4",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-5-3-4",
+  "type": "Listing",
+  "number": "3.5.4",
+  "title": "",
+  "body": "Division, for example 1+2 "
+},
+{
+  "id": "section-3-5-2-5-3-5",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-5-3-5",
+  "type": "Listing",
+  "number": "3.5.5",
+  "title": "",
+  "body": "Remainder, for example 7%2 "
+},
+{
+  "id": "section-3-5-2-7-3-1",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-7-3-1",
+  "type": "Listing",
+  "number": "3.5.6",
+  "title": "",
+  "body": "Addition, for example 'c'+'d' "
+},
+{
+  "id": "section-3-5-2-7-3-2",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-7-3-2",
+  "type": "Listing",
+  "number": "3.5.7",
+  "title": "",
+  "body": "Multiplication, for example 1*'c' "
+},
+{
+  "id": "section-3-5-2-7-3-3",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-7-3-3",
+  "type": "Listing",
+  "number": "3.5.8",
+  "title": "",
+  "body": "Indexing, for example my_string=\"My string is the best string\" my_string[5] my_string[6:9] "
+},
+{
+  "id": "section-3-5-2-7-3-4",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-7-3-4",
+  "type": "Listing",
+  "number": "3.5.9",
+  "title": "",
+  "body": "Locating, for example 'm' in my_string 'LinfieldUniversity'.startswith('Linfield') 'LinfieldUniversity'.find('Uni') "
+},
+{
+  "id": "section-3-5-2-7-3-5",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-7-3-5",
+  "type": "Listing",
+  "number": "3.5.10",
+  "title": "",
+  "body": "Make upper or lowercase, for example my_string.upper() my_string.lower() "
+},
+{
+  "id": "section-3-5-2-7-3-6",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-7-3-6",
+  "type": "Listing",
+  "number": "3.5.11",
+  "title": "",
+  "body": "Counting occurances, for example my_string.count('e') "
+},
+{
+  "id": "section-3-5-2-7-3-7",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-7-3-7",
+  "type": "Listing",
+  "number": "3.5.12",
+  "title": "",
+  "body": "Replacement, for example my_string.replace('i','e') "
+},
+{
+  "id": "section-3-5-2-7-3-8",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-7-3-8",
+  "type": "Listing",
+  "number": "3.5.13",
+  "title": "",
+  "body": "Removing spaces, for example my_string.strip() "
+},
+{
+  "id": "section-3-5-2-8-2-1",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-8-2-1",
+  "type": "Listing",
+  "number": "3.5.14",
+  "title": "",
+  "body": "AND, returns true if both statements are true True and True or "
+},
+{
+  "id": "section-3-5-2-8-2-2",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-8-2-2",
+  "type": "Listing",
+  "number": "3.5.15",
+  "title": "",
+  "body": "OR, returns true if at least one statement is true True or True or True | True "
+},
+{
+  "id": "section-3-5-2-8-2-3",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-8-2-3",
+  "type": "Listing",
+  "number": "3.5.16",
+  "title": "",
+  "body": "Not, returns the opposite boolean varialbe not True or !True "
+},
+{
+  "id": "section-3-5-2-8-3-1",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-8-3-1",
+  "type": "Listing",
+  "number": "3.5.17",
+  "title": "",
+  "body": "Equality, 2 == 3  "
+},
+{
+  "id": "section-3-5-2-8-3-2",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-8-3-2",
+  "type": "Listing",
+  "number": "3.5.18",
+  "title": "",
+  "body": "Not equal 2 != 3 "
+},
+{
+  "id": "section-3-5-2-8-3-3",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-8-3-3",
+  "type": "Listing",
+  "number": "3.5.19",
+  "title": "",
+  "body": "Greater than 2>3 "
+},
+{
+  "id": "section-3-5-2-8-3-4",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-8-3-4",
+  "type": "Listing",
+  "number": "3.5.20",
+  "title": "",
+  "body": "Less than 2 3 "
+},
+{
+  "id": "section-3-5-2-8-3-5",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-8-3-5",
+  "type": "Listing",
+  "number": "3.5.21",
+  "title": "",
+  "body": "Greater than or equal to 2>=3 "
+},
+{
+  "id": "section-3-5-2-8-3-6",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-2-8-3-6",
+  "type": "Listing",
+  "number": "3.5.22",
+  "title": "",
+  "body": "Less than or equal to 2 =3 "
+},
+{
+  "id": "section-3-5-3-2",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-3-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Lists "
+  "body": "Lists index "
 },
 {
-  "id": "p-187",
+  "id": "section-3-5-3-6",
   "level": "2",
-  "url": "section-3-4.html#p-187",
+  "url": "section-3-5.html#section-3-5-3-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "splice "
+},
+{
+  "id": "section-3-5-3-7",
+  "level": "2",
+  "url": "section-3-5.html#section-3-5-3-7",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "range() "
 },
 {
-  "id": "p-188",
+  "id": "section-3-5-3-8",
   "level": "2",
-  "url": "section-3-4.html#p-188",
+  "url": "section-3-5.html#section-3-5-3-8",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Dictionaries "
+  "body": "Dictionaries values "
 },
 {
-  "id": "p-195",
+  "id": "section-3-5-5-2",
   "level": "2",
-  "url": "section-3-4.html#p-195",
+  "url": "section-3-5.html#section-3-5-5-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "if "
 },
 {
-  "id": "p-199",
+  "id": "section-3-5-5-6",
   "level": "2",
-  "url": "section-3-4.html#p-199",
+  "url": "section-3-5.html#section-3-5-5-6",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "for "
 },
 {
-  "id": "p-201",
+  "id": "section-3-5-5-8",
   "level": "2",
-  "url": "section-3-4.html#p-201",
+  "url": "section-3-5.html#section-3-5-5-8",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "for "
 },
 {
-  "id": "p-203",
+  "id": "section-3-5-5-10",
   "level": "2",
-  "url": "section-3-4.html#p-203",
+  "url": "section-3-5.html#section-3-5-5-10",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "while "
 },
 {
-  "id": "activity-5",
+  "id": "section-3-5-5-11",
   "level": "2",
-  "url": "section-3-4.html#activity-5",
+  "url": "section-3-5.html#section-3-5-5-11",
   "type": "Activity",
   "number": "3.5.1",
   "title": "",
   "body": " Write a script that prints all the squares of the odd number between 1 and 10.  "
 },
 {
-  "id": "activity-6",
+  "id": "section-3-5-6-4",
   "level": "2",
-  "url": "section-3-4.html#activity-6",
+  "url": "section-3-5.html#section-3-5-6-4",
   "type": "Activity",
   "number": "3.5.2",
   "title": "Playing with Titanic Dataset.",
@@ -667,9 +883,9 @@ var ptx_lunr_docs = [
   "body": " Naive Bayes Classifier  I didn't retype my notes, but here is how you do math. Inline: . As an unlabeled equation: As a labeled equation:   Here is an example of a table:   Bike Ride Data            Weather  Temperature  Humidity  Wind  Bike Ride?    Rainy  F  High  13 mph  False     "
 },
 {
-  "id": "table-23",
+  "id": "section-6-2-4",
   "level": "2",
-  "url": "section-6-2.html#table-23",
+  "url": "section-6-2.html#section-6-2-4",
   "type": "Table",
   "number": "6.2.1",
   "title": "Bike Ride Data",
@@ -847,9 +1063,9 @@ var ptx_lunr_docs = [
   "body": " Health sciences  Microbiology, possibly.  "
 },
 {
-  "id": "colophon-2",
+  "id": "backmatter-2",
   "level": "1",
-  "url": "colophon-2.html",
+  "url": "backmatter-2.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
@@ -861,6 +1077,7 @@ var ptx_lunr_idx = lunr(function () {
   this.ref('id')
   this.field('title')
   this.field('body')
+  this.metadataWhitelist = ['position']
 
   ptx_lunr_docs.forEach(function (doc) {
     this.add(doc)
