@@ -4,3 +4,25 @@ WARNING : is configured to use 1.3.1. Consider either installing
 WARNING : CLI version 1.3.1 or changing `requirements.txt` to match 1.4.0.
 INFO    : Preparing to deploy from active `main` git branch.
 INFO    : 
+INFO    : Changes to project source since last commit detected.
+INFO    : Add/committing these changes to local Git repository.
+INFO    : 
+INFO    : Using latest build located in `C:\Users\klorenzen\OneDrive - Linfield University\Desktop\intro-data-science\intro-data-science\output\web`.
+INFO    : 
+INFO    : Committing your latest build to the `gh-pages` branch.
+INFO    : 
+INFO    : Attempting to connect to remote repository at `https://github.com/klorenzen/intro-data-science.git`...
+INFO    : 
+INFO    : 
+INFO    : Latest build successfully pushed to GitHub!
+INFO    : 
+INFO    : To enable GitHub Pages, visit
+INFO    :     https://github.com/klorenzen/intro-data-science/settings/pages
+INFO    : selecting the `gh-pages` branch with the `/ (root)` folder.
+INFO    : 
+INFO    : Visit
+INFO    :     https://github.com/klorenzen/intro-data-science/actions/
+INFO    : to check on the status of your GitHub Pages deployment.
+INFO    : 
+INFO    : Your built project will soon be available to the public at:
+INFO    :     https://klorenzen.github.io/intro-data-science/

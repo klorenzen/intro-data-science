@@ -1,4 +1,5 @@
 file:/C:/Users/klorenzen/OneDrive%20-%20Linfield%20University/Desktop/intro-data-science/intro-data-science/source/main.ptx:37:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element biography, got colophon
-file:/C:/Users/klorenzen/OneDrive%20-%20Linfield%20University/Desktop/intro-data-science/intro-data-science/source/main.ptx:15:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element frontmatter there
+file:/C:/Users/klorenzen/OneDrive%20-%20Linfield%20University/Desktop/intro-data-science/intro-data-science/source/main.ptx:13:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element subtitle there
 file:/C:/Users/klorenzen/OneDrive%20-%20Linfield%20University/Desktop/intro-data-science/intro-data-science/source/main.ptx:11:0:ERROR:RELAXNGV:RELAXNG_ERR_CONTENTVALID: Element book failed to validate content
 file:/C:/Users/klorenzen/OneDrive%20-%20Linfield%20University/Desktop/intro-data-science/intro-data-science/source/main.ptx:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element docinfo, got pretext
+file:/C:/Users/klorenzen/OneDrive%20-%20Linfield%20University/Desktop/intro-data-science/intro-data-science/source/main.ptx:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element pretext there

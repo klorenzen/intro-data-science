@@ -1,20 +1,37 @@
 <section xml:id="section-3-4">
 	<title>Data Verbs in Python</title>
-	<subsection><title>A bit more programming</title>
-		<p>Today, we are going to get a bit more sophisticated in our programming skills. We will be focusing on <em>functions</em> and <em>loops.</em> 
+	<p>Today, we are going to dive into working with data in Python. Python is a programming language which helps us tell the computer what to do. Every programming language has syntax or a set of rules that we will learn. For now, let's focus on the big picture and then dive into data. </p>
 
+	<p>One thing that is important to know about Python and programing, is that we use variables to represent data. These representive names are used to reference the actual data or object. To assign a piece of data a name we will use <c>=</c>. So for example the code phrase <c>great_number=2</c> would indicate that anytime later in my code I used <c>great_number</c> the number <c>2</c> would show up in its stead when the computer followed my instructions. When naming variables, there should be no spaces which is why many people use underscores. </p>
+
+	<p>A more detailed handing of Python will be handled in Section ---reference here---. </p> 
+	<subsection><title>Getting Started</title>
+	
+<p>
+	The first step is to tell the computer where to find our data. Here and in our Juypter Notebook we will <term>load</term> the data first. We can think of this as having the data open in our Excel Notebook. The code to do this is in this class is as follows:
+	<blockquote><p><c>
+		import pandas as pd
+URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
+pd.read_csv(URL)
+</c></p></blockquote>
+Let's walk through what each of these pieces mean. This is going to be a yap fest so feel free to skip if you already know what is happening. </p>
+
+<p> The <c>pandas</c> here does not refer to animal but a collection of functions that we will find helpful throughout this semester. 
+</p>
+
+<p>
 A <term>function</term> is a recipe of directions that has inputs (ingredients) and an output (cake). Some functions are internally built into the object (like being able to measure flour) and others are external (like baking a cake). </p>
 
-<p>Internal functions (sometimes called methods) happen after the variable name like so <c>flour.measure()</c> where <c>flour</c> is the variable name and <c>measure()</c> is a function that acts on <c>flour</c>. Sometimes things need to go into the parenthesis like what unit we can to measure in.<c>flour.measure("cups")</c>
+<p>The syntax for internal functions (sometimes called methods) happen after the variable name like so <c>flour.measure()</c> where <c>flour</c> is the variable name and <c>measure()</c> is a function that acts on <c>flour</c>. Sometimes things need to go into the parenthesis like what unit we can to measure in.<c>flour.measure("cups")</c>
 
 This would not only measure the flour but do so in our desire unit, cups!</p>
 
-<p>Other functions that are more like baking a cake have all their inputs in parenthesis. <c>bake(flour, sugar, egg)</c></p>
+<p>The syntas for other functions that are more like baking a cake have all their inputs in parenthesis. <c>bake(flour, sugar, egg)</c></p>
 
 
 <p><term>Packages</term> are a special collection of functions that other people have written that we can use. To use a function from a package, we first have to import them into our notebook. 
 
-Typical Packages:
+Typical packages we will use for data science:
 <ul>
 <li><p> Pandas - great for data, create a dataframe which has lots of neat features like our data verbs</p></li>
 <li><p> NumPy - great for math like square roots. Has arrays which are nice for data manipulation</p></li>
@@ -23,17 +40,20 @@ Typical Packages:
 <li><p> SkLearn - many algorithms and datasets for data analysis</p></li>
 </ul>
 
-When importing packages, you can either import the entire package or particular parts. All of these packages have documentation online (usually) with good examples of how to use their functions. 
+When importing packages, you can either import the entire package or particular parts. All of these packages have documentation online with (usually) good examples of how to use their functions. 
 </p>
 
-<p>If a function comes from a package, then its name might include the package it came from.<c>import pandas as pd
+<p>If a function comes from a package, then its name might include the package it came from. For example:
+<c>import pandas as pd
 pd.read_csv(FILE_NAME)
 </c>
 
 Here <c>read_csv()</c> is a function from the <c>pandas</c> package which we named <c>pd</c>.
 
-Load the pandas package and read the Titanic Dataset using the following URL: <c>URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
+There are many ways to give Pandas and Python a file name. We will start with a URL. Put this URL into your browser, what page does it take you to? <c>URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
 </c></p>
+<p> We are now ready to load our data. Load the pandas package and read the Titanic Dataset using the following URL: <c>URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
+</c>. Then name the loaded data as the variable <c>df</c>.</p>
 
 <exercise xml:id="program-activecode-python">
       <title>Loading Data</title>
@@ -45,28 +65,73 @@ pd.read_csv(URL)
 </input>
 </program>
     </exercise>
+
+   <p>
+   	Let's find out some information about the dataset now that we have it loaded in. First, we can find the number of rows and columns (respectivly) by <c>df.shape</c>. We can find out the name of our columns by <c>df.columns</c>. We can display part of our dataset by using <c> df.head(10)</c> or <c>df.tail(10)</c> to show the first or last 10 entries. Notice how the dataset is displayed is a similar manner to an Excel sheet with cells. </p>
+
+<p>
+   	We can find any blank enties by <c>df.isna()</c>, note that this will give us a cell by cell evaluation of either <c>True</c> or <c>False</c>. There are many more things that we can do to our dataset that we will continue to learn. For now, let's hone in on how to implement our dataverbs.
+   </p>
 </subsection>
 
 <subsection><title>Data Verbs</title>
 
 	<p><ul>
-		<li><p>To <term>select</term> a particular column from our data set we would write:<c>df[ColumnName]</c>. If we have multiple columns, we need to give write a list of all the column names we need (or splice from the <c>df.columns</c> list). There are other ways to do this, but this is one of the more direct ways. For the titanic dataset, select the <c>survived</c>, <c>age</c>, and <c>boat</c> columns.</p></li>
+		<li><p>To <term>select</term> a particular column from our data set we would write:<c>df[ColumnName]</c>. If we have multiple columns, we need to give write a list of all the column names we need (or splice from the <c>df.columns</c> list). There are other ways to do this, but this is one of the more direct ways. For the titanic dataset, select the <c>survived</c>, <c>age</c>, and <c>boat</c> columns.
+		<program xml:id="python-select-data" interactive="activecode" language="python" label="select-data">
+<input>
+import pandas as pd
+URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
+pd.read_csv(URL)
+</input>
+</program>
+</p></li>
 
-		<li><p>To <term>filter</term> particular rows based on a logical expression (think ==, >, .isin(), etc) we would write:<c>df[df[ColumnName]=="Pugs"]</c> If we had multiple filters or wanted to do filtering at the same time as selecting we would need to write:<c>df.loc[(FILTER 1) &amp; (FILTER 2), [ColumnName1, ColumnName2]]</c> where the `&amp;` acts like `and` for our logical expressions. For the titanic dataset, select the <c>survived</c>, <c>age</c>, and <c>boat</c> columns and filter the dataset so we only have <c>female</c> passengers.</p></li>
+		<li><p>To <term>filter</term> particular rows based on a logical expression (--reference--) we would write:<c>df[df[ColumnName]=="Pugs"]</c> If we had multiple filters or wanted to do filtering at the same time as selecting we would need to write:<c>df.loc[(FILTER 1) &amp; (FILTER 2), [ColumnName1, ColumnName2]]</c> where the `&amp;` acts like `and` for our logical expressions. For the titanic dataset, select the <c>survived</c>, <c>age</c>, and <c>boat</c> columns and filter the dataset so we only have <c>female</c> passengers.</p><p>
+			<program xml:id="python-filter-data" interactive="activecode" language="python" label="filterdata">
+<input>
+import pandas as pd
+URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
+pd.read_csv(URL)
+</input>
+</program></p></li>
 
-		<li><p>To make a new column based on previous columns (<term>mutate</term>) we will do an assignment for our new columns as follows:<c>df[NewColumn]=Stuff with previous columns</c> How we get the stuff with previous columns is always interesting! For the Titanic dataset, create a new column that is just the cabin letter for the passengers who have a cabin entry.</p></li>
+		<li><p>To make a new column based on previous columns (<term>mutate</term>) we will do an assignment for our new columns as follows:<c>df[NewColumn]=Stuff with previous columns</c> How we get the stuff with previous columns is always interesting! For the Titanic dataset, create a new column that is just the cabin letter for the passengers who have a cabin entry.</p><p>
+		<program xml:id="python-mutate-data" interactive="activecode" language="python" label="mutate-data">
+<input>
+import pandas as pd
+URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
+pd.read_csv(URL)
+</input>
+</program></p></li>
 
-		<li><p>To <term>sort</term> by particular column(s) we would write: <c>df.sort_values(by=Columns, ascending=True)</c> It will automatically go from smallest to biggest, to go the other way we will need to change `ascending` to `False`. For the Titanic dataset, find who the youngest person was on the ship and who was the oldest.</p></li>
+		<li><p>To <term>sort</term> by particular column(s) we would write: <c>df.sort_values(by=Columns, ascending=True)</c> It will automatically go from smallest to biggest, to go the other way we will need to change `ascending` to `False`. For the Titanic dataset, find who the youngest person was on the ship and who was the oldest.</p><p>
+		<program xml:id="python-sort-data" interactive="activecode" language="python" label="sort-data">
+<input>
+import pandas as pd
+URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
+pd.read_csv(URL)
+</input>
+</program></p></li>
 
 		<li><p> <term>Grouping</term> breaks our dataset into many little pieces so we can study it by subgroup. We would write: <c>df.groupby([Column1, Column2])</c> Grouping is almost always used with aggregate which applies a function over a column.</p></li>
 
-		<li><p> <term>Aggregate</term> applies a function over an entire column (or portion of column if grouped first). We would write: <c> df.agg(['sum', 'min', 'max', 'mean'])</c> or <c>df.agg({'Column1':['sum', 'mean'], 'Column2':['min', 'max']})</c> You can also pass it functions you wrote yourself! For the Titanic dataset, find the average age of people who survived and the average age of people who did not survive. How does compare to the average age of female/male passengers?</p></li>
+		<li><p> <term>Aggregate</term> applies a function over an entire column (or portion of column if grouped first). We would write: <c> df.agg(['sum', 'min', 'max', 'mean'])</c> or <c>df.agg({'Column1':['sum', 'mean'], 'Column2':['min', 'max']})</c> You can also pass it functions you wrote yourself! For the Titanic dataset, find the average age of people who survived and the average age of people who did not survive. How does compare to the average age of female/male passengers?</p><p>
+		<program xml:id="python-agg-data" interactive="activecode" language="python" label="agg-data">
+<input>
+import pandas as pd
+URL="https://raw.githubusercontent.com/klorenzen/Data-Sets/main/titanic.csv"
+pd.read_csv(URL)
+</input>
+</program></p></li>
 
 	</ul></p>
 
 
 
 </subsection>
+
+
 
 
 </section>
